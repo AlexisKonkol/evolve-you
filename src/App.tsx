@@ -28,6 +28,7 @@ import PathGraph from "./pages/PathGraph";
 import Journal from "./pages/Journal";
 import Mentor from "./pages/Mentor";
 import IdentityDashboard from "./pages/IdentityDashboard";
+import Intelligence from "./pages/Intelligence";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
