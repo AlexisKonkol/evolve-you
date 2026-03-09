@@ -15,6 +15,7 @@ import {
   Users,
   MessageCircle,
   Share2,
+  Compass,
 } from "lucide-react";
 import { TodayEvolution } from "@/components/dashboard/TodayEvolution";
 import { ReinventionStreaks } from "@/components/dashboard/ReinventionStreaks";
