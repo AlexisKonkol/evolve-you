@@ -49,7 +49,7 @@ const features = [
 const testimonials = [
   {
     name: "Maya Chen",  role: "Retail → AI Experience Design",
-    quote: "EVOLVE helped me see that 12 years of customer experience wasn't 'just retail' — it was exactly what AI companies need.",
+    quote: "Pathly helped me see that 12 years of customer experience wasn't 'just retail' — it was exactly what AI companies need.",
     stars: 5,
   },
   {
