@@ -29,8 +29,9 @@ const navSections = [
     label: "Explore",
     color: "violet" as const,
     items: [
-      { label: "Opportunity Engine", href: "/opportunity-engine", icon: Rocket, desc: "Connect your identity to real opportunities" },
-      { label: "Opportunity Radar", href: "/opportunities",  icon: Compass,    desc: "Scan emerging roles & trends" },
+      { label: "Opportunity Engine",    href: "/opportunity-engine", icon: Rocket,    desc: "Connect your identity to real opportunities" },
+      { label: "Pathly Intelligence",   href: "/intelligence",       icon: Brain,     desc: "Patterns of discovery across all paths"     },
+      { label: "Opportunity Radar",     href: "/opportunities",      icon: Compass,   desc: "Scan emerging roles & trends"               },
       { label: "Future Vision",     href: "/future-vision",  icon: Eye,        desc: "Define who you want to become" },
       { label: "Future You",        href: "/future-you",     icon: Sparkles,   desc: "Visualize possible future selves" },
       { label: "Career Paths",      href: "/paths",          icon: GitBranch,  desc: "Step-by-step transition roadmaps" },
