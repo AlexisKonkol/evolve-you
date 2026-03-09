@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.life-clarity]
 verify_jwt = false
+
+[functions.future-vision]
+verify_jwt = false

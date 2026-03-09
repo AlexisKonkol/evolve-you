@@ -17,6 +17,7 @@ import Community from "./pages/Community";
 import Pricing from "./pages/Pricing";
 import Profile from "./pages/Profile";
 import LifeClarity from "./pages/LifeClarity";
+import FutureVision from "./pages/FutureVision";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
