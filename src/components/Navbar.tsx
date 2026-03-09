@@ -26,7 +26,7 @@ const navSections = [
     color: "violet" as const,
     items: [
       { label: "Opportunity Radar", href: "/opportunities", icon: Compass, desc: "Scan emerging roles & trends" },
-      { label: "Future Vision", href: "/life-clarity", icon: Eye, desc: "Define who you want to become" },
+      { label: "Future Vision", href: "/future-vision", icon: Eye, desc: "Define who you want to become" },
       { label: "Career Paths", href: "/paths", icon: GitBranch, desc: "Step-by-step transition roadmaps" },
       { label: "Industry Trends", href: "/opportunities", icon: TrendingUp, desc: "AI & automation insights" },
     ],
