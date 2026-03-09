@@ -45,12 +45,12 @@ const pathSteps = [
 
 /* ── Features ──────────────────────────────────────────── */
 const features = [
-  { icon: Brain,       title: "Life Clarity",      desc: "Guided reflection that helps you understand who you are and what truly matters to you." },
-  { icon: Compass,     title: "Future Vision",      desc: "Define the version of yourself you want to become — grounded in your values and strengths." },
-  { icon: FlaskConical,title: "Micro-Experiments",  desc: "Test new directions safely. Learn by doing, not just thinking." },
-  { icon: TrendingUp,  title: "Career Paths",       desc: "Clear, personalised roadmaps that show you exactly what to learn and do next." },
-  { icon: BookOpen,    title: "Focused Learning",   desc: "Short, practical lessons on AI literacy, reinvention strategy, and systems thinking." },
-  { icon: Users,       title: "A Community",        desc: "Thousands of people on the same journey. You're never doing this alone." },
+  { icon: Brain,       title: "Life Clarity",      desc: "Become the kind of person who knows exactly what they value and why. Deep reflection that reveals who you already are." },
+  { icon: Compass,     title: "Future Vision",      desc: "Stop asking what you should do next. See who you're becoming — and step into that version of yourself." },
+  { icon: FlaskConical,title: "Micro-Experiments",  desc: "Explore the paths that match who you are becoming. Test new directions without committing to anything." },
+  { icon: TrendingUp,  title: "Career Paths",       desc: "Become someone with a clear, step-by-step direction. Not generic advice — your path, built around your identity." },
+  { icon: BookOpen,    title: "Focused Learning",   desc: "Become the kind of person who builds new skills. Short, practical lessons designed around your emerging identity." },
+  { icon: Users,       title: "A Community",        desc: "Become part of something bigger. Thousands of people on the same journey — none of you are doing this alone." },
 ];
 
 /* ── Testimonials ──────────────────────────────────────── */
