@@ -6,7 +6,7 @@ import {
   Menu, X, LayoutDashboard, Map, Star, Heart, Sparkles,
   Shield, Compass, Eye, GitBranch, TrendingUp, BookOpen,
   FlaskConical, Wrench, Users, MessagesSquare, Handshake,
-  Rss, ChevronDown,
+  Rss, ChevronDown, Lightbulb,
 } from "lucide-react";
 
 const navSections = [
@@ -18,7 +18,8 @@ const navSections = [
       { label: "Strengths",          href: "/identity-map",        icon: Star,       desc: "Explore your core capabilities" },
       { label: "Values",             href: "/life-clarity",        icon: Heart,      desc: "Discover what drives you" },
       { label: "Life Clarity",       href: "/life-clarity",        icon: Sparkles,   desc: "Guided deep reflection" },
-      { label: "Confidence Builder", href: "/confidence-builder",  icon: Shield,     desc: "Build belief in yourself" },
+      { label: "Clarity Engine",      href: "/clarity-engine",       icon: Lightbulb,  desc: "From confusion to clarity" },
+      { label: "Confidence Builder",  href: "/confidence-builder",   icon: Shield,     desc: "Build belief in yourself" },
     ],
   },
   {

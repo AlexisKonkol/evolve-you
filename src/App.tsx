@@ -19,6 +19,7 @@ import Profile from "./pages/Profile";
 import LifeClarity from "./pages/LifeClarity";
 import FutureVision from "./pages/FutureVision";
 import ConfidenceBuilder from "./pages/ConfidenceBuilder";
+import ClarityEngine from "./pages/ClarityEngine";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -45,6 +46,7 @@ const App = () => (
           <Route path="/life-clarity" element={<LifeClarity />} />
           <Route path="/future-vision" element={<FutureVision />} />
           <Route path="/confidence-builder" element={<ConfidenceBuilder />} />
+          <Route path="/clarity-engine" element={<ClarityEngine />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}

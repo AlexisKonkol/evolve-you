@@ -11,3 +11,6 @@ verify_jwt = false
 
 [functions.confidence-builder]
 verify_jwt = false
+
+[functions.clarity-engine]
+verify_jwt = false
