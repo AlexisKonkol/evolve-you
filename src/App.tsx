@@ -6,14 +6,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
+import IdentityMap from "./pages/IdentityMap";
 import Opportunities from "./pages/Opportunities";
 import Paths from "./pages/Paths";
 import Learn from "./pages/Learn";
+import Experiments from "./pages/Experiments";
 import Coach from "./pages/Coach";
 import Community from "./pages/Community";
 import Pricing from "./pages/Pricing";
-import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -27,9 +29,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/identity-map" element={<IdentityMap />} />
           <Route path="/opportunities" element={<Opportunities />} />
           <Route path="/paths" element={<Paths />} />
           <Route path="/learn" element={<Learn />} />
+          <Route path="/experiments" element={<Experiments />} />
           <Route path="/coach" element={<Coach />} />
           <Route path="/community" element={<Community />} />
           <Route path="/pricing" element={<Pricing />} />
