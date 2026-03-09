@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import {
   Brain, Sparkles, TrendingUp, Map, ArrowRight,
   Zap, Target, Heart, BookOpen, Users, MessageCircle,
-  Share2, Compass, Eye, Shield, Lightbulb, Sun, FlaskConical,
+  Share2, Compass, Eye, Shield, Lightbulb, Sun, FlaskConical, Rocket,
 } from "lucide-react";
 import { TodayEvolution } from "@/components/dashboard/TodayEvolution";
 import { ReinventionStreaks } from "@/components/dashboard/ReinventionStreaks";
