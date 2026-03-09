@@ -290,6 +290,7 @@ export default function Dashboard() {
                 <div className="space-y-1.5">
                   {[
                     { icon: Eye,      label: "Life Clarity",                   sub: "Discover who you are right now",          href: "/life-clarity",       highlight: true  },
+                    { icon: Lightbulb,label: "Clarity Engine",                  sub: "Go from confusion to clarity",            href: "/clarity-engine",     highlight: false },
                     { icon: Shield,   label: "Build Your Confidence",          sub: "Step into a stronger version of yourself", href: "/confidence-builder", highlight: false },
                     { icon: Compass,  label: "Your Future Vision",             sub: "See who you're becoming in 3 years",      href: "/future-vision",      highlight: false },
                     { icon: BookOpen, label: "Become someone who understands AI", sub: "15 min · Beginner",                   href: "/learn",              highlight: false },
