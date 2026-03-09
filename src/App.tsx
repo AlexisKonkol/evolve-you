@@ -9,6 +9,7 @@ import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
 import IdentityMap from "./pages/IdentityMap";
 import Opportunities from "./pages/Opportunities";
+import OpportunityEngine from "./pages/OpportunityEngine";
 import Paths from "./pages/Paths";
 import Learn from "./pages/Learn";
 import Experiments from "./pages/Experiments";
