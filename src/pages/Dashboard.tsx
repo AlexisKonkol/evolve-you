@@ -14,6 +14,7 @@ import { MicroExperiments } from "@/components/dashboard/MicroExperiments";
 import { ReinventionInsights } from "@/components/dashboard/ReinventionInsights";
 import { EvolutionMap } from "@/components/dashboard/EvolutionMap";
 import { EmergingIdentity } from "@/components/dashboard/EmergingIdentity";
+import { MomentumTracker } from "@/components/dashboard/MomentumTracker";
 
 const strengthClusters = [
   { label: "Communication",    score: 92, color: "teal"   },
@@ -123,7 +124,7 @@ export default function Dashboard() {
             {/* Left col */}
             <div className="lg:col-span-2 space-y-5">
 
-              <TodayEvolution />
+              <MomentumTracker />
 
               {/* Identity Profile */}
               <div className="bg-gradient-card border border-border/50 rounded-2xl p-6">
