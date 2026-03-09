@@ -290,6 +290,7 @@ export default function Dashboard() {
               <div className="bg-gradient-card border border-border/50 rounded-2xl p-5 space-y-2">
                 <h3 className="font-semibold text-foreground text-sm mb-3">Continue Your Journey</h3>
                 {[
+                  { icon: Compass, label: "Life Clarity", sub: "Deep reflection · 7 questions", href: "/life-clarity", highlight: true },
                   { icon: BookOpen, label: "AI Literacy Module", sub: "15 min · Beginner", href: "/learn" },
                   { icon: Map, label: "Explore Paths", sub: "3 paths ready", href: "/paths" },
                   { icon: Users, label: "Join Community", sub: "Career Pivots group", href: "/community" },
@@ -297,9 +298,9 @@ export default function Dashboard() {
                   <Link
                     key={item.label}
                     to={item.href}
-                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-surface-2 transition-colors group"
+                    className={`flex items-center gap-3 p-3 rounded-xl transition-colors group ${"highlight" in item && item.highlight ? "bg-teal-500/5 border border-teal-500/15 hover:bg-teal-500/10" : "hover:bg-surface-2"}`}
                   >
-                    <item.icon className="w-4 h-4 text-muted-foreground group-hover:text-teal transition-colors" />
+                    <item.icon className={`w-4 h-4 transition-colors ${"highlight" in item && item.highlight ? "text-teal" : "text-muted-foreground group-hover:text-teal"}`} />
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium text-foreground">{item.label}</p>
                       <p className="text-xs text-muted-foreground">{item.sub}</p>
