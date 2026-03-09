@@ -20,6 +20,7 @@ import LifeClarity from "./pages/LifeClarity";
 import FutureVision from "./pages/FutureVision";
 import ConfidenceBuilder from "./pages/ConfidenceBuilder";
 import ClarityEngine from "./pages/ClarityEngine";
+import PathFinder from "./pages/PathFinder";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
