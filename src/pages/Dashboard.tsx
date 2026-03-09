@@ -251,6 +251,31 @@ export default function Dashboard() {
                   </Button>
                 </Link>
               </div>
+              {/* Opportunity Engine CTA */}
+              <div className="rounded-2xl border p-5"
+                style={{ background: "hsl(var(--amber) / 0.04)", borderColor: "hsl(var(--amber) / 0.2)" }}>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: "linear-gradient(135deg, hsl(var(--amber)), hsl(var(--coral)))" }}>
+                    <Rocket className="w-3.5 h-3.5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm">Opportunity Engine</h3>
+                    <p className="text-xs text-muted-foreground">Connect who you are to what the world needs</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                  Discover emerging careers, projects worth trying, and skills worth building — all matched to your identity.
+                </p>
+                <Link to="/opportunity-engine">
+                  <Button size="sm" className="w-full gap-1.5 text-xs font-semibold text-primary-foreground hover:opacity-90"
+                    style={{ background: "linear-gradient(135deg, hsl(var(--amber)), hsl(var(--coral)))" }}>
+                    Explore Opportunities
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Button>
+                </Link>
+              </div>
+
               {/* Identity Dashboard CTA */}
               <div className="rounded-2xl border p-5"
                 style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.05), hsl(var(--violet) / 0.05))", borderColor: "hsl(var(--coral) / 0.2)" }}>
