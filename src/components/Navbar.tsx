@@ -6,7 +6,7 @@ import {
   Menu, X, LayoutDashboard, Map, Star, Heart, Sparkles,
   Shield, Compass, Eye, GitBranch, TrendingUp, BookOpen,
   FlaskConical, Wrench, Users, MessagesSquare, Handshake,
-  Rss, ChevronDown,
+  Rss, ChevronDown, Lightbulb,
 } from "lucide-react";
 
 const navSections = [
