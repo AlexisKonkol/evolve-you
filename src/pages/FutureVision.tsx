@@ -511,10 +511,8 @@ export default function FutureVision() {
       {/* Minimal nav */}
       <div className="relative z-10 flex items-center justify-between px-6 py-5">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-gradient-teal flex items-center justify-center">
-            <Zap className="w-3.5 h-3.5 text-primary-foreground" />
-          </div>
-          <span className="text-sm font-bold text-foreground">EV<span className="text-gradient-teal">OLV</span>E</span>
+          <img src={pathlyLogo} alt="Pathly" className="w-7 h-7 rounded-lg object-contain" />
+          <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
         </Link>
         {/* Step indicators */}
         <div className="flex items-center gap-3">
