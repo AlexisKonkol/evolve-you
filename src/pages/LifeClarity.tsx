@@ -353,7 +353,7 @@ export default function LifeClarity() {
                       className="flex items-center gap-4 p-3 rounded-xl bg-surface-2 hover:bg-surface-3 transition-colors group"
                     >
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center border ${colorClass} shrink-0`}>
-                        <Zap className="w-3.5 h-3.5" />
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium text-foreground">{item.label}</p>
