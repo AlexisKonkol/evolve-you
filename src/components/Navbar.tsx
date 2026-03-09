@@ -219,20 +219,20 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-2 ml-auto">
           {isAppRoute ? (
             <Link to="/profile">
-              <Button variant="outline" size="sm" className="border-border text-muted-foreground hover:text-foreground hover:border-primary/40 h-8 text-xs">
+              <Button variant="outline" size="sm" className="border-border/60 text-muted-foreground hover:text-foreground hover:border-teal-500/40 h-8 text-xs rounded-lg">
                 My Profile
               </Button>
             </Link>
           ) : (
             <>
               <Link to="/dashboard">
-                <Button variant="outline" size="sm" className="border-border text-muted-foreground hover:text-foreground hover:border-primary/40 h-8 text-xs">
+                <Button variant="outline" size="sm" className="border-border/60 text-muted-foreground hover:text-foreground hover:border-teal-500/40 h-8 text-xs rounded-lg">
                   Sign In
                 </Button>
               </Link>
               <Link to="/onboarding">
-                <Button size="sm" className="bg-gradient-teal text-primary-foreground font-semibold hover:opacity-90 glow-teal h-8 text-xs">
-                  Start Free
+                <Button size="sm" className="bg-gradient-teal text-primary-foreground font-semibold hover:opacity-90 h-8 text-xs rounded-lg">
+                  Start free
                 </Button>
               </Link>
             </>
