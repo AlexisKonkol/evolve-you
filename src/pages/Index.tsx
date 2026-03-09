@@ -291,10 +291,10 @@ export default function Index() {
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-[1.1]">
             The future belongs to those
             <br />
-            <span className="text-gradient-coral italic">who keep evolving.</span>
+            <span className="text-gradient-coral italic">who keep becoming.</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-12 leading-relaxed">
-            Your next path is waiting. It begins with a single honest question.
+            Every lasting change begins with a shift in identity — not a change of circumstance. Your next path starts here.
           </p>
           <Link to="/onboarding">
             <Button size="lg"
