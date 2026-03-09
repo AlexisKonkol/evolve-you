@@ -28,6 +28,7 @@ const navSections = [
     items: [
       { label: "Opportunity Radar", href: "/opportunities",  icon: Compass,    desc: "Scan emerging roles & trends" },
       { label: "Future Vision",     href: "/future-vision",  icon: Eye,        desc: "Define who you want to become" },
+      { label: "Future You",        href: "/future-you",     icon: Sparkles,   desc: "Visualize possible future selves" },
       { label: "Career Paths",      href: "/paths",          icon: GitBranch,  desc: "Step-by-step transition roadmaps" },
       { label: "Path Finder",       href: "/path-finder",    icon: Compass,    desc: "AI-powered path discovery" },
       { label: "Industry Trends",   href: "/opportunities",  icon: TrendingUp, desc: "AI & automation insights" },

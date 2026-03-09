@@ -21,6 +21,7 @@ import FutureVision from "./pages/FutureVision";
 import ConfidenceBuilder from "./pages/ConfidenceBuilder";
 import ClarityEngine from "./pages/ClarityEngine";
 import PathFinder from "./pages/PathFinder";
+import FutureYou from "./pages/FutureYou";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/confidence-builder" element={<ConfidenceBuilder />} />
           <Route path="/clarity-engine" element={<ClarityEngine />} />
           <Route path="/path-finder" element={<PathFinder />} />
+          <Route path="/future-you" element={<FutureYou />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}

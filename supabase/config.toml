@@ -17,3 +17,6 @@ verify_jwt = false
 
 [functions.path-finder]
 verify_jwt = false
+
+[functions.future-you]
+verify_jwt = false
