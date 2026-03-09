@@ -316,6 +316,7 @@ export default function Dashboard() {
                 <div className="space-y-1.5">
                   {[
                     { icon: Eye,      label: "Life Clarity",                   sub: "Discover who you are right now",          href: "/life-clarity",       highlight: true  },
+                    { icon: FlaskConical, label: "Life Experiments",            sub: "Test new directions through small actions", href: "/experiments",        highlight: false },
                     { icon: Lightbulb,label: "Clarity Engine",                  sub: "Go from confusion to clarity",            href: "/clarity-engine",     highlight: false },
                     { icon: Map,      label: "Path Finder",                     sub: "Discover paths you haven't seen yet",     href: "/path-finder",        highlight: false },
                     { icon: Compass,  label: "Path Graph",                      sub: "Explore your network of possibilities",   href: "/path-graph",         highlight: false },

@@ -1,5 +1,8 @@
 project_id = "mmevioqqxofmxqbszooo"
 
+[functions.experiments-engine]
+verify_jwt = false
+
 [functions.ai-coach]
 verify_jwt = false
 
