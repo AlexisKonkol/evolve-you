@@ -13,6 +13,7 @@ import Coach from "./pages/Coach";
 import Community from "./pages/Community";
 import Pricing from "./pages/Pricing";
 import NotFound from "./pages/NotFound";
+import Profile from "./pages/Profile";
 
 const queryClient = new QueryClient();
 

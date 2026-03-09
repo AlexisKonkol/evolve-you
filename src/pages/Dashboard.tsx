@@ -14,7 +14,14 @@ import {
   BookOpen,
   Users,
   MessageCircle,
+  Share2,
 } from "lucide-react";
+import { TodayEvolution } from "@/components/dashboard/TodayEvolution";
+import { ReinventionStreaks } from "@/components/dashboard/ReinventionStreaks";
+import { FutureIdentityTracker } from "@/components/dashboard/FutureIdentityTracker";
+import { MicroExperiments } from "@/components/dashboard/MicroExperiments";
+import { ReinventionInsights } from "@/components/dashboard/ReinventionInsights";
+import { EvolutionMap } from "@/components/dashboard/EvolutionMap";
 
 const strengthClusters = [
   { label: "Communication", score: 92, color: "teal" },
@@ -34,27 +41,9 @@ const identityProfile = {
 };
 
 const suggestedRoles = [
-  {
-    title: "AI Workflow Designer",
-    match: 94,
-    icon: Zap,
-    tag: "Fastest Growing",
-    tagColor: "teal",
-  },
-  {
-    title: "Digital Experience Strategist",
-    match: 88,
-    icon: Target,
-    tag: "High Income",
-    tagColor: "amber",
-  },
-  {
-    title: "Automation Consultant",
-    match: 82,
-    icon: Brain,
-    tag: "Emerging Field",
-    tagColor: "violet",
-  },
+  { title: "AI Workflow Designer", match: 94, icon: Zap, tag: "Fastest Growing", tagColor: "teal" },
+  { title: "Digital Experience Strategist", match: 88, icon: Target, tag: "High Income", tagColor: "amber" },
+  { title: "Automation Consultant", match: 82, icon: Brain, tag: "Emerging Field", tagColor: "violet" },
 ];
 
 const coachInsights = [
@@ -78,13 +67,19 @@ export default function Dashboard() {
               <h1 className="text-3xl md:text-4xl font-bold text-foreground">
                 Welcome back, <span className="text-gradient-teal">Alex</span>
               </h1>
-              <p className="text-muted-foreground mt-1">Your reinvention journey is 35% complete</p>
+              <p className="text-muted-foreground mt-1">Your reinvention journey is 35% complete · 12-day streak 🔥</p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap">
+              <Link to="/profile">
+                <Button variant="outline" className="border-border hover:border-teal-500/50 gap-2">
+                  <Share2 className="w-4 h-4 text-teal" />
+                  Share Profile
+                </Button>
+              </Link>
               <Link to="/coach">
                 <Button variant="outline" className="border-border hover:border-teal-500/50 gap-2">
                   <MessageCircle className="w-4 h-4 text-teal" />
-                  Talk to AI Coach
+                  AI Coach
                 </Button>
               </Link>
               <Link to="/opportunities">
@@ -126,10 +121,14 @@ export default function Dashboard() {
             </div>
           </div>
 
+          {/* === MAIN GRID === */}
           <div className="grid lg:grid-cols-3 gap-6">
 
-            {/* Left col */}
+            {/* Left col (2/3) */}
             <div className="lg:col-span-2 space-y-6">
+
+              {/* Today's Evolution — top priority */}
+              <TodayEvolution />
 
               {/* Identity Profile */}
               <div className="bg-gradient-card border border-border/50 rounded-2xl p-6">
@@ -157,7 +156,7 @@ export default function Dashboard() {
                   ].map((section) => (
                     <div key={section.label} className="bg-surface-2 rounded-xl p-4">
                       <div className="flex items-center gap-2 mb-3">
-                        <section.icon className={`w-4 h-4 text-${section.color === "teal" ? "teal" : section.color === "amber" ? "amber" : "violet-500"}`} />
+                        <section.icon className={`w-4 h-4 ${section.color === "teal" ? "text-teal" : section.color === "amber" ? "text-amber" : "text-violet"}`} />
                         <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{section.label}</span>
                       </div>
                       <div className="flex flex-wrap gap-1.5">
@@ -181,7 +180,7 @@ export default function Dashboard() {
               <div className="bg-gradient-card border border-border/50 rounded-2xl p-6">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 bg-violet-500/10 rounded-xl flex items-center justify-center">
-                    <Map className="w-5 h-5 text-violet-500" />
+                    <Map className="w-5 h-5 text-violet" />
                   </div>
                   <h2 className="font-bold text-foreground">Strength Clusters</h2>
                 </div>
@@ -195,20 +194,29 @@ export default function Dashboard() {
                           <span className="text-muted-foreground">{s.score}%</span>
                         </div>
                         <div className="h-2 bg-border rounded-full overflow-hidden">
-                          <div
-                            className={`h-full ${barColor} rounded-full transition-all duration-700`}
-                            style={{ width: `${s.score}%` }}
-                          />
+                          <div className={`h-full ${barColor} rounded-full transition-all duration-700`} style={{ width: `${s.score}%` }} />
                         </div>
                       </div>
                     );
                   })}
                 </div>
               </div>
+
+              {/* Micro Experiments */}
+              <MicroExperiments />
+
+              {/* Evolution Map */}
+              <EvolutionMap />
             </div>
 
-            {/* Right col */}
+            {/* Right col (1/3) */}
             <div className="space-y-6">
+
+              {/* Streaks */}
+              <ReinventionStreaks />
+
+              {/* Future Identity Tracker */}
+              <FutureIdentityTracker />
 
               {/* AI Coach Insights */}
               <div className="bg-gradient-card border border-teal-500/20 rounded-2xl p-5">
@@ -253,7 +261,13 @@ export default function Dashboard() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium text-foreground truncate">{r.title}</p>
-                        <span className={`text-xs px-2 py-0.5 rounded-full bg-${r.tagColor === "teal" ? "teal-500" : r.tagColor === "amber" ? "amber-500" : "violet-500"}/10 text-${r.tagColor === "teal" ? "teal" : r.tagColor === "amber" ? "amber" : "violet-500"}`}>
+                        <span className={`text-xs px-2 py-0.5 rounded-full ${
+                          r.tagColor === "teal"
+                            ? "bg-teal-500/10 text-teal"
+                            : r.tagColor === "amber"
+                            ? "bg-amber-500/10 text-amber"
+                            : "bg-violet-500/10 text-violet"
+                        }`}>
                           {r.tag}
                         </span>
                       </div>
@@ -267,6 +281,9 @@ export default function Dashboard() {
                   </Button>
                 </Link>
               </div>
+
+              {/* Reinvention Insights */}
+              <ReinventionInsights />
 
               {/* Quick links */}
               <div className="bg-gradient-card border border-border/50 rounded-2xl p-5 space-y-2">
