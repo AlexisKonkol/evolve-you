@@ -18,7 +18,7 @@ const navSections = [
       { label: "Strengths", href: "/identity-map", icon: Star, desc: "Explore your core capabilities" },
       { label: "Values", href: "/life-clarity", icon: Heart, desc: "Discover what drives you" },
       { label: "Life Clarity", href: "/life-clarity", icon: Sparkles, desc: "Guided deep reflection" },
-      { label: "Confidence Builder", href: "/coach", icon: Shield, desc: "Build belief in yourself" },
+      { label: "Confidence Builder", href: "/confidence-builder", icon: Shield, desc: "Build belief in yourself" },
     ],
   },
   {
