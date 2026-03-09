@@ -29,6 +29,7 @@ import Journal from "./pages/Journal";
 import Mentor from "./pages/Mentor";
 import IdentityDashboard from "./pages/IdentityDashboard";
 import Intelligence from "./pages/Intelligence";
+import Report from "./pages/Report";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
