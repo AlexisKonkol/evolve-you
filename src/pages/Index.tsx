@@ -45,12 +45,12 @@ const pathSteps = [
 
 /* ── Features ──────────────────────────────────────────── */
 const features = [
-  { icon: Brain,       title: "Life Clarity",      desc: "Guided reflection that helps you understand who you are and what truly matters to you." },
-  { icon: Compass,     title: "Future Vision",      desc: "Define the version of yourself you want to become — grounded in your values and strengths." },
-  { icon: FlaskConical,title: "Micro-Experiments",  desc: "Test new directions safely. Learn by doing, not just thinking." },
-  { icon: TrendingUp,  title: "Career Paths",       desc: "Clear, personalised roadmaps that show you exactly what to learn and do next." },
-  { icon: BookOpen,    title: "Focused Learning",   desc: "Short, practical lessons on AI literacy, reinvention strategy, and systems thinking." },
-  { icon: Users,       title: "A Community",        desc: "Thousands of people on the same journey. You're never doing this alone." },
+  { icon: Brain,       title: "Life Clarity",      desc: "Become the kind of person who knows exactly what they value and why. Deep reflection that reveals who you already are." },
+  { icon: Compass,     title: "Future Vision",      desc: "Stop asking what you should do next. See who you're becoming — and step into that version of yourself." },
+  { icon: FlaskConical,title: "Micro-Experiments",  desc: "Explore the paths that match who you are becoming. Test new directions without committing to anything." },
+  { icon: TrendingUp,  title: "Career Paths",       desc: "Become someone with a clear, step-by-step direction. Not generic advice — your path, built around your identity." },
+  { icon: BookOpen,    title: "Focused Learning",   desc: "Become the kind of person who builds new skills. Short, practical lessons designed around your emerging identity." },
+  { icon: Users,       title: "A Community",        desc: "Become part of something bigger. Thousands of people on the same journey — none of you are doing this alone." },
 ];
 
 /* ── Testimonials ──────────────────────────────────────── */
@@ -101,7 +101,7 @@ export default function Index() {
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-10 animate-fade-up border"
             style={{ background: "hsl(var(--coral) / 0.08)", borderColor: "hsl(var(--coral) / 0.18)", color: "hsl(var(--coral))" }}>
             <Sparkles className="w-3.5 h-3.5" />
-            A platform for the AI age
+            Who are you becoming?
           </div>
 
           {/* Headline */}
@@ -112,7 +112,7 @@ export default function Index() {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed animate-fade-up">
-            The world is changing faster than ever. Pathly helps you discover who you are, explore what's possible, and design your next chapter.
+            The world is changing faster than ever. Pathly helps you discover who you are, see who you're becoming, and step into your next chapter — with AI as your guide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-16 animate-fade-up">
@@ -134,9 +134,9 @@ export default function Index() {
           {/* Social proof */}
           <div className="flex items-center justify-center gap-10 text-sm text-muted-foreground animate-fade-in">
             {[
-              { n: "50K+", l: "people finding their path" },
-              { n: "200+", l: "futures mapped" },
-              { n: "94%",  l: "found clarity" },
+              { n: "50K+", l: "people becoming more" },
+              { n: "200+", l: "identities mapped" },
+              { n: "94%",  l: "shifted self-perception" },
             ].map((s, i) => (
               <div key={i} className="text-center">
                 <div className="text-xl font-bold text-foreground tracking-tight">{s.n}</div>
@@ -291,10 +291,10 @@ export default function Index() {
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-[1.1]">
             The future belongs to those
             <br />
-            <span className="text-gradient-coral italic">who keep evolving.</span>
+            <span className="text-gradient-coral italic">who keep becoming.</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-12 leading-relaxed">
-            Your next path is waiting. It begins with a single honest question.
+            Every lasting change begins with a shift in identity — not a change of circumstance. Your next path starts here.
           </p>
           <Link to="/onboarding">
             <Button size="lg"

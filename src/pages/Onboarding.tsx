@@ -113,22 +113,22 @@ export default function Onboarding() {
       <div className="fixed top-0 left-0 right-0 z-40 glass border-b border-border/50 px-6 py-4">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-teal flex items-center justify-center">
+            <div className="w-7 h-7 rounded-lg bg-gradient-coral flex items-center justify-center">
               <Zap className="w-3.5 h-3.5 text-primary-foreground" />
             </div>
             <span className="font-bold text-foreground tracking-wide text-sm">
-              EV<span className="text-gradient-teal">OLV</span>E
+              Path<span className="text-gradient-coral">ly</span>
             </span>
           </div>
           <div className="text-xs text-muted-foreground font-medium">
-            Question {step + 1} of {total}
+            Discovering who you are · {step + 1} of {total}
           </div>
         </div>
         {/* Progress */}
         <div className="mt-3 max-w-2xl mx-auto">
           <div className="h-1 bg-border rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-teal rounded-full transition-all duration-500 ease-out"
+              className="h-full bg-gradient-coral rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -144,9 +144,9 @@ export default function Onboarding() {
                 key={i}
                 className={`rounded-full transition-all duration-300 ${
                   i === step
-                    ? "w-6 h-2 bg-teal"
+                    ? "w-6 h-2 bg-coral"
                     : i < step
-                    ? "w-2 h-2 bg-teal/50"
+                    ? "w-2 h-2 bg-coral/50"
                     : "w-2 h-2 bg-border"
                 }`}
               />
@@ -155,6 +155,9 @@ export default function Onboarding() {
 
           {/* Question */}
           <div className="text-center mb-10">
+            <p className="text-xs font-semibold uppercase tracking-widest text-coral mb-3">
+              Understanding who you are
+            </p>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               {current.question}
             </h1>
@@ -175,16 +178,16 @@ export default function Onboarding() {
                   key={opt}
                   onClick={() => toggle(opt)}
                   className={`relative p-4 rounded-xl border text-left transition-all duration-200 group ${
-                    isSelected
-                      ? "border-teal-500/60 bg-teal-500/10 text-foreground"
-                      : "border-border bg-surface-1 text-muted-foreground hover:border-teal-500/30 hover:bg-surface-2 hover:text-foreground"
+                  isSelected
+                      ? "border-coral-500/60 bg-coral-500/10 text-foreground"
+                      : "border-border bg-surface-1 text-muted-foreground hover:border-coral-500/30 hover:bg-surface-2 hover:text-foreground"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
                         isSelected
-                          ? "border-teal bg-teal"
+                          ? "border-coral bg-coral"
                           : "border-muted-foreground/30"
                       }`}
                     >
@@ -211,9 +214,9 @@ export default function Onboarding() {
             <Button
               onClick={next}
               disabled={!canProceed}
-              className="bg-gradient-teal text-primary-foreground font-semibold px-7 gap-2 hover:opacity-90 disabled:opacity-30"
+              className="bg-gradient-coral text-primary-foreground font-semibold px-7 gap-2 hover:opacity-90 disabled:opacity-30"
             >
-              {step === total - 1 ? "Generate My Profile" : "Continue"}
+              {step === total - 1 ? "Reveal My Identity Profile" : "Continue becoming"}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
