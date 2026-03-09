@@ -119,17 +119,17 @@ export function Navbar() {
     <header
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass border-b border-border/50 py-3" : "py-4"
+        scrolled ? "glass border-b border-border/40 py-3" : "py-4"
       }`}
     >
-      <div className="container flex items-center gap-2">
+      <div className="container max-w-6xl flex items-center gap-2 px-6">
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group shrink-0 mr-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-teal flex items-center justify-center glow-teal group-hover:scale-110 transition-transform">
-            <Zap className="w-4 h-4 text-primary-foreground" />
+          <div className="w-7 h-7 rounded-lg bg-gradient-teal flex items-center justify-center group-hover:opacity-90 transition-opacity">
+            <Zap className="w-3.5 h-3.5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-bold tracking-wide text-foreground">
+          <span className="font-bold tracking-wide text-foreground">
             EV<span className="text-gradient-teal">OLV</span>E
           </span>
         </Link>
@@ -219,20 +219,20 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-2 ml-auto">
           {isAppRoute ? (
             <Link to="/profile">
-              <Button variant="outline" size="sm" className="border-border text-muted-foreground hover:text-foreground hover:border-primary/40 h-8 text-xs">
+              <Button variant="outline" size="sm" className="border-border/60 text-muted-foreground hover:text-foreground hover:border-teal-500/40 h-8 text-xs rounded-lg">
                 My Profile
               </Button>
             </Link>
           ) : (
             <>
               <Link to="/dashboard">
-                <Button variant="outline" size="sm" className="border-border text-muted-foreground hover:text-foreground hover:border-primary/40 h-8 text-xs">
+                <Button variant="outline" size="sm" className="border-border/60 text-muted-foreground hover:text-foreground hover:border-teal-500/40 h-8 text-xs rounded-lg">
                   Sign In
                 </Button>
               </Link>
               <Link to="/onboarding">
-                <Button size="sm" className="bg-gradient-teal text-primary-foreground font-semibold hover:opacity-90 glow-teal h-8 text-xs">
-                  Start Free
+                <Button size="sm" className="bg-gradient-teal text-primary-foreground font-semibold hover:opacity-90 h-8 text-xs rounded-lg">
+                  Start free
                 </Button>
               </Link>
             </>
