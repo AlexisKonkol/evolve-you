@@ -9,12 +9,17 @@ import {
   Download, Twitter, Link2, Check, Star, Lightbulb,
   Target, TrendingUp, GitBranch, RefreshCw,
 } from "lucide-react";
+import {
+  RadarChart, Radar, PolarGrid, PolarAngleAxis,
+  ResponsiveContainer,
+} from "recharts";
 
-// ── Static report data (would come from user profile in production) ───────────
+// ── Static report data ────────────────────────────────────────────────────────
 
 const reportMeta = {
   name: "Alex",
   archetype: "The Connector-Builder",
+  archetypeTagline: "You build bridges between ideas, people, and possibilities.",
   generatedDate: "March 2026",
   explorationDays: 42,
   journalEntries: 14,
@@ -23,12 +28,12 @@ const reportMeta = {
 };
 
 const curiosityProfile = [
-  { label: "Technology & AI",        pct: 91, color: "coral",  icon: Zap      },
-  { label: "Entrepreneurship",       pct: 84, color: "violet", icon: Rocket   },
-  { label: "Creativity & Design",    pct: 76, color: "amber",  icon: Sparkles },
-  { label: "Learning & Education",   pct: 82, color: "coral",  icon: BookOpen },
-  { label: "Community Building",     pct: 68, color: "violet", icon: Users    },
-  { label: "Future of Work",         pct: 73, color: "amber",  icon: Globe    },
+  { label: "Technology & AI",      pct: 91, color: "coral",  icon: Zap      },
+  { label: "Entrepreneurship",     pct: 84, color: "violet", icon: Rocket   },
+  { label: "Creativity & Design",  pct: 76, color: "amber",  icon: Sparkles },
+  { label: "Learning & Education", pct: 82, color: "coral",  icon: BookOpen },
+  { label: "Community Building",   pct: 68, color: "violet", icon: Users    },
+  { label: "Future of Work",       pct: 73, color: "amber",  icon: Globe    },
 ];
 
 const strengthSignals = [
@@ -63,12 +68,12 @@ const strengthSignals = [
 ];
 
 const energySources = [
-  { label: "Learning new ideas",              icon: BookOpen,   color: "coral"  },
-  { label: "Building projects",              icon: Zap,        color: "violet" },
-  { label: "Helping others grow",            icon: Heart,      color: "amber"  },
-  { label: "Exploring emerging technologies", icon: Brain,      color: "coral"  },
-  { label: "Connecting with curious people", icon: Users,      color: "violet" },
-  { label: "Creating something original",    icon: Sparkles,   color: "amber"  },
+  { label: "Learning new ideas",               icon: BookOpen, color: "coral"  },
+  { label: "Building projects",               icon: Zap,      color: "violet" },
+  { label: "Helping others grow",             icon: Heart,    color: "amber"  },
+  { label: "Exploring emerging technologies", icon: Brain,    color: "coral"  },
+  { label: "Connecting with curious people",  icon: Users,    color: "violet" },
+  { label: "Creating something original",     icon: Sparkles, color: "amber"  },
 ];
 
 const pathSuggestions = [
@@ -134,34 +139,90 @@ const experiments = [
 ];
 
 const nextDirections = [
-  { label: "Explore building a small AI-powered tool",             icon: Zap,       color: "coral",  href: "/experiments"      },
-  { label: "Learn the fundamentals of product design",            icon: Lightbulb, color: "violet", href: "/learn"            },
-  { label: "Start a creative writing or content project",         icon: BookOpen,  color: "amber",  href: "/experiments"      },
-  { label: "Have three conversations with people in AI products", icon: Users,     color: "coral",  href: "/network"          },
-  { label: "Map your ideal workday and what it reveals",          icon: Target,    color: "violet", href: "/journal"          },
+  { label: "Explore building a small AI-powered tool",             icon: Zap,       color: "coral",  href: "/experiments"  },
+  { label: "Learn the fundamentals of product design",            icon: Lightbulb, color: "violet", href: "/learn"        },
+  { label: "Start a creative writing or content project",         icon: BookOpen,  color: "amber",  href: "/experiments"  },
+  { label: "Have three conversations with people in AI products", icon: Users,     color: "coral",  href: "/network"      },
+  { label: "Map your ideal workday and what it reveals",          icon: Target,    color: "violet", href: "/journal"      },
 ];
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
+// ── Design helpers ────────────────────────────────────────────────────────────
+
 const cIcon: Record<string, string>   = { coral: "text-coral", violet: "text-violet", amber: "text-amber" };
 const cBg: Record<string, string>     = { coral: "bg-coral-500/10", violet: "bg-violet-500/10", amber: "bg-amber-500/10" };
 const cBorder: Record<string, string> = { coral: "border-coral-500/20", violet: "border-violet-500/20", amber: "border-amber-500/20" };
 const cGrad: Record<string, string>   = {
-  coral: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)))",
+  coral:  "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)))",
   violet: "linear-gradient(135deg, hsl(var(--violet)), hsl(var(--coral)))",
-  amber: "linear-gradient(135deg, hsl(var(--amber)), hsl(var(--coral)))",
+  amber:  "linear-gradient(135deg, hsl(var(--amber)), hsl(var(--coral)))",
 };
 
-function BarFill({ color, pct }: { color: string; pct: number }) {
+// ── Animated bar fill ─────────────────────────────────────────────────────────
+
+function BarFill({ color, pct, animate }: { color: string; pct: number; animate?: boolean }) {
+  const [width, setWidth] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!animate) { setWidth(pct); return; }
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Tiny delay so transition is visible
+          setTimeout(() => setWidth(pct), 80);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [pct, animate]);
+
   const cls = color === "coral" ? "bg-gradient-coral" : color === "amber" ? "bg-gradient-amber" : "";
-  const style = color === "violet"
-    ? { background: "hsl(var(--violet))", width: `${pct}%` }
-    : { width: `${pct}%` };
+  const style =
+    color === "violet"
+      ? { background: "hsl(var(--violet))", width: `${width}%` }
+      : { width: `${width}%` };
+
   return (
-    <div className="h-2 bg-border rounded-full overflow-hidden">
-      <div className={`h-full rounded-full transition-all duration-700 ${cls}`} style={style} />
+    <div ref={ref} className="h-2 bg-border rounded-full overflow-hidden">
+      <div
+        className={`h-full rounded-full ${cls}`}
+        style={{ ...style, transition: "width 0.9s cubic-bezier(0.22, 1, 0.36, 1)" }}
+      />
     </div>
   );
 }
+
+// ── Animated counter ──────────────────────────────────────────────────────────
+
+function AnimatedCounter({ target, duration = 1200 }: { target: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+  const started = useRef(false);
+
+  useEffect(() => {
+    if (started.current) return;
+    started.current = true;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const elapsed = Math.min((now - start) / duration, 1);
+      // ease-out cubic
+      const eased = 1 - Math.pow(1 - elapsed, 3);
+      setCount(Math.round(eased * target));
+      if (elapsed < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [target, duration]);
+
+  return <>{count}</>;
+}
+
+// ── Radar chart colors ────────────────────────────────────────────────────────
+
+const radarData = curiosityProfile.map((c) => ({ subject: c.label.split(" & ")[0].split(" ")[0], value: c.pct }));
 
 // ── AI Summary streaming helper ───────────────────────────────────────────────
 
@@ -252,7 +313,6 @@ export default function Report() {
     }
   }, []);
 
-  // Auto-generate on mount
   useEffect(() => { generateSummary(); }, [generateSummary]);
 
   const handleCopyLink = () => {
@@ -274,7 +334,6 @@ export default function Report() {
               background: "linear-gradient(145deg, hsl(var(--coral) / 0.12), hsl(var(--violet) / 0.1), hsl(var(--amber) / 0.08))",
               border: "1px solid hsl(var(--coral) / 0.2)",
             }}>
-            {/* Decorative glow */}
             <div className="absolute -top-10 -right-10 w-48 h-48 rounded-full opacity-20 pointer-events-none"
               style={{ background: "radial-gradient(circle, hsl(var(--coral)), transparent)" }} />
             <div className="absolute -bottom-8 -left-8 w-36 h-36 rounded-full opacity-10 pointer-events-none"
@@ -295,7 +354,6 @@ export default function Report() {
                     Archetype: <span className="text-foreground font-semibold">{reportMeta.archetype}</span>
                   </p>
                 </div>
-                {/* Share buttons */}
                 <div className="flex gap-2 shrink-0">
                   <Button size="sm" variant="outline"
                     className="border-border hover:border-coral-500/40 gap-1.5 text-xs"
@@ -312,17 +370,19 @@ export default function Report() {
                 </div>
               </div>
 
-              {/* Summary stats */}
+              {/* Animated stats */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {[
-                  { label: "Days exploring",       value: reportMeta.explorationDays },
-                  { label: "Journal entries",       value: reportMeta.journalEntries  },
-                  { label: "Experiments tried",     value: reportMeta.experimentsCompleted },
-                  { label: "Paths explored",        value: reportMeta.pathsExplored   },
+                  { label: "Days exploring",    value: reportMeta.explorationDays       },
+                  { label: "Journal entries",   value: reportMeta.journalEntries        },
+                  { label: "Experiments tried", value: reportMeta.experimentsCompleted  },
+                  { label: "Paths explored",    value: reportMeta.pathsExplored         },
                 ].map((s) => (
                   <div key={s.label} className="text-center rounded-xl p-3"
                     style={{ background: "hsl(var(--background) / 0.5)", border: "1px solid hsl(var(--border) / 0.6)" }}>
-                    <div className="text-2xl font-bold text-foreground">{s.value}</div>
+                    <div className="text-2xl font-bold text-foreground">
+                      <AnimatedCounter target={s.value} />
+                    </div>
                     <div className="text-xs text-muted-foreground mt-0.5">{s.label}</div>
                   </div>
                 ))}
@@ -331,13 +391,12 @@ export default function Report() {
           </div>
 
           {/* ── AI Narrative Summary ──────────────────────────────── */}
-          <section className="mb-8">
+          <section className="mb-6">
             <div className="rounded-2xl p-6 relative overflow-hidden"
               style={{
                 background: "linear-gradient(135deg, hsl(var(--coral) / 0.07), hsl(var(--violet) / 0.07))",
                 border: "1px solid hsl(var(--coral) / 0.2)",
               }}>
-              {/* Subtle glow */}
               <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-10 pointer-events-none"
                 style={{ background: "radial-gradient(circle, hsl(var(--violet)), transparent)" }} />
 
@@ -364,7 +423,6 @@ export default function Report() {
                   </button>
                 </div>
 
-                {/* Summary text */}
                 <div className="min-h-[80px]">
                   {summaryError ? (
                     <p className="text-sm text-destructive">{summaryError}</p>
@@ -387,6 +445,11 @@ export default function Report() {
             </div>
           </section>
 
+          {/* ── Identity Snapshot Card ────────────────────────────── */}
+          <section className="mb-8">
+            <IdentitySnapshotCard />
+          </section>
+
           {/* ── Section 1: Curiosity Profile ──────────────────────── */}
           <section className="mb-8">
             <div className="bg-gradient-card border border-border/50 rounded-2xl p-6">
@@ -397,23 +460,50 @@ export default function Report() {
                 title="Your Curiosity Profile"
                 desc="The areas where your attention naturally returns — signals of who you're becoming."
               />
-              <div className="space-y-4 mt-5">
-                {curiosityProfile.map((c) => {
-                  const CIcon = c.icon;
-                  return (
-                    <div key={c.label}>
-                      <div className="flex items-center justify-between mb-1.5">
-                        <div className="flex items-center gap-2">
-                          <CIcon className={`w-3.5 h-3.5 ${cIcon[c.color]}`} />
-                          <span className="text-sm font-medium text-foreground">{c.label}</span>
+
+              {/* Radar chart + bars side by side on md+ */}
+              <div className="mt-5 flex flex-col md:flex-row gap-6">
+                {/* Radar */}
+                <div className="w-full md:w-56 h-52 shrink-0">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <RadarChart data={radarData} margin={{ top: 8, right: 8, bottom: 8, left: 8 }}>
+                      <PolarGrid stroke="hsl(var(--border))" strokeOpacity={0.6} />
+                      <PolarAngleAxis
+                        dataKey="subject"
+                        tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 10 }}
+                      />
+                      <Radar
+                        name="Curiosity"
+                        dataKey="value"
+                        stroke="hsl(var(--coral))"
+                        fill="hsl(var(--coral))"
+                        fillOpacity={0.18}
+                        strokeWidth={1.5}
+                      />
+                    </RadarChart>
+                  </ResponsiveContainer>
+                </div>
+
+                {/* Bars */}
+                <div className="flex-1 space-y-4">
+                  {curiosityProfile.map((c) => {
+                    const CIcon = c.icon;
+                    return (
+                      <div key={c.label}>
+                        <div className="flex items-center justify-between mb-1.5">
+                          <div className="flex items-center gap-2">
+                            <CIcon className={`w-3.5 h-3.5 ${cIcon[c.color]}`} />
+                            <span className="text-sm font-medium text-foreground">{c.label}</span>
+                          </div>
+                          <span className={`text-sm font-bold ${cIcon[c.color]}`}>{c.pct}%</span>
                         </div>
-                        <span className={`text-sm font-bold ${cIcon[c.color]}`}>{c.pct}%</span>
+                        <BarFill color={c.color} pct={c.pct} animate />
                       </div>
-                      <BarFill color={c.color} pct={c.pct} />
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
+
               <p className="text-xs text-muted-foreground mt-5 leading-relaxed italic">
                 These aren't personality labels — they're patterns of where your curiosity naturally travels.
               </p>
@@ -448,7 +538,7 @@ export default function Report() {
                         </div>
                       </div>
                       <div className="mb-2">
-                        <BarFill color={s.color} pct={s.strength} />
+                        <BarFill color={s.color} pct={s.strength} animate />
                       </div>
                       <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
                     </div>
@@ -504,7 +594,7 @@ export default function Report() {
                   return (
                     <Link key={p.title} to={p.href}
                       className="flex items-center gap-4 bg-surface-2 rounded-xl p-4 hover:bg-surface-3 transition-colors group">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${cBg[p.color]}`}
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
                         style={{ background: cGrad[p.color] }}>
                         <PIcon className="w-5 h-5 text-primary-foreground" />
                       </div>
@@ -642,14 +732,112 @@ export default function Report() {
   );
 }
 
-// ── Sub-components ────────────────────────────────────────────────────────────
+// ── Identity Snapshot Card ────────────────────────────────────────────────────
+
+function IdentitySnapshotCard() {
+  const topCuriosity = curiosityProfile.slice(0, 3);
+  const pillColors: Record<string, { bg: string; text: string; border: string }> = {
+    coral:  { bg: "hsl(var(--coral) / 0.12)",  text: "hsl(var(--coral))",  border: "hsl(var(--coral) / 0.3)"  },
+    violet: { bg: "hsl(var(--violet) / 0.12)", text: "hsl(var(--violet))", border: "hsl(var(--violet) / 0.3)" },
+    amber:  { bg: "hsl(var(--amber) / 0.12)",  text: "hsl(var(--amber))",  border: "hsl(var(--amber) / 0.3)"  },
+  };
+
+  return (
+    <div
+      className="rounded-2xl p-6 relative overflow-hidden"
+      style={{
+        background: "linear-gradient(145deg, hsl(var(--surface-1)), hsl(20 14% 11%))",
+        border: "1px solid hsl(var(--coral) / 0.18)",
+        boxShadow: "0 0 60px -20px hsl(var(--coral) / 0.18), 0 0 0 1px hsl(var(--coral) / 0.06) inset",
+      }}
+    >
+      {/* Background decorations */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
+        <div className="absolute -top-12 -right-12 w-52 h-52 rounded-full opacity-[0.07]"
+          style={{ background: "radial-gradient(circle, hsl(var(--coral)), transparent)" }} />
+        <div className="absolute -bottom-10 -left-10 w-40 h-40 rounded-full opacity-[0.06]"
+          style={{ background: "radial-gradient(circle, hsl(var(--violet)), transparent)" }} />
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: "radial-gradient(circle, hsl(var(--foreground)) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }} />
+      </div>
+
+      <div className="relative">
+        {/* Top label */}
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-coral animate-pulse" />
+            <span className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground">Identity Snapshot</span>
+          </div>
+          <span className="text-xs text-muted-foreground/50">{reportMeta.generatedDate}</span>
+        </div>
+
+        {/* Archetype */}
+        <div className="mb-5">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-sm font-bold mb-3"
+            style={{
+              background: "linear-gradient(135deg, hsl(var(--coral) / 0.15), hsl(var(--violet) / 0.15))",
+              border: "1px solid hsl(var(--coral) / 0.3)",
+              color: "hsl(var(--coral))",
+            }}>
+            <Sparkles className="w-3.5 h-3.5" />
+            {reportMeta.archetype}
+          </div>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            {reportMeta.archetypeTagline}
+          </p>
+        </div>
+
+        {/* Top curiosity areas */}
+        <div className="mb-5">
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60 mb-2.5">
+            Top curiosity areas
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {topCuriosity.map((c) => {
+              const CIcon = c.icon;
+              const pill = pillColors[c.color];
+              return (
+                <span key={c.label}
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold"
+                  style={{ background: pill.bg, color: pill.text, border: `1px solid ${pill.border}` }}>
+                  <CIcon className="w-3 h-3" />
+                  {c.label}
+                  <span className="opacity-60 font-normal">{c.pct}%</span>
+                </span>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="h-px mb-5" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--border)), transparent)" }} />
+
+        {/* Core quote + Pathly branding */}
+        <div className="flex items-end justify-between gap-4">
+          <p className="text-xs text-muted-foreground/70 italic leading-relaxed max-w-xs">
+            "Understanding yourself is the beginning of designing your future."
+          </p>
+          <div className="flex items-center gap-1.5 shrink-0">
+            <div className="w-4 h-4 rounded-sm flex items-center justify-center"
+              style={{ background: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)))" }}>
+              <Sparkles className="w-2.5 h-2.5 text-primary-foreground" />
+            </div>
+            <span className="text-xs font-bold text-muted-foreground/60 tracking-widest uppercase">Pathly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── SectionHeader ─────────────────────────────────────────────────────────────
 
 function SectionHeader({
-  icon,
-  iconBg,
-  number,
-  title,
-  desc,
+  icon, iconBg, number, title, desc,
 }: {
   icon: React.ReactNode;
   iconBg: string;
