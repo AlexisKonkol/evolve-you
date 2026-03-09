@@ -277,10 +277,10 @@ export default function LifeClarity() {
               <Sparkles className="w-7 h-7 text-primary-foreground" />
             </div>
             <h1 className="font-display text-3xl md:text-4xl text-foreground mb-3">
-              Your Life Clarity Summary
+              Who You Are Becoming
             </h1>
             <p className="text-muted-foreground">
-              Generated from your honest reflections.
+              A clarity profile built from your honest reflections.
             </p>
           </div>
 
