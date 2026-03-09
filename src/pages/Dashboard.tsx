@@ -253,6 +253,31 @@ export default function Dashboard() {
               </div>
 
               {/* Paths that match you */}
+              {/* Path Finder CTA */}
+              <div className="rounded-2xl border p-5"
+                style={{ background: "hsl(var(--violet) / 0.06)", borderColor: "hsl(var(--violet) / 0.2)" }}>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: "hsl(var(--violet) / 0.15)" }}>
+                    <Map className="w-3.5 h-3.5 text-violet" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm">Path Finder</h3>
+                    <p className="text-xs text-muted-foreground">AI-powered path discovery</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                  Discover paths aligned with who you are becoming — including ones you may never have considered.
+                </p>
+                <Link to="/path-finder">
+                  <Button size="sm" className="w-full gap-1.5 text-xs font-semibold text-primary-foreground hover:opacity-90"
+                    style={{ background: "linear-gradient(135deg, hsl(var(--violet)), hsl(var(--coral)))" }}>
+                    Reveal My Paths
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Button>
+                </Link>
+              </div>
+
               <div className="bg-gradient-card border border-border/50 rounded-2xl p-5">
                 <div className="flex items-center gap-2 mb-4">
                   <TrendingUp className="w-4 h-4 text-amber" />
@@ -292,6 +317,7 @@ export default function Dashboard() {
                   {[
                     { icon: Eye,      label: "Life Clarity",                   sub: "Discover who you are right now",          href: "/life-clarity",       highlight: true  },
                     { icon: Lightbulb,label: "Clarity Engine",                  sub: "Go from confusion to clarity",            href: "/clarity-engine",     highlight: false },
+                    { icon: Map,      label: "Path Finder",                     sub: "Discover paths you haven't seen yet",     href: "/path-finder",        highlight: false },
                     { icon: Shield,   label: "Build Your Confidence",          sub: "Step into a stronger version of yourself", href: "/confidence-builder", highlight: false },
                     { icon: Compass,  label: "Your Future Vision",             sub: "See who you're becoming in 3 years",      href: "/future-vision",      highlight: false },
                     { icon: BookOpen, label: "Become someone who understands AI", sub: "15 min · Beginner",                   href: "/learn",              highlight: false },
