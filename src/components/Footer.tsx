@@ -35,7 +35,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px]">
-              Helping you find your path in a changing world.
+              Find Your Next Path. A platform for discovering your direction in the AI age.
             </p>
           </div>
 
@@ -58,7 +58,7 @@ export function Footer() {
         <div className="section-divider mb-8" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <span>© 2025 Pathly. All rights reserved.</span>
-          <span>Your path is waiting.</span>
+          <span>Find Your Next Path.</span>
         </div>
       </div>
     </footer>
