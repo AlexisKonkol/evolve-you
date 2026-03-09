@@ -321,10 +321,10 @@ export default function FutureVision() {
               <Eye className="w-8 h-8 text-primary-foreground" />
             </div>
             <h1 className="font-display text-3xl md:text-4xl text-foreground mb-3">
-              Your Future Vision Profile
+              Your Future Identity Profile
             </h1>
             <p className="text-muted-foreground">
-              Three years from now — built from your own reflections.
+              Three years from now — built from your own vision of who you're becoming.
             </p>
           </div>
 
