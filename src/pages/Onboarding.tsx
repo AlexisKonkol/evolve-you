@@ -155,6 +155,9 @@ export default function Onboarding() {
 
           {/* Question */}
           <div className="text-center mb-10">
+            <p className="text-xs font-semibold uppercase tracking-widest text-coral mb-3">
+              Understanding who you are
+            </p>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               {current.question}
             </h1>
