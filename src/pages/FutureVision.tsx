@@ -232,15 +232,15 @@ export default function FutureVision() {
           </div>
 
           <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight mb-6">
-            See your future clearly.<br />
-            <span className="text-gradient-teal">Then build toward it.</span>
+            See who you're becoming.<br />
+            <span className="text-gradient-coral">Then step into it.</span>
           </h1>
 
           <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-            Most people never stop to imagine what they truly want.
+            Most people never stop to imagine who they're becoming — only what they should do next.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-10 max-w-md mx-auto">
-            You'll answer <span className="text-foreground font-medium">6 vivid prompts</span> about your life three years from now. Then your AI guide will craft a personalized <span className="text-foreground font-medium">Future Vision Profile</span> — your roadmap to who you're becoming.
+            You'll answer <span className="text-foreground font-medium">6 vivid prompts</span> about your life three years from now. Then your AI guide will craft a personalized <span className="text-foreground font-medium">Future Identity Profile</span> — a portrait of who you're growing into.
           </p>
 
           {/* Stats row */}
