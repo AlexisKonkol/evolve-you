@@ -1,5 +1,8 @@
 project_id = "mmevioqqxofmxqbszooo"
 
+[functions.identity-insights]
+verify_jwt = false
+
 [functions.path-mentor]
 verify_jwt = false
 

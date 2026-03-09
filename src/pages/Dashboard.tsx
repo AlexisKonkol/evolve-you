@@ -251,6 +251,30 @@ export default function Dashboard() {
                   </Button>
                 </Link>
               </div>
+              {/* Identity Dashboard CTA */}
+              <div className="rounded-2xl border p-5"
+                style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.05), hsl(var(--violet) / 0.05))", borderColor: "hsl(var(--coral) / 0.2)" }}>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)))" }}>
+                    <Brain className="w-3.5 h-3.5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm">Identity Dashboard</h3>
+                    <p className="text-xs text-muted-foreground">See who you are becoming</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                  Explore your curiosity signals, strength patterns, interest map, and possible futures — all in one place.
+                </p>
+                <Link to="/identity-dashboard">
+                  <Button size="sm" className="w-full gap-1.5 text-xs font-semibold text-primary-foreground hover:opacity-90"
+                    style={{ background: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--violet)))" }}>
+                    Open Identity Dashboard
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Button>
+                </Link>
+              </div>
 
               {/* Path Mentor CTA */}
               <div className="rounded-2xl border p-5"
