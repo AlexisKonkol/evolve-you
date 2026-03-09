@@ -35,7 +35,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-[200px]">
-              Helping you find your path in a changing world.
+              Find Your Next Path. A platform for discovering your direction in the AI age.
             </p>
           </div>
 
