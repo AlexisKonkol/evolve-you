@@ -56,7 +56,7 @@
     --surface-2: 220 28% 12%;
     --surface-3: 220 25% 16%;
 
-    /* Gradients */
+    /* Gradients as CSS custom properties */
     --gradient-hero: linear-gradient(135deg, hsl(220 43% 5%) 0%, hsl(200 50% 7%) 50%, hsl(172 40% 8%) 100%);
     --gradient-teal: linear-gradient(135deg, hsl(172 80% 35%), hsl(190 80% 45%));
     --gradient-amber: linear-gradient(135deg, hsl(38 90% 50%), hsl(28 90% 55%));
@@ -130,12 +130,36 @@
     background: var(--gradient-hero);
   }
 
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-teal {
+    background: var(--gradient-teal);
+  }
+
+  .bg-gradient-amber {
+    background: var(--gradient-amber);
+  }
+
   .border-teal {
     border-color: hsl(var(--teal) / 0.3);
   }
 
   .border-amber {
     border-color: hsl(var(--amber) / 0.3);
+  }
+
+  .text-teal {
+    color: hsl(var(--teal));
+  }
+
+  .text-amber {
+    color: hsl(var(--amber));
+  }
+
+  .text-violet {
+    color: hsl(var(--violet));
   }
 
   .glass {
@@ -146,6 +170,34 @@
 
   .progress-bar {
     background: var(--gradient-teal);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out both;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out both;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
