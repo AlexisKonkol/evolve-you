@@ -1,5 +1,8 @@
 project_id = "mmevioqqxofmxqbszooo"
 
+[functions.path-mentor]
+verify_jwt = false
+
 [functions.journal-insights]
 verify_jwt = false
 

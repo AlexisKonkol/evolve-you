@@ -252,6 +252,31 @@ export default function Dashboard() {
                 </Link>
               </div>
 
+              {/* Path Mentor CTA */}
+              <div className="rounded-2xl border p-5"
+                style={{ background: "hsl(var(--coral) / 0.04)", borderColor: "hsl(var(--coral) / 0.18)" }}>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)))" }}>
+                    <Compass className="w-3.5 h-3.5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm">Path Mentor</h3>
+                    <p className="text-xs text-muted-foreground">A thoughtful guide for your journey</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                  Not sure what to do next? Your mentor helps you think clearly through questions — not answers.
+                </p>
+                <Link to="/mentor">
+                  <Button size="sm" className="w-full gap-1.5 text-xs font-semibold text-primary-foreground hover:opacity-90"
+                    style={{ background: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)))" }}>
+                    Talk to your mentor
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Button>
+                </Link>
+              </div>
+
               {/* Paths that match you */}
               {/* Path Finder CTA */}
               <div className="rounded-2xl border p-5"
