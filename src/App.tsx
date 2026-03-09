@@ -15,6 +15,7 @@ import Coach from "./pages/Coach";
 import Community from "./pages/Community";
 import Pricing from "./pages/Pricing";
 import Profile from "./pages/Profile";
+import LifeClarity from "./pages/LifeClarity";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/community" element={<Community />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/life-clarity" element={<LifeClarity />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
