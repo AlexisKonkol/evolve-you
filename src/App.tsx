@@ -15,6 +15,7 @@ import Learn from "./pages/Learn";
 import Experiments from "./pages/Experiments";
 import Coach from "./pages/Coach";
 import Community from "./pages/Community";
+import PathlyNetwork from "./pages/PathlyNetwork";
 import Pricing from "./pages/Pricing";
 import Profile from "./pages/Profile";
 import LifeClarity from "./pages/LifeClarity";
