@@ -23,6 +23,7 @@ import ClarityEngine from "./pages/ClarityEngine";
 import PathFinder from "./pages/PathFinder";
 import FutureYou from "./pages/FutureYou";
 import PathGraph from "./pages/PathGraph";
+import Journal from "./pages/Journal";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/path-finder" element={<PathFinder />} />
           <Route path="/future-you" element={<FutureYou />} />
           <Route path="/path-graph" element={<PathGraph />} />
+          <Route path="/journal" element={<Journal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}
