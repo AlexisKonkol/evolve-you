@@ -19,6 +19,7 @@ const navSections = [
       { label: "Values",             href: "/life-clarity",        icon: Heart,      desc: "Discover what drives you" },
       { label: "Life Clarity",       href: "/life-clarity",        icon: Sparkles,   desc: "Guided deep reflection" },
       { label: "Path Journal",        href: "/journal",              icon: BookOpen,   desc: "Reflect and discover your patterns" },
+      { label: "Path Mentor",         href: "/mentor",               icon: Compass,    desc: "A thoughtful guide for your path" },
       { label: "Clarity Engine",      href: "/clarity-engine",       icon: Lightbulb,  desc: "From confusion to clarity" },
       { label: "Confidence Builder",  href: "/confidence-builder",   icon: Shield,     desc: "Build belief in yourself" },
     ],
