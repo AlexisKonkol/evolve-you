@@ -24,6 +24,7 @@ import PathFinder from "./pages/PathFinder";
 import FutureYou from "./pages/FutureYou";
 import PathGraph from "./pages/PathGraph";
 import Journal from "./pages/Journal";
+import Mentor from "./pages/Mentor";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
