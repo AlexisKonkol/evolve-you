@@ -15,6 +15,7 @@ const navSections = [
     color: "coral" as const,
     items: [
       { label: "Identity Map",       href: "/identity-map",        icon: Map,        desc: "Visualize your strengths network" },
+      { label: "Pathly Report",      href: "/report",              icon: Sparkles,   desc: "Your personalized insight report"      },
       { label: "Strengths",          href: "/identity-map",        icon: Star,       desc: "Explore your core capabilities" },
       { label: "Values",             href: "/life-clarity",        icon: Heart,      desc: "Discover what drives you" },
       { label: "Life Clarity",       href: "/life-clarity",          icon: Sparkles,   desc: "Guided deep reflection"                },

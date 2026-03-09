@@ -66,6 +66,7 @@ const App = () => (
           <Route path="/mentor" element={<Mentor />} />
           <Route path="/identity-dashboard" element={<IdentityDashboard />} />
           <Route path="/intelligence" element={<Intelligence />} />
+          <Route path="/report" element={<Report />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}
