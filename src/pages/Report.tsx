@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -7,7 +7,7 @@ import {
   Sparkles, Zap, Brain, Heart, BookOpen, Rocket,
   Users, Globe, FlaskConical, ArrowRight, Share2,
   Download, Twitter, Link2, Check, Star, Lightbulb,
-  Target, TrendingUp, GitBranch,
+  Target, TrendingUp, GitBranch, RefreshCw,
 } from "lucide-react";
 
 // ── Static report data (would come from user profile in production) ───────────
