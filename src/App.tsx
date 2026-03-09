@@ -54,6 +54,7 @@ const App = () => (
           <Route path="/path-finder" element={<PathFinder />} />
           <Route path="/future-you" element={<FutureYou />} />
           <Route path="/path-graph" element={<PathGraph />} />
+          <Route path="/journal" element={<Journal />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}
