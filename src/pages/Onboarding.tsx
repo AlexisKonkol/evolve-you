@@ -187,7 +187,7 @@ export default function Onboarding() {
                     <div
                       className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 transition-all ${
                         isSelected
-                          ? "border-teal bg-teal"
+                          ? "border-coral bg-coral"
                           : "border-muted-foreground/30"
                       }`}
                     >
