@@ -124,7 +124,7 @@ export default function Dashboard() {
             {/* Left col */}
             <div className="lg:col-span-2 space-y-5">
 
-              <TodayEvolution />
+              <MomentumTracker />
 
               {/* Identity Profile */}
               <div className="bg-gradient-card border border-border/50 rounded-2xl p-6">
