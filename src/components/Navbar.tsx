@@ -119,17 +119,17 @@ export function Navbar() {
     <header
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass border-b border-border/50 py-3" : "py-4"
+        scrolled ? "glass border-b border-border/40 py-3" : "py-4"
       }`}
     >
-      <div className="container flex items-center gap-2">
+      <div className="container max-w-6xl flex items-center gap-2 px-6">
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group shrink-0 mr-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-teal flex items-center justify-center glow-teal group-hover:scale-110 transition-transform">
-            <Zap className="w-4 h-4 text-primary-foreground" />
+          <div className="w-7 h-7 rounded-lg bg-gradient-teal flex items-center justify-center group-hover:opacity-90 transition-opacity">
+            <Zap className="w-3.5 h-3.5 text-primary-foreground" />
           </div>
-          <span className="text-xl font-bold tracking-wide text-foreground">
+          <span className="font-bold tracking-wide text-foreground">
             EV<span className="text-gradient-teal">OLV</span>E
           </span>
         </Link>
