@@ -28,6 +28,7 @@ import PathGraph from "./pages/PathGraph";
 import Journal from "./pages/Journal";
 import Mentor from "./pages/Mentor";
 import IdentityDashboard from "./pages/IdentityDashboard";
+import Intelligence from "./pages/Intelligence";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -63,6 +64,7 @@ const App = () => (
           <Route path="/journal" element={<Journal />} />
           <Route path="/mentor" element={<Mentor />} />
           <Route path="/identity-dashboard" element={<IdentityDashboard />} />
+          <Route path="/intelligence" element={<Intelligence />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}
