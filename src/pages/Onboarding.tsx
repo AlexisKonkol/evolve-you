@@ -144,9 +144,9 @@ export default function Onboarding() {
                 key={i}
                 className={`rounded-full transition-all duration-300 ${
                   i === step
-                    ? "w-6 h-2 bg-teal"
+                    ? "w-6 h-2 bg-coral"
                     : i < step
-                    ? "w-2 h-2 bg-teal/50"
+                    ? "w-2 h-2 bg-coral/50"
                     : "w-2 h-2 bg-border"
                 }`}
               />
