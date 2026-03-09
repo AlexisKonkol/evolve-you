@@ -2,3 +2,6 @@ project_id = "mmevioqqxofmxqbszooo"
 
 [functions.ai-coach]
 verify_jwt = false
+
+[functions.life-clarity]
+verify_jwt = false
