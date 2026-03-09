@@ -2,10 +2,11 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowRight, ArrowLeft, Shield, RefreshCw, Zap, Sparkles,
+  ArrowRight, ArrowLeft, Shield, RefreshCw, Sparkles,
   Star, Wrench, Users, Brain, Heart,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import pathlyLogo from "@/assets/pathly-logo.png";
 import { toast } from "sonner";
 
 const CONFIDENCE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/confidence-builder`;

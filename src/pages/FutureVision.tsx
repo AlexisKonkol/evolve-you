@@ -2,10 +2,11 @@ import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowRight, ArrowLeft, Eye, RefreshCw, Zap,
+  ArrowRight, ArrowLeft, Eye, RefreshCw,
   Sparkles, Star, Target, Briefcase, Sun, TrendingUp, MessageSquare,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import pathlyLogo from "@/assets/pathly-logo.png";
 import { toast } from "sonner";
 
 const FUTURE_VISION_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/future-vision`;
