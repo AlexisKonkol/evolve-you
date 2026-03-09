@@ -23,6 +23,7 @@ import ClarityEngine from "./pages/ClarityEngine";
 import PathFinder from "./pages/PathFinder";
 import FutureYou from "./pages/FutureYou";
 import PathGraph from "./pages/PathGraph";
+import Journal from "./pages/Journal";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

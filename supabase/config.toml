@@ -1,5 +1,8 @@
 project_id = "mmevioqqxofmxqbszooo"
 
+[functions.journal-insights]
+verify_jwt = false
+
 [functions.experiments-engine]
 verify_jwt = false
 
