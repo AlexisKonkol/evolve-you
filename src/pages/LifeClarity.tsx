@@ -208,31 +208,30 @@ export default function LifeClarity() {
 
         <div className="relative z-10 max-w-xl w-full text-center animate-fade-up">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-2 text-sm text-teal font-medium mb-8">
+          <div className="inline-flex items-center gap-2 bg-coral-500/10 border border-coral-500/20 rounded-full px-4 py-2 text-sm text-coral font-medium mb-8">
             <Sparkles className="w-4 h-4" />
-            Life Clarity · Guided Reflection
+            Life Clarity · The Pause
           </div>
 
           {/* Headline */}
           <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight mb-6">
-            Understand yourself<br />
-            <span className="text-gradient-teal">more deeply</span><br />
-            than ever before.
+            Stop asking what to do.<br />
+            <span className="text-gradient-coral">Start asking who you are.</span>
           </h1>
 
           <p className="text-muted-foreground text-lg leading-relaxed mb-4">
-            This is a quiet space for honest reflection.
+            This is a quiet space to understand yourself more deeply than ever before.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-10 max-w-md mx-auto">
-            You'll be guided through <span className="text-foreground font-medium">7 thoughtful questions</span>. Take your time. There are no right answers — only yours. At the end, your AI guide will offer a personalized Life Clarity Summary.
+            You'll be guided through <span className="text-foreground font-medium">7 honest questions</span>. Take your time. There are no right answers — only yours. At the end, your AI guide will reveal a personalized Life Clarity profile of who you are becoming.
           </p>
 
           <div className="flex flex-col items-center gap-4">
             <Button
               onClick={() => { setStage("questions"); setTimeout(() => textRef.current?.focus(), 100); }}
-              className="bg-gradient-teal text-primary-foreground px-8 py-3 h-auto text-base font-semibold hover:opacity-90 glow-teal gap-2"
+              className="bg-gradient-coral text-primary-foreground px-8 py-3 h-auto text-base font-semibold hover:opacity-90 glow-coral gap-2"
             >
-              Begin Reflection
+              Begin Your Reflection
               <ArrowRight className="w-4 h-4" />
             </Button>
             <Link to="/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
