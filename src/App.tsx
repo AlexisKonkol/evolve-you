@@ -9,6 +9,7 @@ import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
 import IdentityMap from "./pages/IdentityMap";
 import Opportunities from "./pages/Opportunities";
+import OpportunityEngine from "./pages/OpportunityEngine";
 import Paths from "./pages/Paths";
 import Learn from "./pages/Learn";
 import Experiments from "./pages/Experiments";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/identity-map" element={<IdentityMap />} />
           <Route path="/opportunities" element={<Opportunities />} />
+          <Route path="/opportunity-engine" element={<OpportunityEngine />} />
           <Route path="/paths" element={<Paths />} />
           <Route path="/learn" element={<Learn />} />
           <Route path="/experiments" element={<Experiments />} />

@@ -6,7 +6,7 @@ import {
   Menu, X, LayoutDashboard, Map, Star, Heart, Sparkles,
   Shield, Compass, Eye, GitBranch, TrendingUp, BookOpen,
   FlaskConical, Wrench, Users, MessagesSquare, Handshake,
-  Rss, ChevronDown, Lightbulb, Brain,
+  Rss, ChevronDown, Lightbulb, Brain, Rocket,
 } from "lucide-react";
 
 const navSections = [
@@ -29,6 +29,7 @@ const navSections = [
     label: "Explore",
     color: "violet" as const,
     items: [
+      { label: "Opportunity Engine", href: "/opportunity-engine", icon: Rocket, desc: "Connect your identity to real opportunities" },
       { label: "Opportunity Radar", href: "/opportunities",  icon: Compass,    desc: "Scan emerging roles & trends" },
       { label: "Future Vision",     href: "/future-vision",  icon: Eye,        desc: "Define who you want to become" },
       { label: "Future You",        href: "/future-you",     icon: Sparkles,   desc: "Visualize possible future selves" },
