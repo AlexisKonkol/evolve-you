@@ -15,6 +15,7 @@ import Coach from "./pages/Coach";
 import Community from "./pages/Community";
 import Pricing from "./pages/Pricing";
 import Profile from "./pages/Profile";
+import LifeClarity from "./pages/LifeClarity";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
