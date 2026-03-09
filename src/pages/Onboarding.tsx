@@ -178,9 +178,9 @@ export default function Onboarding() {
                   key={opt}
                   onClick={() => toggle(opt)}
                   className={`relative p-4 rounded-xl border text-left transition-all duration-200 group ${
-                    isSelected
-                      ? "border-teal-500/60 bg-teal-500/10 text-foreground"
-                      : "border-border bg-surface-1 text-muted-foreground hover:border-teal-500/30 hover:bg-surface-2 hover:text-foreground"
+                  isSelected
+                      ? "border-coral-500/60 bg-coral-500/10 text-foreground"
+                      : "border-border bg-surface-1 text-muted-foreground hover:border-coral-500/30 hover:bg-surface-2 hover:text-foreground"
                   }`}
                 >
                   <div className="flex items-center gap-3">
