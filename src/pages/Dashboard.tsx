@@ -401,6 +401,7 @@ export default function Dashboard() {
                     { icon: BookOpen, label: "Become someone who understands AI", sub: "15 min · Beginner",                   href: "/learn",              highlight: false },
                     { icon: Map,      label: "Explore paths that match you",   sub: "3 paths aligned to your identity",        href: "/paths",              highlight: false },
                     { icon: Users,    label: "Join others on this journey",    sub: "Career Pivots community",                 href: "/community",          highlight: false },
+                    { icon: Users,    label: "Pathly Network",                  sub: "Connect with people exploring similar paths", href: "/network",           highlight: false },
                   ].map((item) => (
                     <Link key={item.label} to={item.href}
                       className={`flex items-center gap-3 p-3 rounded-xl transition-colors group ${

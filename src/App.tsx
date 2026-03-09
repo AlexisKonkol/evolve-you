@@ -15,6 +15,7 @@ import Learn from "./pages/Learn";
 import Experiments from "./pages/Experiments";
 import Coach from "./pages/Coach";
 import Community from "./pages/Community";
+import PathlyNetwork from "./pages/PathlyNetwork";
 import Pricing from "./pages/Pricing";
 import Profile from "./pages/Profile";
 import LifeClarity from "./pages/LifeClarity";
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/experiments" element={<Experiments />} />
           <Route path="/coach" element={<Coach />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/network" element={<PathlyNetwork />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/life-clarity" element={<LifeClarity />} />

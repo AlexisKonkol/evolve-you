@@ -53,6 +53,7 @@ const navSections = [
     label: "Community",
     color: "coral" as const,
     items: [
+      { label: "Pathly Network",    href: "/network",     icon: Users,          desc: "Connect with others exploring similar paths" },
       { label: "Discussion Groups",   href: "/community",   icon: MessagesSquare, desc: "Connect with reinventors" },
       { label: "Shared Experiments",  href: "/experiments", icon: FlaskConical,   desc: "See what others are testing" },
       { label: "Mentorship",          href: "/community",   icon: Handshake,      desc: "Find a guide for your journey" },
