@@ -251,6 +251,31 @@ export default function Dashboard() {
                   </Button>
                 </Link>
               </div>
+              {/* Pathly Report CTA */}
+              <div className="rounded-2xl border p-5"
+                style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.06), hsl(var(--amber) / 0.06))", borderColor: "hsl(var(--coral) / 0.2)" }}>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--amber)))" }}>
+                    <Sparkles className="w-3.5 h-3.5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground text-sm">Your Pathly Report</h3>
+                    <p className="text-xs text-muted-foreground">Your personalized insight report</p>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                  See your curiosity profile, strength signals, energy sources, and paths aligned to who you are becoming.
+                </p>
+                <Link to="/report">
+                  <Button size="sm" className="w-full gap-1.5 text-xs font-semibold text-primary-foreground hover:opacity-90"
+                    style={{ background: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--amber)))" }}>
+                    Read my report
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Button>
+                </Link>
+              </div>
+
               {/* Opportunity Engine CTA */}
               <div className="rounded-2xl border p-5"
                 style={{ background: "hsl(var(--amber) / 0.04)", borderColor: "hsl(var(--amber) / 0.2)" }}>
