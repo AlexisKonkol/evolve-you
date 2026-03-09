@@ -22,6 +22,7 @@ import ConfidenceBuilder from "./pages/ConfidenceBuilder";
 import ClarityEngine from "./pages/ClarityEngine";
 import PathFinder from "./pages/PathFinder";
 import FutureYou from "./pages/FutureYou";
+import PathGraph from "./pages/PathGraph";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
