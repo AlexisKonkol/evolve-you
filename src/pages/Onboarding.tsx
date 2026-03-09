@@ -214,9 +214,9 @@ export default function Onboarding() {
             <Button
               onClick={next}
               disabled={!canProceed}
-              className="bg-gradient-teal text-primary-foreground font-semibold px-7 gap-2 hover:opacity-90 disabled:opacity-30"
+              className="bg-gradient-coral text-primary-foreground font-semibold px-7 gap-2 hover:opacity-90 disabled:opacity-30"
             >
-              {step === total - 1 ? "Generate My Profile" : "Continue"}
+              {step === total - 1 ? "Reveal My Identity Profile" : "Continue becoming"}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
