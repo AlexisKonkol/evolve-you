@@ -113,15 +113,15 @@ export default function Onboarding() {
       <div className="fixed top-0 left-0 right-0 z-40 glass border-b border-border/50 px-6 py-4">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-teal flex items-center justify-center">
+            <div className="w-7 h-7 rounded-lg bg-gradient-coral flex items-center justify-center">
               <Zap className="w-3.5 h-3.5 text-primary-foreground" />
             </div>
             <span className="font-bold text-foreground tracking-wide text-sm">
-              EV<span className="text-gradient-teal">OLV</span>E
+              Path<span className="text-gradient-coral">ly</span>
             </span>
           </div>
           <div className="text-xs text-muted-foreground font-medium">
-            Question {step + 1} of {total}
+            Discovering who you are · {step + 1} of {total}
           </div>
         </div>
         {/* Progress */}
