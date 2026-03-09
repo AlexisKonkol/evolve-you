@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { FloatingCoach } from "@/components/FloatingCoach";
 import Index from "./pages/Index";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
@@ -42,6 +43,8 @@ const App = () => (
           <Route path="/life-clarity" element={<LifeClarity />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        {/* Floating AI Coach — visible on every page except /coach */}
+        <FloatingCoach />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
