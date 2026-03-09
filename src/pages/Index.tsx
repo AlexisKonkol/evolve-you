@@ -49,7 +49,7 @@ const features = [
 const testimonials = [
   {
     name: "Maya Chen",  role: "Retail → AI Experience Design",
-    quote: "EVOLVE helped me see that 12 years of customer experience wasn't 'just retail' — it was exactly what AI companies need.",
+    quote: "Pathly helped me see that 12 years of customer experience wasn't 'just retail' — it was exactly what AI companies need.",
     stars: 5,
   },
   {
@@ -100,7 +100,7 @@ export default function Index() {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed animate-fade-up">
-            The world is changing fast. EVOLVE helps you understand who you are, where you fit, and how to get there — with AI as your guide.
+            The world is changing fast. Pathly helps you understand who you are, where you fit, and how to get there — with AI as your guide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-16 animate-fade-up">

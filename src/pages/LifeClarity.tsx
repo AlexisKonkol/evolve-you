@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, Sparkles, RefreshCw, Download, Share2, Zap } from "lucide-react";
+import { ArrowRight, ArrowLeft, Sparkles, RefreshCw, Download, Share2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "sonner";
+import pathlyLogo from "@/assets/pathly-logo.png";
 
 const LIFE_CLARITY_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/life-clarity`;
 
@@ -352,7 +353,7 @@ export default function LifeClarity() {
                       className="flex items-center gap-4 p-3 rounded-xl bg-surface-2 hover:bg-surface-3 transition-colors group"
                     >
                       <div className={`w-8 h-8 rounded-lg flex items-center justify-center border ${colorClass} shrink-0`}>
-                        <Zap className="w-3.5 h-3.5" />
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium text-foreground">{item.label}</p>
@@ -394,10 +395,8 @@ export default function LifeClarity() {
       {/* Nav */}
       <div className="relative z-10 flex items-center justify-between px-6 py-5">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-gradient-teal flex items-center justify-center">
-            <Zap className="w-3.5 h-3.5 text-primary-foreground" />
-          </div>
-          <span className="text-sm font-bold text-foreground">EV<span className="text-gradient-teal">OLV</span>E</span>
+          <img src={pathlyLogo} alt="Pathly" className="w-7 h-7 rounded-lg object-contain" />
+          <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
         </Link>
         <div className="flex items-center gap-3">
           <span className="text-xs text-muted-foreground">{current + 1} of {questions.length}</span>

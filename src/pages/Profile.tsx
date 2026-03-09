@@ -219,10 +219,10 @@ export default function ProfilePage() {
 
           {/* CTA */}
           <div className="mt-8 text-center">
-            <p className="text-muted-foreground text-sm mb-4">Start your own reinvention journey on EVOLVE</p>
+            <p className="text-muted-foreground text-sm mb-4">Start your own journey on Pathly</p>
             <Link to="/onboarding">
-              <Button className="bg-gradient-teal text-primary-foreground gap-2 hover:opacity-90 px-6">
-                Begin Your Reinvention
+              <Button className="bg-gradient-coral text-primary-foreground gap-2 hover:opacity-90 px-6">
+                Begin Your Journey
                 <ArrowRight className="w-4 h-4" />
               </Button>
             </Link>
