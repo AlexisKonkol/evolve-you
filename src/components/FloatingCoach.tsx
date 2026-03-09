@@ -82,15 +82,15 @@ export function FloatingCoach() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Hide on full coach page
-  if (location.pathname === "/coach") return null;
-
   useEffect(() => {
     if (open) {
       bottomRef.current?.scrollIntoView({ behavior: "smooth" });
       setTimeout(() => inputRef.current?.focus(), 100);
     }
   }, [messages, open]);
+
+  // Hide on full coach page — AFTER all hooks
+  if (location.pathname === "/coach") return null;
 
   const send = async (text: string) => {
     if (!text.trim() || streaming) return;
