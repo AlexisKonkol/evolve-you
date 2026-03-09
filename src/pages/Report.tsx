@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -7,7 +7,7 @@ import {
   Sparkles, Zap, Brain, Heart, BookOpen, Rocket,
   Users, Globe, FlaskConical, ArrowRight, Share2,
   Download, Twitter, Link2, Check, Star, Lightbulb,
-  Target, TrendingUp, GitBranch,
+  Target, TrendingUp, GitBranch, RefreshCw,
 } from "lucide-react";
 
 // ── Static report data (would come from user profile in production) ───────────
@@ -163,11 +163,97 @@ function BarFill({ color, pct }: { color: string; pct: number }) {
   );
 }
 
+// ── AI Summary streaming helper ───────────────────────────────────────────────
+
+async function streamReportSummary(
+  payload: object,
+  onDelta: (chunk: string) => void,
+  onDone: () => void,
+  onError: (msg: string) => void
+) {
+  const resp = await fetch(
+    `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/report-summary`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+      },
+      body: JSON.stringify(payload),
+    }
+  );
+
+  if (!resp.ok || !resp.body) {
+    try {
+      const err = await resp.json();
+      onError(err.error ?? "Failed to generate summary.");
+    } catch {
+      onError("Failed to generate summary.");
+    }
+    return;
+  }
+
+  const reader = resp.body.getReader();
+  const decoder = new TextDecoder();
+  let buf = "";
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buf += decoder.decode(value, { stream: true });
+
+    let nl: number;
+    while ((nl = buf.indexOf("\n")) !== -1) {
+      let line = buf.slice(0, nl);
+      buf = buf.slice(nl + 1);
+      if (line.endsWith("\r")) line = line.slice(0, -1);
+      if (!line.startsWith("data: ")) continue;
+      const json = line.slice(6).trim();
+      if (json === "[DONE]") { onDone(); return; }
+      try {
+        const parsed = JSON.parse(json);
+        const chunk = parsed.choices?.[0]?.delta?.content as string | undefined;
+        if (chunk) onDelta(chunk);
+      } catch { /* partial */ }
+    }
+  }
+  onDone();
+}
+
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function Report() {
   const [copied, setCopied] = useState(false);
+  const [summary, setSummary] = useState("");
+  const [summaryLoading, setSummaryLoading] = useState(false);
+  const [summaryError, setSummaryError] = useState("");
   const reportRef = useRef<HTMLDivElement>(null);
+
+  const generateSummary = useCallback(async () => {
+    setSummary("");
+    setSummaryError("");
+    setSummaryLoading(true);
+    try {
+      await streamReportSummary(
+        {
+          name: reportMeta.name,
+          archetype: reportMeta.archetype,
+          curiosityAreas: curiosityProfile.map((c) => c.label),
+          strengths: strengthSignals.map((s) => s.label),
+          energySources: energySources.map((e) => e.label),
+        },
+        (chunk) => setSummary((prev) => prev + chunk),
+        () => setSummaryLoading(false),
+        (msg) => { setSummaryError(msg); setSummaryLoading(false); }
+      );
+    } catch {
+      setSummaryError("Something went wrong. Please try again.");
+      setSummaryLoading(false);
+    }
+  }, []);
+
+  // Auto-generate on mount
+  useEffect(() => { generateSummary(); }, [generateSummary]);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.origin + "/report");
@@ -243,6 +329,63 @@ export default function Report() {
               </div>
             </div>
           </div>
+
+          {/* ── AI Narrative Summary ──────────────────────────────── */}
+          <section className="mb-8">
+            <div className="rounded-2xl p-6 relative overflow-hidden"
+              style={{
+                background: "linear-gradient(135deg, hsl(var(--coral) / 0.07), hsl(var(--violet) / 0.07))",
+                border: "1px solid hsl(var(--coral) / 0.2)",
+              }}>
+              {/* Subtle glow */}
+              <div className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-10 pointer-events-none"
+                style={{ background: "radial-gradient(circle, hsl(var(--violet)), transparent)" }} />
+
+              <div className="relative">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-xl flex items-center justify-center shrink-0"
+                      style={{ background: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--violet)))" }}>
+                      <Sparkles className="w-3.5 h-3.5 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Pathly Insight</p>
+                      <p className="text-sm font-semibold text-foreground">Who you appear to be becoming</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={generateSummary}
+                    disabled={summaryLoading}
+                    className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors disabled:opacity-40"
+                    title="Regenerate summary"
+                  >
+                    <RefreshCw className={`w-3.5 h-3.5 ${summaryLoading ? "animate-spin" : ""}`} />
+                    Regenerate
+                  </button>
+                </div>
+
+                {/* Summary text */}
+                <div className="min-h-[80px]">
+                  {summaryError ? (
+                    <p className="text-sm text-destructive">{summaryError}</p>
+                  ) : summaryLoading && !summary ? (
+                    <div className="space-y-2.5">
+                      {[100, 90, 75].map((w) => (
+                        <div key={w} className="h-3.5 rounded-full bg-border animate-pulse" style={{ width: `${w}%` }} />
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-base text-foreground/90 leading-relaxed font-light italic">
+                      {summary}
+                      {summaryLoading && (
+                        <span className="inline-block w-0.5 h-4 bg-coral ml-0.5 animate-pulse align-middle" />
+                      )}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* ── Section 1: Curiosity Profile ──────────────────────── */}
           <section className="mb-8">
