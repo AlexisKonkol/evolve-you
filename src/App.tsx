@@ -50,6 +50,7 @@ const App = () => (
           <Route path="/confidence-builder" element={<ConfidenceBuilder />} />
           <Route path="/clarity-engine" element={<ClarityEngine />} />
           <Route path="/path-finder" element={<PathFinder />} />
+          <Route path="/future-you" element={<FutureYou />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}
