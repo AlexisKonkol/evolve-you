@@ -163,11 +163,97 @@ function BarFill({ color, pct }: { color: string; pct: number }) {
   );
 }
 
+// ── AI Summary streaming helper ───────────────────────────────────────────────
+
+async function streamReportSummary(
+  payload: object,
+  onDelta: (chunk: string) => void,
+  onDone: () => void,
+  onError: (msg: string) => void
+) {
+  const resp = await fetch(
+    `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/report-summary`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+      },
+      body: JSON.stringify(payload),
+    }
+  );
+
+  if (!resp.ok || !resp.body) {
+    try {
+      const err = await resp.json();
+      onError(err.error ?? "Failed to generate summary.");
+    } catch {
+      onError("Failed to generate summary.");
+    }
+    return;
+  }
+
+  const reader = resp.body.getReader();
+  const decoder = new TextDecoder();
+  let buf = "";
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buf += decoder.decode(value, { stream: true });
+
+    let nl: number;
+    while ((nl = buf.indexOf("\n")) !== -1) {
+      let line = buf.slice(0, nl);
+      buf = buf.slice(nl + 1);
+      if (line.endsWith("\r")) line = line.slice(0, -1);
+      if (!line.startsWith("data: ")) continue;
+      const json = line.slice(6).trim();
+      if (json === "[DONE]") { onDone(); return; }
+      try {
+        const parsed = JSON.parse(json);
+        const chunk = parsed.choices?.[0]?.delta?.content as string | undefined;
+        if (chunk) onDelta(chunk);
+      } catch { /* partial */ }
+    }
+  }
+  onDone();
+}
+
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function Report() {
   const [copied, setCopied] = useState(false);
+  const [summary, setSummary] = useState("");
+  const [summaryLoading, setSummaryLoading] = useState(false);
+  const [summaryError, setSummaryError] = useState("");
   const reportRef = useRef<HTMLDivElement>(null);
+
+  const generateSummary = useCallback(async () => {
+    setSummary("");
+    setSummaryError("");
+    setSummaryLoading(true);
+    try {
+      await streamReportSummary(
+        {
+          name: reportMeta.name,
+          archetype: reportMeta.archetype,
+          curiosityAreas: curiosityProfile.map((c) => c.label),
+          strengths: strengthSignals.map((s) => s.label),
+          energySources: energySources.map((e) => e.label),
+        },
+        (chunk) => setSummary((prev) => prev + chunk),
+        () => setSummaryLoading(false),
+        (msg) => { setSummaryError(msg); setSummaryLoading(false); }
+      );
+    } catch {
+      setSummaryError("Something went wrong. Please try again.");
+      setSummaryLoading(false);
+    }
+  }, []);
+
+  // Auto-generate on mount
+  useEffect(() => { generateSummary(); }, [generateSummary]);
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.origin + "/report");
