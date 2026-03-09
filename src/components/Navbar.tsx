@@ -31,6 +31,7 @@ const navSections = [
       { label: "Future You",        href: "/future-you",     icon: Sparkles,   desc: "Visualize possible future selves" },
       { label: "Career Paths",      href: "/paths",          icon: GitBranch,  desc: "Step-by-step transition roadmaps" },
       { label: "Path Finder",       href: "/path-finder",    icon: Compass,    desc: "AI-powered path discovery" },
+      { label: "Path Graph",        href: "/path-graph",     icon: Map,        desc: "Explore your network of possibilities" },
       { label: "Industry Trends",   href: "/opportunities",  icon: TrendingUp, desc: "AI & automation insights" },
     ],
   },
