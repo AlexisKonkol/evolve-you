@@ -128,7 +128,7 @@ export default function Onboarding() {
         <div className="mt-3 max-w-2xl mx-auto">
           <div className="h-1 bg-border rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-teal rounded-full transition-all duration-500 ease-out"
+              className="h-full bg-gradient-coral rounded-full transition-all duration-500 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
