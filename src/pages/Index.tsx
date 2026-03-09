@@ -134,9 +134,9 @@ export default function Index() {
           {/* Social proof */}
           <div className="flex items-center justify-center gap-10 text-sm text-muted-foreground animate-fade-in">
             {[
-              { n: "50K+", l: "people finding their path" },
-              { n: "200+", l: "futures mapped" },
-              { n: "94%",  l: "found clarity" },
+              { n: "50K+", l: "people becoming more" },
+              { n: "200+", l: "identities mapped" },
+              { n: "94%",  l: "shifted self-perception" },
             ].map((s, i) => (
               <div key={i} className="text-center">
                 <div className="text-xl font-bold text-foreground tracking-tight">{s.n}</div>
