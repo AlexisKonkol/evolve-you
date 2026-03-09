@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, Sparkles, RefreshCw, Download, Share2, Zap } from "lucide-react";
+import { ArrowRight, ArrowLeft, Sparkles, RefreshCw, Download, Share2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "sonner";
+import pathlyLogo from "@/assets/pathly-logo.png";
 
 const LIFE_CLARITY_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/life-clarity`;
 
