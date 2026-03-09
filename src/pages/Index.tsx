@@ -101,7 +101,7 @@ export default function Index() {
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-10 animate-fade-up border"
             style={{ background: "hsl(var(--coral) / 0.08)", borderColor: "hsl(var(--coral) / 0.18)", color: "hsl(var(--coral))" }}>
             <Sparkles className="w-3.5 h-3.5" />
-            A platform for the AI age
+            Who are you becoming?
           </div>
 
           {/* Headline */}
@@ -112,7 +112,7 @@ export default function Index() {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed animate-fade-up">
-            The world is changing faster than ever. Pathly helps you discover who you are, explore what's possible, and design your next chapter.
+            The world is changing faster than ever. Pathly helps you discover who you are, see who you're becoming, and step into your next chapter — with AI as your guide.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-16 animate-fade-up">
