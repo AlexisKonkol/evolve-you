@@ -56,12 +56,12 @@ export default function Dashboard() {
           {/* ── Header ──────────────────────────────────────────── */}
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-10">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-coral mb-2">Your journey</p>
+              <p className="text-xs font-semibold uppercase tracking-widest text-coral mb-2">Identity journey</p>
               <h1 className="text-3xl font-bold text-foreground tracking-tight">
                 Welcome back, <span className="text-gradient-coral">Alex</span>
               </h1>
               <p className="text-muted-foreground text-sm mt-1.5">
-                You're becoming someone new · 12-day streak 🔥
+                You are more than your job title · 12-day streak 🔥
               </p>
             </div>
             <div className="flex gap-2 flex-wrap">
