@@ -86,13 +86,13 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* ── PATH progress ───────────────────────────────────── */}
+          {/* ── Identity Arc progress ───────────────────────────── */}
           <div className="bg-gradient-card border border-border/50 rounded-2xl p-6 mb-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
               <div>
-                <h3 className="font-semibold text-foreground text-sm">Your PATH journey</h3>
+                <h3 className="font-semibold text-foreground text-sm">Your reinvention journey</h3>
                 <p className="text-xs text-muted-foreground mt-0.5">
-                  You're in the <span className="text-amber">Assess</span> phase — understanding who you are
+                  You're in the <span className="text-amber font-medium">Recognition</span> phase — patterns are emerging
                 </p>
               </div>
               <span className="text-coral font-bold text-xl">35%</span>
@@ -102,10 +102,10 @@ export default function Dashboard() {
             </div>
             <div className="flex gap-2 flex-wrap">
               {[
-                { label: "Pause",        done: true,  active: false },
-                { label: "Assess",       done: false, active: true  },
-                { label: "Test",         done: false, active: false },
-                { label: "Head Forward", done: false, active: false },
+                { label: "Reset",       done: true,  active: false, desc: "Separated identity from job" },
+                { label: "Discover",    done: false, active: true,  desc: "Patterns emerging" },
+                { label: "Explore",     done: false, active: false, desc: "Path exploration" },
+                { label: "Design",      done: false, active: false, desc: "Next chapter" },
               ].map((s) => (
                 <span key={s.label} className={`text-xs px-3 py-1 rounded-full border transition-colors ${
                   s.done   ? "border-coral-500/35 bg-coral-500/10 text-coral"  :
