@@ -4,73 +4,73 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import {
   ArrowRight, Sparkles, Brain, Compass, FlaskConical,
-  TrendingUp, Star, Users, BookOpen, Shield,
+  TrendingUp, Star, Users, BookOpen, Heart, Zap, Shield,
 } from "lucide-react";
 
-/* ── PATH Method steps ─────────────────────────────────── */
-const pathSteps = [
+/* ── Transformation steps ─────────────────────────────── */
+const steps = [
   {
-    letter: "P",
-    word: "Pause",
+    step: "01",
+    word: "Reset",
     color: "coral",
     icon: Brain,
-    headline: "Slow down and reflect",
-    body: "Answer reflective questions that help you understand your life, interests, strengths, and motivations more clearly.",
+    headline: "Separate your identity from your job",
+    body: "Most people define themselves by what they do. Pathly helps you reconnect with who you actually are — your energy, values, and natural tendencies — independent of any job title.",
   },
   {
-    letter: "A",
-    word: "Assess",
+    step: "02",
+    word: "Discover",
     color: "violet",
-    icon: Compass,
-    headline: "Know your strengths",
-    body: "Identify your natural skills, values, and experiences. Pathly generates an identity profile that highlights your patterns and capabilities.",
+    icon: Sparkles,
+    headline: "Uncover your patterns and strengths",
+    body: "AI analyzes your reflections to surface curiosity themes, strength signals, and energy drivers — the building blocks of your real identity.",
   },
   {
-    letter: "T",
-    word: "Test",
+    step: "03",
+    word: "Explore",
     color: "amber",
     icon: FlaskConical,
-    headline: "Explore what's possible",
-    body: "Run small experiments. Discover new career paths and opportunities. Learn what energises you without committing to anything.",
+    headline: "See what's possible for someone like you",
+    body: "Discover paths, projects, and experiments aligned to your identity — not your old resume. Run small tests without committing to anything.",
   },
   {
-    letter: "H",
-    word: "Head Forward",
+    step: "04",
+    word: "Design",
     color: "coral",
     icon: TrendingUp,
-    headline: "Design your next chapter",
-    body: "Build a clear, step-by-step plan toward the life you truly want — with AI as your guide and a community beside you.",
+    headline: "Design the next chapter of your life",
+    body: "Build a reinvention roadmap. Skills to develop, communities to join, experiments to run. A life that fits who you're becoming — not who you were.",
   },
 ];
 
 /* ── Features ──────────────────────────────────────────── */
 const features = [
-  { icon: Brain,       title: "Life Clarity",      desc: "Become the kind of person who knows exactly what they value and why. Deep reflection that reveals who you already are." },
-  { icon: Compass,     title: "Future Vision",      desc: "Stop asking what you should do next. See who you're becoming — and step into that version of yourself." },
-  { icon: FlaskConical,title: "Micro-Experiments",  desc: "Explore the paths that match who you are becoming. Test new directions without committing to anything." },
-  { icon: TrendingUp,  title: "Career Paths",       desc: "Become someone with a clear, step-by-step direction. Not generic advice — your path, built around your identity." },
-  { icon: BookOpen,    title: "Focused Learning",   desc: "Become the kind of person who builds new skills. Short, practical lessons designed around your emerging identity." },
-  { icon: Users,       title: "A Community",        desc: "Become part of something bigger. Thousands of people on the same journey — none of you are doing this alone." },
+  { icon: Brain,        title: "Identity Reset",         desc: "Separate who you are from what you do. A reflective experience that helps you rediscover your real self." },
+  { icon: Compass,      title: "Pattern Discovery",      desc: "Surface the themes, strengths, and drives that appear across all your reflections. Your identity fingerprint." },
+  { icon: Sparkles,     title: "AI Identity Profile",    desc: "A personal narrative that captures who you're becoming — your archetype, values, working style, and what energizes you." },
+  { icon: FlaskConical, title: "Path Exploration",       desc: "Paths aligned to your identity, not your job history. Careers, creative projects, entrepreneurial directions, and more." },
+  { icon: TrendingUp,   title: "Reinvention Roadmap",    desc: "A non-linear plan for exploring your next chapter. Skills to build, experiments to run, people to learn from." },
+  { icon: BookOpen,     title: "Reflection & Growth",    desc: "Track your evolution over time. Journal, log curiosity, and watch your self-understanding deepen with every session." },
 ];
 
 /* ── Testimonials ──────────────────────────────────────── */
 const testimonials = [
   {
     name: "Maya Chen",
-    role: "Retail → AI Experience Design",
-    quote: "Pathly helped me see that 12 years in customer experience wasn't 'just retail' — it was exactly what AI companies need.",
+    context: "After a tech layoff",
+    quote: "I spent three months applying to jobs that felt wrong. Pathly helped me realize I wasn't looking for a new job — I was looking for a new identity. That shift changed everything.",
     stars: 5,
   },
   {
     name: "James Okafor",
-    role: "Teacher → Digital Curriculum",
-    quote: "I was scared AI would replace me. Instead it became my greatest tool. Pathly showed me the way.",
+    context: "After 10 years in education",
+    quote: "I thought burnout meant I'd chosen the wrong career. Turns out I'd just outgrown one version of myself. Pathly helped me see who I was becoming next.",
     stars: 5,
   },
   {
     name: "Sofia Reyes",
-    role: "Accountant → Automation Strategy",
-    quote: "The identity map was eye-opening. I thought I needed to start over. Turns out I just needed a new lens.",
+    context: "Career transition at 38",
+    quote: "The identity questions felt almost too personal at first. Then I realized that's exactly what was missing from every other career platform I'd tried.",
     stars: 5,
   },
 ];
@@ -101,32 +101,36 @@ export default function Index() {
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-10 animate-fade-up border"
             style={{ background: "hsl(var(--coral) / 0.08)", borderColor: "hsl(var(--coral) / 0.18)", color: "hsl(var(--coral))" }}>
             <Sparkles className="w-3.5 h-3.5" />
-            Who are you becoming?
+            A platform for discovering your path
           </div>
 
           {/* Headline */}
           <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.08] tracking-tight mb-6 animate-fade-up">
-            Find Your
+            You are not
             <br />
-            <span className="text-gradient-coral italic">Next Path.</span>
+            <span className="text-gradient-coral italic">your job title.</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed animate-fade-up">
-            The world is changing faster than ever. Pathly helps you discover who you are, see who you're becoming, and step into your next chapter — with AI as your guide.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-5 leading-relaxed animate-fade-up">
+            Pathly helps you rediscover who you are beyond your career — and design the next chapter of your life.
+          </p>
+
+          <p className="text-sm text-muted-foreground/70 max-w-md mx-auto mb-10 leading-relaxed animate-fade-up italic">
+            For the person who just left a job and feels lost. For the person who succeeded but doesn't feel fulfilled. For the person ready to design a life that actually fits.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-16 animate-fade-up">
             <Link to="/onboarding">
               <Button size="lg"
                 className="bg-gradient-coral text-primary-foreground font-semibold text-base px-8 py-6 rounded-xl glow-coral hover:opacity-90 transition-all hover:scale-[1.02] group gap-2">
-                Start Your Journey
+                Begin your identity discovery
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </Button>
             </Link>
             <Link to="/life-clarity">
               <Button size="lg" variant="outline"
                 className="border-border text-muted-foreground hover:text-foreground hover:border-coral-500/40 text-base px-8 py-6 rounded-xl gap-2 bg-transparent">
-                Try Life Clarity
+                Try a reflection
               </Button>
             </Link>
           </div>
@@ -134,9 +138,9 @@ export default function Index() {
           {/* Social proof */}
           <div className="flex items-center justify-center gap-10 text-sm text-muted-foreground animate-fade-in">
             {[
-              { n: "50K+", l: "people becoming more" },
-              { n: "200+", l: "identities mapped" },
-              { n: "94%",  l: "shifted self-perception" },
+              { n: "50K+",  l: "people rediscovering themselves" },
+              { n: "94%",   l: "shifted their self-perception" },
+              { n: "4.9★",  l: "from users in transition" },
             ].map((s, i) => (
               <div key={i} className="text-center">
                 <div className="text-xl font-bold text-foreground tracking-tight">{s.n}</div>
@@ -152,61 +156,60 @@ export default function Index() {
         </div>
       </section>
 
-      {/* ── Why Pathly Exists ─────────────────────────────────── */}
+      {/* ── The Real Problem ─────────────────────────────────── */}
       <section className="py-32" style={{ background: "hsl(var(--surface-1))" }}>
         <div className="container max-w-2xl px-6 text-center">
-          <p className="text-coral text-xs font-semibold uppercase tracking-widest mb-4">Our story</p>
+          <p className="text-coral text-xs font-semibold uppercase tracking-widest mb-4">Why Pathly exists</p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-10 leading-snug">
-            Why Pathly Exists
+            Most people tie their identity to their job.
           </h2>
 
           <div className="text-muted-foreground text-base leading-[1.9] space-y-5 text-left max-w-xl mx-auto">
-            <p>At some point, almost everyone feels lost.</p>
-            <p>Not because they lack talent.<br />Not because they lack ambition.</p>
-            <p>But because the world is changing faster than ever.</p>
-            <div className="border-l-2 pl-5 space-y-2 my-6" style={{ borderColor: "hsl(var(--coral) / 0.4)" }}>
-              <p className="text-foreground/80">Careers are shifting.</p>
-              <p className="text-foreground/80">Industries are evolving.</p>
-              <p className="text-foreground/80">Artificial intelligence is redefining what's possible.</p>
+            <p>When a job disappears, so does the person.</p>
+            <p>Layoffs. Burnout. Industry shifts. Life transitions.</p>
+            <p>Millions of people are left asking a question no career platform was ever designed to answer:</p>
+
+            <div className="border-l-2 pl-5 my-6" style={{ borderColor: "hsl(var(--coral) / 0.4)" }}>
+              <p className="text-foreground font-semibold text-lg italic font-display">
+                "If I'm not my job... who am I?"
+              </p>
             </div>
-            <p>Many people are left asking a simple question:</p>
-            <p className="text-lg font-semibold text-foreground italic font-display">
-              "What should I do next?"
-            </p>
+
             <p>
-              Pathly helps people rediscover their direction, unlock their strengths, and design a path toward the life they truly want.
+              Pathly was built to answer that question. Not with a job recommendation. With a genuine process of self-discovery — one that helps you understand your energy, your strengths, your values, and your natural curiosity before suggesting any path forward.
+            </p>
+            <p className="text-foreground font-medium">
+              Understanding yourself is the beginning of designing your future.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── The PATH Method ───────────────────────────────────── */}
+      {/* ── How It Works ──────────────────────────────────────── */}
       <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
         <div className="container max-w-4xl relative z-10 px-6">
           <div className="text-center mb-14">
-            <p className="text-amber text-xs font-semibold uppercase tracking-widest mb-3">How it works</p>
+            <p className="text-amber text-xs font-semibold uppercase tracking-widest mb-3">The journey</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              The{" "}
-              <span className="text-gradient-coral">PATH</span>
-              {" "}Method
+              From identity confusion
+              <span className="text-gradient-coral"> to personal clarity</span>
             </h2>
             <p className="text-muted-foreground text-base max-w-md mx-auto leading-relaxed">
-              A simple, powerful framework that guides your entire Pathly experience.
+              A structured journey through self-discovery — at your own pace, guided by AI.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4">
-            {pathSteps.map((step, i) => {
+            {steps.map((step, i) => {
               const Icon = step.icon;
               const c = colorMap[step.color];
               return (
                 <div key={i}
                   className="bg-gradient-card border border-border/40 rounded-2xl p-7 card-hover group flex gap-5">
-                  {/* Letter badge */}
                   <div className="shrink-0">
                     <div className={`w-12 h-12 rounded-2xl flex items-center justify-center border ${c.bg} ${c.border}`}>
-                      <span className={`text-xl font-bold ${c.text}`}>{step.letter}</span>
+                      <span className={`text-sm font-bold ${c.text}`}>{step.step}</span>
                     </div>
                   </div>
                   <div>
@@ -227,10 +230,10 @@ export default function Index() {
       <section className="py-32" style={{ background: "hsl(var(--surface-1))" }}>
         <div className="container max-w-5xl px-6">
           <div className="text-center mb-14">
-            <p className="text-coral text-xs font-semibold uppercase tracking-widest mb-3">Everything you need</p>
+            <p className="text-coral text-xs font-semibold uppercase tracking-widest mb-3">Platform features</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Built for real reinvention</h2>
             <p className="text-muted-foreground text-base max-w-md mx-auto leading-relaxed">
-              Not a job board. Not a resume tool. A complete system for becoming who you're meant to be next.
+              Not a job board. Not a resume tool. A complete system for discovering who you are and designing what comes next.
             </p>
           </div>
 
@@ -253,31 +256,52 @@ export default function Index() {
       <section className="py-32">
         <div className="container max-w-5xl px-6">
           <div className="text-center mb-14">
-            <p className="text-violet text-xs font-semibold uppercase tracking-widest mb-3">Real paths taken</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Their story could be yours</h2>
+            <p className="text-violet text-xs font-semibold uppercase tracking-widest mb-3">Real stories</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">You're not the only one who felt this way</h2>
+            <p className="text-muted-foreground text-base max-w-sm mx-auto">From people who were exactly where you are now.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-5">
             {testimonials.map((t, i) => (
               <div key={i} className="bg-gradient-card border border-border/40 rounded-2xl p-7">
-                <div className="flex gap-0.5 mb-5">
+                <div className="flex gap-0.5 mb-2">
                   {Array.from({ length: t.stars }).map((_, j) => (
                     <Star key={j} className="w-3.5 h-3.5 text-amber fill-current" />
                   ))}
                 </div>
+                <p className="text-xs text-muted-foreground/60 mb-4 italic">{t.context}</p>
                 <p className="text-muted-foreground leading-relaxed mb-6 text-sm">"{t.quote}"</p>
-                <div>
-                  <div className="font-semibold text-foreground text-sm">{t.name}</div>
-                  <div className="text-xs text-coral mt-0.5">{t.role}</div>
-                </div>
+                <div className="font-semibold text-foreground text-sm">{t.name}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* ── Identity arc ─────────────────────────────────────── */}
+      <section className="py-24" style={{ background: "hsl(var(--surface-1))" }}>
+        <div className="container max-w-3xl px-6">
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-8">The emotional arc Pathly guides you through</p>
+          <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
+            {[
+              { label: "Confusion", color: "text-muted-foreground" },
+              { label: "→", color: "text-border" },
+              { label: "Curiosity", color: "text-violet" },
+              { label: "→", color: "text-border" },
+              { label: "Recognition", color: "text-amber" },
+              { label: "→", color: "text-border" },
+              { label: "Possibility", color: "text-coral" },
+              { label: "→", color: "text-border" },
+              { label: "Agency", color: "text-foreground font-semibold" },
+            ].map((item, i) => (
+              <span key={i} className={`font-medium ${item.color}`}>{item.label}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA ───────────────────────────────────────────────── */}
-      <section className="py-36 relative overflow-hidden" style={{ background: "hsl(var(--surface-1))" }}>
+      <section className="py-36 relative overflow-hidden">
         <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full blur-3xl"
           style={{ background: "hsl(var(--coral) / 0.07)" }} />
@@ -285,25 +309,25 @@ export default function Index() {
         <div className="container max-w-2xl text-center relative z-10 px-6">
           <div className="inline-flex items-center gap-2 border rounded-full px-4 py-2 text-sm font-medium mb-8"
             style={{ borderColor: "hsl(var(--coral) / 0.2)", color: "hsl(var(--coral))" }}>
-            <Shield className="w-3.5 h-3.5" />
-            Our belief
+            <Heart className="w-3.5 h-3.5" />
+            A deeper kind of career platform
           </div>
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-[1.1]">
-            The future belongs to those
+            The next chapter starts with
             <br />
-            <span className="text-gradient-coral italic">who keep becoming.</span>
+            <span className="text-gradient-coral italic">knowing who you are.</span>
           </h2>
           <p className="text-muted-foreground text-lg mb-12 leading-relaxed">
-            Every lasting change begins with a shift in identity — not a change of circumstance. Your next path starts here.
+            Most platforms start with what job you want. Pathly starts with who you actually are. That one difference changes everything.
           </p>
           <Link to="/onboarding">
             <Button size="lg"
               className="bg-gradient-coral text-primary-foreground font-semibold text-base px-10 py-6 rounded-xl glow-coral hover:opacity-90 transition-all hover:scale-[1.02] group gap-2">
-              Start Your Journey
+              Begin your identity discovery
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </Button>
           </Link>
-          <p className="text-muted-foreground/50 text-sm mt-4">Free forever · No credit card required</p>
+          <p className="text-muted-foreground/50 text-sm mt-4">Free to start · No job title required</p>
         </div>
       </section>
 
