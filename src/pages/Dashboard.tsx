@@ -221,6 +221,9 @@ export default function Dashboard() {
             <div className="space-y-5">
               <ReinventionStreaks />
 
+              {/* Shareable Identity Card — viral feature */}
+              <ShareableIdentityCard />
+
               {/* Emerging Identity — the centerpiece */}
               <EmergingIdentity />
 
