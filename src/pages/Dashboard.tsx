@@ -126,6 +126,9 @@ export default function Dashboard() {
             {/* Left col */}
             <div className="lg:col-span-2 space-y-5">
 
+              {/* Daily Mirror — retention hook */}
+              <DailyMirror />
+
               <MomentumTracker />
 
               {/* Identity Profile */}
