@@ -15,6 +15,8 @@ import { ReinventionInsights } from "@/components/dashboard/ReinventionInsights"
 import { EvolutionMap } from "@/components/dashboard/EvolutionMap";
 import { EmergingIdentity } from "@/components/dashboard/EmergingIdentity";
 import { MomentumTracker } from "@/components/dashboard/MomentumTracker";
+import { DailyMirror } from "@/components/dashboard/DailyMirror";
+import { ShareableIdentityCard } from "@/components/dashboard/ShareableIdentityCard";
 
 const strengthClusters = [
   { label: "Communication",    score: 92, color: "teal"   },
