@@ -15,6 +15,8 @@ import { ReinventionInsights } from "@/components/dashboard/ReinventionInsights"
 import { EvolutionMap } from "@/components/dashboard/EvolutionMap";
 import { EmergingIdentity } from "@/components/dashboard/EmergingIdentity";
 import { MomentumTracker } from "@/components/dashboard/MomentumTracker";
+import { DailyMirror } from "@/components/dashboard/DailyMirror";
+import { ShareableIdentityCard } from "@/components/dashboard/ShareableIdentityCard";
 
 const strengthClusters = [
   { label: "Communication",    score: 92, color: "teal"   },
@@ -124,6 +126,9 @@ export default function Dashboard() {
             {/* Left col */}
             <div className="lg:col-span-2 space-y-5">
 
+              {/* Daily Mirror — retention hook */}
+              <DailyMirror />
+
               <MomentumTracker />
 
               {/* Identity Profile */}
@@ -215,6 +220,9 @@ export default function Dashboard() {
             {/* Right col */}
             <div className="space-y-5">
               <ReinventionStreaks />
+
+              {/* Shareable Identity Card — viral feature */}
+              <ShareableIdentityCard />
 
               {/* Emerging Identity — the centerpiece */}
               <EmergingIdentity />

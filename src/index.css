@@ -220,6 +220,19 @@
   to   { opacity: 1; }
 }
 
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+.animate-ping {
+  animation: ping 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Smooth question transitions in onboarding */
+.transition-280 {
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
 /* ── Scrollbar ── */
 ::-webkit-scrollbar       { width: 5px; }
 ::-webkit-scrollbar-track { background: hsl(var(--background)); }
