@@ -142,6 +142,18 @@ export function Navbar() {
             Dashboard
           </Link>
 
+          <Link
+            to="/framework"
+            className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+              location.pathname === "/framework"
+                ? "text-violet bg-violet-500/10"
+                : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+            }`}
+          >
+            <Layers className="w-3.5 h-3.5" />
+            Framework
+          </Link>
+
           {navSections.map((section) => {
             const cm = colorMap[section.color];
             const isActive = isSectionActive(section);
