@@ -247,6 +247,13 @@ export default function Index() {
                 Try a free reflection
               </Button>
             </Link>
+            <Link to="/framework">
+              <Button size="lg" variant="outline"
+                className="border-violet-500/30 text-muted-foreground hover:text-violet hover:border-violet-500/50 text-base px-8 py-6 rounded-xl gap-2 bg-transparent">
+                <Layers className="w-4 h-4" />
+                Our framework
+              </Button>
+            </Link>
           </div>
 
           {/* Trust signals */}
