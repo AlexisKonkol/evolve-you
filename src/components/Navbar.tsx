@@ -246,6 +246,13 @@ export function Navbar() {
               <LayoutDashboard className="w-4 h-4" />
               Dashboard
             </Link>
+            <Link to="/framework" onClick={() => setMobileOpen(false)}
+              className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
+                location.pathname === "/framework" ? "text-violet bg-violet-500/10" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+              }`}>
+              <Layers className="w-4 h-4" />
+              Our Framework
+            </Link>
             {navSections.map((section) => {
               const cm = colorMap[section.color];
               return (

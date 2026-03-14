@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import {
   ArrowRight, Sparkles, Brain, Compass, FlaskConical,
   TrendingUp, Star, BookOpen, Heart, Zap, Quote,
-  Flame, Eye, Lightbulb, Target, ChevronRight,
+  Flame, Eye, Lightbulb, Target, ChevronRight, Layers,
 } from "lucide-react";
 
 /* ── Rotating curiosity-gap hooks ───────────────────────────────────── */
