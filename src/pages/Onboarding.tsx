@@ -292,7 +292,7 @@ export default function Onboarding() {
           </div>
 
           <Button
-            onClick={() => navigate("/dashboard")}
+            onClick={() => navigate("/identity-profile", { state: { answers } })}
             className="w-full bg-gradient-coral text-primary-foreground font-semibold py-6 text-base rounded-xl glow-coral hover:opacity-90 gap-2 group">
             Show me my identity profile
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

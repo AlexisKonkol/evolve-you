@@ -31,6 +31,7 @@ import IdentityDashboard from "./pages/IdentityDashboard";
 import Intelligence from "./pages/Intelligence";
 import Report from "./pages/Report";
 import Framework from "./pages/Framework";
+import IdentityProfile from "./pages/IdentityProfile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -69,6 +70,7 @@ const App = () => (
           <Route path="/intelligence" element={<Intelligence />} />
           <Route path="/report" element={<Report />} />
           <Route path="/framework" element={<Framework />} />
+          <Route path="/identity-profile" element={<IdentityProfile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}
