@@ -429,7 +429,7 @@ export default function Onboarding() {
           <div className="w-16 h-16 rounded-2xl bg-gradient-coral flex items-center justify-center mx-auto mb-6 glow-coral">
             <Sparkles className="w-7 h-7 text-primary-foreground" />
           </div>
-          <h1 className="text-3xl font-bold text-foreground mb-3">There's a word for people like you.</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-3">What you shared just revealed something important.</h1>
           <p className="text-muted-foreground text-base leading-relaxed mb-8 max-w-md mx-auto">
             We found it in what you told us. Your full profile will show you your archetype, the patterns you've been living, your hidden strengths, and the paths aligned with who you are.
           </p>
