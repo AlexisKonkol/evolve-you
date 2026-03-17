@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import {
-  Sparkles, ArrowRight, Copy, Check, Share2, Zap, Heart,
+  Sparkles, ArrowRight, Copy, Check, Share2, Heart,
   Eye, Flame, Compass, ChevronDown, RotateCcw, ArrowUpRight,
   Star, Shield, Lightbulb, Wind, Moon, Sun,
 } from "lucide-react";
@@ -177,7 +177,7 @@ function ShareCard({ profile }: { profile: IdentityProfileData }) {
   const [copied, setCopied] = useState(false);
   const accent = archetypeAccent(profile.archetype.name);
 
-  const shareText = `My Pathly identity: ${profile.archetype.name}\n\n"${profile.archetype.tagline}"\n\nMirror moment: "${profile.mirrorMoment.slice(0, 120)}..."\n\nDiscover yours at pathly.app`;
+  const shareText = `My NAVO identity: ${profile.archetype.name}\n\n"${profile.archetype.tagline}"\n\nMirror moment: "${profile.mirrorMoment.slice(0, 120)}..."\n\nDiscover yours at navo.app`;
 
   const copy = () => {
     navigator.clipboard.writeText(shareText).then(() => {
@@ -200,12 +200,12 @@ function ShareCard({ profile }: { profile: IdentityProfileData }) {
         className="relative p-6 overflow-hidden"
         style={{ background: `radial-gradient(ellipse 70% 50% at 80% 20%, hsl(var(${accent.cssVar}) / 0.1), transparent)` }}
       >
-        {/* Pathly mark */}
+        {/* NAVO mark */}
         <div className="flex items-center gap-1.5 mb-5">
           <div className="w-5 h-5 rounded-md bg-gradient-coral flex items-center justify-center">
             <Flame className="w-2.5 h-2.5 text-primary-foreground" />
           </div>
-          <span className="text-xs font-bold text-muted-foreground tracking-widest uppercase">Pathly · Path Identity Profile</span>
+          <span className="text-xs font-bold text-muted-foreground tracking-widest uppercase">NAVO · Identity Profile</span>
         </div>
 
         <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: `hsl(var(${accent.cssVar}))` }}>
@@ -429,12 +429,18 @@ export default function IdentityProfile() {
       <div className="fixed top-0 left-0 right-0 z-40 glass border-b border-border/50 px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-coral flex items-center justify-center">
-              <Zap className="w-3.5 h-3.5 text-primary-foreground" />
-            </div>
-            <span className="font-bold text-foreground tracking-wide text-sm">
-              Path<span className="text-gradient-coral">ly</span>
-            </span>
+            <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+              <rect width="100" height="100" rx="22" fill="#000"/>
+              <ellipse cx="50" cy="56" rx="38" ry="11" stroke="#D85A30" strokeWidth="2.5" fill="none" opacity="0.6"/>
+              <ellipse cx="50" cy="56" rx="30" ry="8" stroke="#D85A30" strokeWidth="1" fill="none" opacity="0.3"/>
+              <path d="M50 12 L39 58 L50 53 Z" fill="#9B3520"/>
+              <path d="M50 12 L61 58 L50 53 Z" fill="#F07050"/>
+              <path d="M39 58 L50 53 L50 70 Z" fill="#C04535"/>
+              <path d="M61 58 L50 53 L50 70 Z" fill="#E05540"/>
+              <circle cx="50" cy="12" r="3" fill="white" opacity="0.9"/>
+              <path d="M26 22 L27.5 26 L32 28 L27.5 30 L26 34 L24.5 30 L20 28 L24.5 26 Z" fill="#FFB090" opacity="0.8"/>
+            </svg>
+            <span className="font-bold text-foreground tracking-wide text-sm">NAV<span className="text-gradient-coral">O</span></span>
           </div>
           <span
             className="text-xs px-3 py-1 rounded-full font-semibold"
@@ -444,7 +450,7 @@ export default function IdentityProfile() {
               color: `hsl(var(${accent.cssVar}))`,
             }}
           >
-            ✦ Path Identity Profile
+            ✦ NAVO Identity Profile
           </span>
         </div>
       </div>
@@ -475,7 +481,7 @@ export default function IdentityProfile() {
                       className="text-xs font-bold uppercase tracking-widest mb-2"
                       style={{ color: `hsl(var(${accent.cssVar}))` }}
                     >
-                      Your Path Identity Archetype
+                      Your NAVO Identity Archetype
                     </p>
                     <h1
                       className="text-4xl md:text-5xl font-bold text-foreground mb-3 leading-tight"
