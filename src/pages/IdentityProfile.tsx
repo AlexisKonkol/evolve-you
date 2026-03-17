@@ -19,6 +19,7 @@ interface IdentityProfileData {
   mirrorMoment: string;
   curiosityThread: string;
   identityNarrative: string;
+  displacementStory?: string;
 }
 
 /* ── Archetype color map ─────────────────────────────────────────── */
@@ -538,6 +539,42 @@ export default function IdentityProfile() {
           <Reveal delay={100}>
             <MirrorMoment text={profile.mirrorMoment} />
           </Reveal>
+
+          {/* ── DISPLACEMENT STORY ──────────────────────────────────── */}
+          {profile.displacementStory && (
+            <Reveal delay={125}>
+              <div
+                className="relative rounded-2xl overflow-hidden border"
+                style={{
+                  background: "linear-gradient(135deg, hsl(var(--surface-1)), hsl(20 14% 11%))",
+                  borderColor: "hsl(var(--violet) / 0.25)",
+                }}
+              >
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, hsl(var(--violet) / 0.06), transparent)" }}
+                />
+                <div className="relative p-6 md:p-8">
+                  <div className="flex items-center gap-2 mb-5">
+                    <div className="w-8 h-8 rounded-xl flex items-center justify-center"
+                      style={{ background: "hsl(var(--violet) / 0.15)" }}>
+                      <Flame className="w-4 h-4 text-violet" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-widest text-violet">The Reframe</p>
+                      <p className="text-xs text-muted-foreground">What this moment is really about</p>
+                    </div>
+                  </div>
+                  <p
+                    className="text-lg md:text-xl font-medium text-foreground leading-relaxed italic"
+                    style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+                  >
+                    "{profile.displacementStory}"
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          )}
 
           {/* ── IDENTITY NARRATIVE ──────────────────────────────── */}
           <Reveal delay={150}>
