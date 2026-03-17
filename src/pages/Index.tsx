@@ -232,92 +232,82 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* ── HERO — Angle: Lost / Pattern interrupt ──────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
-        <div
-          className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full blur-3xl opacity-50"
-          style={{ background: "hsl(var(--coral) / 0.07)" }}
-        />
-        <div
-          className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-40"
-          style={{ background: "hsl(var(--rose) / 0.06)" }}
-        />
+    {/* ── HERO ──────────────────────────────────────────────────────── */}
+<section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  <div className="absolute inset-0 bg-gradient-hero" />
+  <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
+  <div className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full blur-3xl opacity-50"
+    style={{ background: "hsl(var(--coral) / 0.07)" }} />
+  <div className="absolute bottom-1/3 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-40"
+    style={{ background: "hsl(var(--rose) / 0.06)" }} />
 
-        <div className="container relative z-10 text-center max-w-3xl mx-auto px-6">
+  <div className="container relative z-10 text-center max-w-3xl mx-auto px-6">
 
-          {/* Pattern-interrupt badge */}
-          <div
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-10 animate-fade-up border"
-            style={{
-              background: "hsl(var(--coral) / 0.08)",
-              borderColor: "hsl(var(--coral) / 0.18)",
-              color: "hsl(var(--coral))",
-            }}
-          >
-            <Heart className="w-3.5 h-3.5" />
-            For the person who built a life that doesn't feel like theirs
-          </div>
+    {/* Badge */}
+    <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-10 animate-fade-up border"
+      style={{ background: "hsl(var(--coral) / 0.08)", borderColor: "hsl(var(--coral) / 0.18)", color: "hsl(var(--coral))" }}>
+      <Heart className="w-3.5 h-3.5" />
+      For the person AI displaced, laid off, or burned out
+    </div>
 
-          {/* Headline — Version A: Lost / Pattern interrupt */}
-          <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.08] tracking-tight mb-6 animate-fade-up">
-            You are more than
-            <br />
-            <RotatingHook />
-          </h1>
+    {/* Headline */}
+    <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.08] tracking-tight mb-6 animate-fade-up">
+      The job ended.
+      <br />
+      <span className="text-gradient-coral italic">You didn't.</span>
+    </h1>
 
-          {/* Subheadline — emotionally mirroring, identity-framed */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-4 leading-relaxed animate-fade-up">
-            Somewhere along the way, you became your job. Pathly helps you find the person who was there before it — and design what comes next.
-          </p>
+    {/* Subheadline */}
+    <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-4 leading-relaxed animate-fade-up">
+      Most people respond to a layoff by updating their résumé. Applying to more jobs. Doing more of what already felt wrong.
+    </p>
 
-          {/* Micro-copy — emotionally specific context */}
-          <p className="text-sm text-muted-foreground/55 max-w-lg mx-auto mb-10 leading-relaxed animate-fade-up">
-            For the person who feels lost after a layoff. Who succeeded at work but feels empty. Who keeps thinking: <em>"there has to be more than this."</em>
-          </p>
+    <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-4 leading-relaxed animate-fade-up">
+      NAVO does something different. Before any path, any plan, any next step — we help you understand who you actually are.
+    </p>
 
-          {/* CTAs — curiosity-driven, pressure-reducing */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-14 animate-fade-up">
-            <Link to="/onboarding">
-              <Button
-                size="lg"
-                className="bg-gradient-coral text-primary-foreground font-semibold text-base px-8 py-6 rounded-xl glow-coral hover:opacity-90 transition-all hover:scale-[1.02] group gap-2"
-              >
-                Start uncovering who you are
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Button>
-            </Link>
-            <Link to="/life-clarity">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-border text-muted-foreground hover:text-foreground hover:border-coral-500/40 text-base px-8 py-6 rounded-xl gap-2 bg-transparent"
-              >
-                Try a free reflection first
-              </Button>
-            </Link>
-          </div>
+    {/* Micro-copy */}
+    <p className="text-sm text-muted-foreground/55 max-w-lg mx-auto mb-10 leading-relaxed animate-fade-up italic">
+      "If I'm not my job title... who am I?"<br />
+      That's the question no career platform was built to answer. NAVO was.
+    </p>
 
-          {/* Trust signals */}
-          <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground animate-fade-in flex-wrap">
-            {[
-              { n: "4 min",  l: "to your first real insight" },
-              { n: "Free",   l: "no email required to start" },
-              { n: "94%",    l: "say it changed how they see themselves" },
-            ].map((s, i) => (
-              <div key={i} className="text-center">
-                <div className="text-xl font-bold text-foreground tracking-tight">{s.n}</div>
-                <div className="text-xs mt-0.5">{s.l}</div>
-              </div>
-            ))}
-          </div>
+    {/* CTAs */}
+    <div className="flex flex-col sm:flex-row gap-3 justify-center mb-14 animate-fade-up">
+      <Link to="/onboarding">
+        <Button size="lg"
+          className="bg-gradient-coral text-primary-foreground font-semibold text-base px-8 py-6 rounded-xl glow-coral hover:opacity-90 transition-all hover:scale-[1.02] group gap-2">
+          Rediscover your edge
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+        </Button>
+      </Link>
+      <Link to="/identity-profile">
+        <Button size="lg" variant="outline"
+          className="border-border text-muted-foreground hover:text-foreground hover:border-coral-500/40 text-base px-8 py-6 rounded-xl gap-2 bg-transparent">
+          See a sample profile
+        </Button>
+      </Link>
+    </div>
+
+    {/* Trust signals */}
+    <div className="flex items-center justify-center gap-8 text-sm text-muted-foreground animate-fade-in flex-wrap">
+      {[
+        { n: "4 min",  l: "to your first real insight" },
+        { n: "Free",   l: "no email required to start" },
+        { n: "AI era", l: "built for right now" },
+      ].map((s, i) => (
+        <div key={i} className="text-center">
+          <div className="text-xl font-bold text-foreground tracking-tight">{s.n}</div>
+          <div className="text-xs mt-0.5">{s.l}</div>
         </div>
+      ))}
+    </div>
+  </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
-          <div className="w-px h-8 bg-gradient-to-b from-transparent to-muted-foreground mx-auto" />
-        </div>
-      </section>
+  <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
+    <div className="w-px h-8 bg-gradient-to-b from-transparent to-muted-foreground mx-auto" />
+  </div>
+</section>
 
       {/* ── THE REAL PROBLEM — Emotional mirroring ─────────────────── */}
       <section className="py-28 relative overflow-hidden">
