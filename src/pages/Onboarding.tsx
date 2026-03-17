@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, Zap, Check, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, Sparkles } from "lucide-react";
 
 /* ── Context options — why they're here ─────────────────────────── */
 const contextOptions = [
@@ -284,10 +284,18 @@ export default function Onboarding() {
         <div className="fixed top-0 left-0 right-0 z-40 glass border-b border-border/50 px-6 py-4">
           <div className="max-w-2xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-coral flex items-center justify-center">
-                <Zap className="w-3.5 h-3.5 text-primary-foreground" />
-              </div>
-              <span className="font-bold text-foreground tracking-wide text-sm">Path<span className="text-gradient-coral">ly</span></span>
+              <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+                <rect width="100" height="100" rx="22" fill="#000"/>
+                <ellipse cx="50" cy="56" rx="38" ry="11" stroke="#D85A30" strokeWidth="2.5" fill="none" opacity="0.6"/>
+                <ellipse cx="50" cy="56" rx="30" ry="8" stroke="#D85A30" strokeWidth="1" fill="none" opacity="0.3"/>
+                <path d="M50 12 L39 58 L50 53 Z" fill="#9B3520"/>
+                <path d="M50 12 L61 58 L50 53 Z" fill="#F07050"/>
+                <path d="M39 58 L50 53 L50 70 Z" fill="#C04535"/>
+                <path d="M61 58 L50 53 L50 70 Z" fill="#E05540"/>
+                <circle cx="50" cy="12" r="3" fill="white" opacity="0.9"/>
+                <path d="M26 22 L27.5 26 L32 28 L27.5 30 L26 34 L24.5 30 L20 28 L24.5 26 Z" fill="#FFB090" opacity="0.8"/>
+              </svg>
+              <span className="font-bold text-foreground tracking-wide text-sm">NAV<span className="text-gradient-coral">O</span></span>
             </div>
             <div className="text-xs text-muted-foreground font-medium">4 minutes · No resume required</div>
           </div>
@@ -339,10 +347,18 @@ export default function Onboarding() {
         <div className="fixed top-0 left-0 right-0 z-40 glass border-b border-border/50 px-6 py-4">
           <div className="max-w-2xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-coral flex items-center justify-center">
-                <Zap className="w-3.5 h-3.5 text-primary-foreground" />
-              </div>
-              <span className="font-bold text-foreground tracking-wide text-sm">Path<span className="text-gradient-coral">ly</span></span>
+              <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+                <rect width="100" height="100" rx="22" fill="#000"/>
+                <ellipse cx="50" cy="56" rx="38" ry="11" stroke="#D85A30" strokeWidth="2.5" fill="none" opacity="0.6"/>
+                <ellipse cx="50" cy="56" rx="30" ry="8" stroke="#D85A30" strokeWidth="1" fill="none" opacity="0.3"/>
+                <path d="M50 12 L39 58 L50 53 Z" fill="#9B3520"/>
+                <path d="M50 12 L61 58 L50 53 Z" fill="#F07050"/>
+                <path d="M39 58 L50 53 L50 70 Z" fill="#C04535"/>
+                <path d="M61 58 L50 53 L50 70 Z" fill="#E05540"/>
+                <circle cx="50" cy="12" r="3" fill="white" opacity="0.9"/>
+                <path d="M26 22 L27.5 26 L32 28 L27.5 30 L26 34 L24.5 30 L20 28 L24.5 26 Z" fill="#FFB090" opacity="0.8"/>
+              </svg>
+              <span className="font-bold text-foreground tracking-wide text-sm">NAV<span className="text-gradient-coral">O</span></span>
             </div>
           </div>
         </div>
@@ -411,10 +427,18 @@ export default function Onboarding() {
         <div className="fixed top-0 left-0 right-0 z-40 glass border-b border-border/50 px-6 py-4">
           <div className="max-w-2xl mx-auto flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-coral flex items-center justify-center">
-                <Zap className="w-3.5 h-3.5 text-primary-foreground" />
-              </div>
-              <span className="font-bold text-foreground tracking-wide text-sm">Path<span className="text-gradient-coral">ly</span></span>
+              <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+                <rect width="100" height="100" rx="22" fill="#000"/>
+                <ellipse cx="50" cy="56" rx="38" ry="11" stroke="#D85A30" strokeWidth="2.5" fill="none" opacity="0.6"/>
+                <ellipse cx="50" cy="56" rx="30" ry="8" stroke="#D85A30" strokeWidth="1" fill="none" opacity="0.3"/>
+                <path d="M50 12 L39 58 L50 53 Z" fill="#9B3520"/>
+                <path d="M50 12 L61 58 L50 53 Z" fill="#F07050"/>
+                <path d="M39 58 L50 53 L50 70 Z" fill="#C04535"/>
+                <path d="M61 58 L50 53 L50 70 Z" fill="#E05540"/>
+                <circle cx="50" cy="12" r="3" fill="white" opacity="0.9"/>
+                <path d="M26 22 L27.5 26 L32 28 L27.5 30 L26 34 L24.5 30 L20 28 L24.5 26 Z" fill="#FFB090" opacity="0.8"/>
+              </svg>
+              <span className="font-bold text-foreground tracking-wide text-sm">NAV<span className="text-gradient-coral">O</span></span>
             </div>
             <div className="text-xs text-muted-foreground font-medium">Complete ✓</div>
           </div>
@@ -460,7 +484,7 @@ export default function Onboarding() {
             Show me who I am
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </Button>
-          <p className="text-xs text-muted-foreground/40 mt-3">Your profile deepens the more you use Pathly.</p>
+          <p className="text-xs text-muted-foreground/40 mt-3">Your profile deepens the more you use NAVO.</p>
         </div>
       </div>
     );
@@ -472,10 +496,18 @@ export default function Onboarding() {
       <div className="fixed top-0 left-0 right-0 z-40 glass border-b border-border/50 px-6 py-4">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-coral flex items-center justify-center">
-              <Zap className="w-3.5 h-3.5 text-primary-foreground" />
-            </div>
-            <span className="font-bold text-foreground tracking-wide text-sm">Path<span className="text-gradient-coral">ly</span></span>
+            <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+              <rect width="100" height="100" rx="22" fill="#000"/>
+              <ellipse cx="50" cy="56" rx="38" ry="11" stroke="#D85A30" strokeWidth="2.5" fill="none" opacity="0.6"/>
+              <ellipse cx="50" cy="56" rx="30" ry="8" stroke="#D85A30" strokeWidth="1" fill="none" opacity="0.3"/>
+              <path d="M50 12 L39 58 L50 53 Z" fill="#9B3520"/>
+              <path d="M50 12 L61 58 L50 53 Z" fill="#F07050"/>
+              <path d="M39 58 L50 53 L50 70 Z" fill="#C04535"/>
+              <path d="M61 58 L50 53 L50 70 Z" fill="#E05540"/>
+              <circle cx="50" cy="12" r="3" fill="white" opacity="0.9"/>
+              <path d="M26 22 L27.5 26 L32 28 L27.5 30 L26 34 L24.5 30 L20 28 L24.5 26 Z" fill="#FFB090" opacity="0.8"/>
+            </svg>
+            <span className="font-bold text-foreground tracking-wide text-sm">NAV<span className="text-gradient-coral">O</span></span>
           </div>
           <div className="text-xs text-muted-foreground font-medium">{step + 1} of {total}</div>
         </div>
