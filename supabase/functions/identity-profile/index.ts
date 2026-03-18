@@ -32,8 +32,8 @@ CRITICAL RULES:
 - displacementStory is NON-NEGOTIABLE. It must always be present. It must always be exactly 2 sentences. It must reframe a career transition or job loss as forced evolution, not failure. If the user has not mentioned a job loss, still write it — frame it as the courage it takes to question the path they were on.
 - Be specific to their actual answers.
 - Write like a wise, warm friend — never a corporate coach.`;
+
 serve(async (req: Request) => {
-  // Handle CORS preflight
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
@@ -57,7 +57,6 @@ serve(async (req: Request) => {
       );
     }
 
-    // Format the user message from answers and optional context
     const userMessage = [
       context ? `Context: ${typeof context === "string" ? context : JSON.stringify(context)}` : null,
       `Answers: ${typeof answers === "string" ? answers : JSON.stringify(answers, null, 2)}`,
@@ -65,7 +64,7 @@ serve(async (req: Request) => {
       .filter(Boolean)
       .join("\n\n");
 
-    const anthropicResponse = await fetch("https://api.anthropic.com/v1/messages", {
+    const anthropicResponse = await fetch(ANTHROPIC_API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -73,19 +72,13 @@ serve(async (req: Request) => {
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "claude-opus-4-5",
+        model: ANTHROPIC_MODEL,
         max_tokens: 4096,
         system: SYSTEM_PROMPT,
-        messages: [
-          {
-            role: "user",
-            content: userMessage,
-          },
-        ],
+        messages: [{ role: "user", content: userMessage }],
       }),
     });
 
-    // Handle rate limiting gracefully
     if (anthropicResponse.status === 429) {
       const retryAfter = anthropicResponse.headers.get("retry-after");
       return new Response(
@@ -108,60 +101,45 @@ serve(async (req: Request) => {
       const errorBody = await anthropicResponse.text();
       console.error("Anthropic API error:", anthropicResponse.status, errorBody);
       return new Response(
-        JSON.stringify({
-          error: `Anthropic API error: ${anthropicResponse.status}`,
-          details: errorBody,
-        }),
-        {
-          status: 502,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        }
+        JSON.stringify({ error: `Anthropic API error: ${anthropicResponse.status}`, details: errorBody }),
+        { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
     const anthropicData = await anthropicResponse.json();
-
-    // Extract the text content from the response
     const rawContent = anthropicData?.content?.[0]?.text ?? "";
 
-    // Parse the JSON profile from the response
-    let profile: unknown;
+    let profile: Record<string, unknown>;
     try {
-      // Strip markdown code fences if present (e.g. ```json ... ```)
+      // Strip any accidental markdown fences the model may add
       const cleaned = rawContent
         .replace(/^```(?:json)?\s*/i, "")
-        .replace(/\s*```$/, "")
+        .replace(/\s*```\s*$/i, "")
         .trim();
       profile = JSON.parse(cleaned);
     } catch (parseError) {
       console.error("Failed to parse profile JSON:", parseError, "\nRaw content:", rawContent);
       return new Response(
-        JSON.stringify({
-          error: "Failed to parse identity profile from AI response",
-          raw: rawContent,
-        }),
-        {
-          status: 500,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        }
+        JSON.stringify({ error: "Failed to parse identity profile from AI response", raw: rawContent }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
+    }
+
+    // ── Safety net: guarantee displacementStory is always present ────
+    if (!profile.displacementStory || typeof profile.displacementStory !== "string" || profile.displacementStory.trim() === "") {
+      profile.displacementStory =
+        "What felt like the floor falling out was actually a clearing — the old path simply ran out of room for who you're becoming. You were never going to find your real direction inside a story that was written for someone else.";
     }
 
     return new Response(
       JSON.stringify({ profile }),
-      {
-        status: 200,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
+      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err) {
     console.error("Unhandled error in identity-profile function:", err);
     return new Response(
       JSON.stringify({ error: "Internal server error", details: String(err) }),
-      {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
+      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
 });
