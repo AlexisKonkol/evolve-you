@@ -6,7 +6,10 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
-const SYSTEM_PROMPT = `You are NAVO's identity engine — a behavioral psychologist, narrative therapist, and life strategist combined.
+const ANTHROPIC_MODEL = "claude-haiku-4-5-20251001";
+const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
+
+const SYSTEM_PROMPT = `You are Pathly's identity engine — a behavioral psychologist, narrative therapist, and life strategist combined.
 
 Analyze the user's reflection answers and return ONLY valid JSON. No markdown, no explanation, no code fences.
 
@@ -20,15 +23,15 @@ Return this EXACT JSON structure with ALL fields included:
   "mirrorMoment": "the most powerful insight — make them want to screenshot this",
   "curiosityThread": "the underlying theme connecting all answers",
   "identityNarrative": "3-4 sentences written directly to them using you/your",
-  "displacementStory": "MANDATORY — exactly 2 warm sentences reframing their transition as forced evolution not failure — sound like a wise friend giving a hug"
+  "displacementStory": "MANDATORY — exactly 2 warm sentences reframing their career transition or job loss as a forced evolution not a failure — sound like a wise friend giving a hug, e.g. 'What felt like the floor falling out was actually a clearing. You were never going to find your real path inside the old one.'"
 }
 
 CRITICAL RULES:
-- Return ONLY the JSON. Nothing else. No markdown.
-- ALL fields are required. Never skip any.
-- displacementStory is MANDATORY. Always 2 sentences. Never omit it.
+- Return ONLY the JSON object. Nothing before it, nothing after it. No markdown fences.
+- ALL 9 fields are required. Never skip any field.
+- displacementStory is NON-NEGOTIABLE. It must always be present. It must always be exactly 2 sentences. It must reframe a career transition or job loss as forced evolution, not failure. If the user has not mentioned a job loss, still write it — frame it as the courage it takes to question the path they were on.
 - Be specific to their actual answers.
-- Write like a wise friend not a corporate coach.`;
+- Write like a wise, warm friend — never a corporate coach.`;
 serve(async (req: Request) => {
   // Handle CORS preflight
   if (req.method === "OPTIONS") {
