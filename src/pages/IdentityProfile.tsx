@@ -540,41 +540,61 @@ export default function IdentityProfile() {
             <MirrorMoment text={profile.mirrorMoment} />
           </Reveal>
 
-          {/* ── DISPLACEMENT STORY ──────────────────────────────────── */}
-          {profile.displacementStory && (
-            <Reveal delay={125}>
+          {/* ── THE REFRAME ─────────────────────────────────────────── */}
+          <Reveal delay={125}>
+            <div
+              className="relative rounded-2xl overflow-hidden border"
+              style={{
+                background: "linear-gradient(135deg, hsl(258 40% 10%), hsl(258 30% 13%))",
+                borderColor: "hsl(var(--violet) / 0.35)",
+              }}
+            >
+              {/* Violet radial glow */}
               <div
-                className="relative rounded-2xl overflow-hidden border"
+                className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: "linear-gradient(135deg, hsl(var(--surface-1)), hsl(20 14% 11%))",
-                  borderColor: "hsl(var(--violet) / 0.25)",
+                  background: "radial-gradient(ellipse 90% 60% at 50% 0%, hsl(var(--violet) / 0.12), transparent)",
                 }}
-              >
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{ background: "radial-gradient(ellipse 80% 60% at 50% 0%, hsl(var(--violet) / 0.06), transparent)" }}
-                />
-                <div className="relative p-6 md:p-8">
-                  <div className="flex items-center gap-2 mb-5">
-                    <div className="w-8 h-8 rounded-xl flex items-center justify-center"
-                      style={{ background: "hsl(var(--violet) / 0.15)" }}>
-                      <Flame className="w-4 h-4 text-violet" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-violet">The Reframe</p>
-                      <p className="text-xs text-muted-foreground">What this moment is really about</p>
-                    </div>
-                  </div>
-                  <p
-                    className="text-lg md:text-xl font-medium text-foreground leading-relaxed italic"
-                    style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
+              />
+              {/* Top accent line */}
+              <div
+                className="absolute top-0 left-0 right-0 h-px"
+                style={{ background: "linear-gradient(90deg, transparent, hsl(var(--violet) / 0.6), transparent)" }}
+              />
+              <div className="relative p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-5">
+                  <div
+                    className="w-9 h-9 rounded-xl flex items-center justify-center"
+                    style={{
+                      background: "hsl(var(--violet) / 0.18)",
+                      border: "1px solid hsl(var(--violet) / 0.3)",
+                      boxShadow: "0 0 16px -4px hsl(var(--violet) / 0.35)",
+                    }}
                   >
-                    "{profile.displacementStory}"
-                  </p>
+                    <Wind className="w-4 h-4" style={{ color: "hsl(var(--violet))" }} />
+                  </div>
+                  <div>
+                    <p
+                      className="text-xs font-bold uppercase tracking-widest"
+                      style={{ color: "hsl(var(--violet))" }}
+                    >
+                      The Reframe
+                    </p>
+                    <p className="text-xs text-muted-foreground">A different way to see this moment</p>
+                  </div>
                 </div>
+                <blockquote
+                  className="text-lg md:text-xl font-medium leading-relaxed italic"
+                  style={{
+                    fontFamily: "'DM Serif Display', Georgia, serif",
+                    color: "hsl(var(--foreground) / 0.9)",
+                  }}
+                >
+                  "{profile.displacementStory || "This transition isn't a detour — it's the actual path. The version of you that exists on the other side of this moment is more aligned, more whole, and more you."}"
+                </blockquote>
               </div>
-            </Reveal>
-          )}
+            </div>
+          </Reveal>
 
           {/* ── IDENTITY NARRATIVE ──────────────────────────────── */}
           <Reveal delay={150}>
