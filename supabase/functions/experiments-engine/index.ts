@@ -21,7 +21,7 @@ serve(async (req) => {
 
     if (type === "reflect") {
       const { experimentTitle, dayTitle, reflection } = body;
-      systemPrompt = `You are a thoughtful life coach on the Pathly platform. 
+      systemPrompt = `You are a thoughtful life coach on the NAVO platform. 
 Your role is to help people explore potential paths through small experiments.
 When someone shares a reflection after a daily experiment activity, give them a brief, insightful, encouraging response.
 Speak directly to them. Use calm, human language. 2-3 sentences maximum. No bullet points, no headings.
@@ -36,7 +36,7 @@ Give a short, insightful coach response about what this reflection reveals about
 
     } else if (type === "recommend") {
       const { completedExperiments } = body;
-      systemPrompt = `You are a thoughtful life coach on the Pathly platform.
+      systemPrompt = `You are a thoughtful life coach on the NAVO platform.
 Your role is to suggest meaningful experiment directions based on what someone has already explored.
 Use calm, human language. Be specific and personal. No corporate jargon.
 Format: 3-4 short paragraphs. Each paragraph suggests one direction with a brief reason.
@@ -46,7 +46,7 @@ Keep it under 200 words total. Focus on curiosity and exploration, not career ou
         ? `Experiments they have already completed: ${completedExperiments.join(", ")}`
         : "They haven't completed any experiments yet.";
 
-      userPrompt = `Based on someone who has been exploring on Pathly, suggest 3 meaningful experiments they might want to try next.
+      userPrompt = `Based on someone who has been exploring on NAVO, suggest 3 meaningful experiments they might want to try next.
 ${completedList}
 
 If they haven't completed any, suggest experiments that are good starting points for self-discovery.

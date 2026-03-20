@@ -15,7 +15,7 @@ const archetypeData = {
 export function ShareableIdentityCard() {
   const [copied, setCopied] = useState(false);
 
-  const shareText = `My Pathly identity archetype: "${archetypeData.name}" — ${archetypeData.tagline} Discover yours at pathly.app`;
+  const shareText = `My NAVO identity archetype: "${archetypeData.name}" — ${archetypeData.tagline} Discover yours at navo.app`;
 
   const copy = () => {
     navigator.clipboard.writeText(shareText).then(() => {
@@ -66,7 +66,7 @@ export function ShareableIdentityCard() {
             <div className="w-5 h-5 rounded-md bg-gradient-coral flex items-center justify-center">
               <Flame className="w-2.5 h-2.5 text-primary-foreground" />
             </div>
-            <span className="text-xs font-bold text-muted-foreground tracking-widest uppercase">Pathly</span>
+            <span className="text-xs font-bold text-muted-foreground tracking-widest uppercase">NAVO</span>
           </div>
 
           {/* Archetype */}

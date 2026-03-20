@@ -6,7 +6,7 @@ import {
   Lightbulb, Zap, Compass, Heart, Star,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import pathlyLogo from "@/assets/pathly-logo.png";
+import navoLogo from "@/assets/navo-logo.png";
 import { toast } from "sonner";
 
 const CLARITY_ENGINE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/clarity-engine`;
@@ -216,7 +216,7 @@ export default function ClarityEngine() {
         <div className="relative z-10 max-w-lg w-full text-center animate-fade-up">
           {/* Logo */}
           <Link to="/" className="inline-flex items-center gap-2 mb-10">
-            <img src={pathlyLogo} alt="Pathly" className="w-7 h-7 rounded-lg object-contain" />
+            <img src={navoLogo} alt="NAVO" className="w-7 h-7 rounded-lg object-contain" />
             <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
           </Link>
 
@@ -319,7 +319,7 @@ export default function ClarityEngine() {
           {/* Header */}
           <div className="text-center mb-12 animate-fade-up">
             <Link to="/" className="inline-flex items-center gap-2 mb-8">
-              <img src={pathlyLogo} alt="Pathly" className="w-6 h-6 rounded-md object-contain" />
+              <img src={navoLogo} alt="NAVO" className="w-6 h-6 rounded-md object-contain" />
               <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
             </Link>
             <div className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5"
@@ -512,7 +512,7 @@ export default function ClarityEngine() {
       {/* Nav */}
       <div className="relative z-10 flex items-center justify-between px-6 py-5">
         <Link to="/" className="flex items-center gap-2">
-          <img src={pathlyLogo} alt="Pathly" className="w-7 h-7 rounded-lg object-contain" />
+          <img src={navoLogo} alt="NAVO" className="w-7 h-7 rounded-lg object-contain" />
           <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
         </Link>
         <div className="flex items-center gap-3">

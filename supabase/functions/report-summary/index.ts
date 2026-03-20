@@ -15,7 +15,7 @@ serve(async (req) => {
 
     const { name, archetype, curiosityAreas, strengths, energySources } = await req.json();
 
-    const systemPrompt = `You are a thoughtful insight writer for Pathly, a self-discovery platform.
+    const systemPrompt = `You are a thoughtful insight writer for NAVO, a self-discovery platform.
 Your role is to write a warm, personal, flowing narrative summary about a user based on their profile data.
 
 Rules:
@@ -29,7 +29,7 @@ Rules:
 - End with an observation that opens possibility, not a directive.
 - Keep the total response under 120 words.`;
 
-    const userPrompt = `Write a personal narrative summary for this Pathly user:
+    const userPrompt = `Write a personal narrative summary for this NAVO user:
 
 Name: ${name}
 Archetype: ${archetype}

@@ -22,7 +22,7 @@ serve(async (req) => {
       });
     }
 
-    const systemPrompt = `You are a thoughtful identity coach on Pathly, a self-discovery platform.
+    const systemPrompt = `You are a thoughtful identity coach on NAVO, a self-discovery platform.
 Your role is to generate warm, insightful observations about someone's emerging identity based on their interests and strengths.
 
 Format your response with exactly these sections (use these exact headers):

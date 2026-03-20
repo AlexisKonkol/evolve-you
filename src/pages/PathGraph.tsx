@@ -6,7 +6,7 @@ import {
   Brain, TrendingUp, FlaskConical, BookOpen, Users, Map,
   Lightbulb, Eye,
 } from "lucide-react";
-import pathlyLogo from "@/assets/pathly-logo.png";
+import navoLogo from "@/assets/navo-logo.png";
 
 // ── Color palette per node type ────────────────────────────────────
 const TYPE_STYLE = {
@@ -590,7 +590,7 @@ export default function PathGraph() {
 
         <div className="relative z-10 max-w-xl w-full text-center animate-fade-up">
           <Link to="/" className="inline-flex items-center gap-2 mb-10">
-            <img src={pathlyLogo} alt="Pathly" className="w-7 h-7 rounded-lg object-contain" />
+            <img src={navoLogo} alt="NAVO" className="w-7 h-7 rounded-lg object-contain" />
             <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
           </Link>
 
@@ -658,7 +658,7 @@ export default function PathGraph() {
       {/* Top bar */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-border/40 shrink-0 glass sticky top-0 z-30">
         <Link to="/" className="flex items-center gap-2">
-          <img src={pathlyLogo} alt="Pathly" className="w-6 h-6 rounded-md object-contain" />
+          <img src={navoLogo} alt="NAVO" className="w-6 h-6 rounded-md object-contain" />
           <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
         </Link>
 

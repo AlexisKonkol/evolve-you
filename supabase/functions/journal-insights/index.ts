@@ -22,7 +22,7 @@ serve(async (req) => {
       });
     }
 
-    const systemPrompt = `You are a thoughtful life coach on Pathly, a self-discovery platform.
+    const systemPrompt = `You are a thoughtful life coach on NAVO, a self-discovery platform.
 You are analyzing someone's private journal reflections to help them understand themselves better.
 Your goal is to surface genuine patterns in their thinking — not to flatter them.
 

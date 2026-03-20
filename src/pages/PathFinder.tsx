@@ -7,7 +7,7 @@ import {
   BookOpen, Users, Globe, Lightbulb, Map, Brain,
   CheckCircle2, Circle,
 } from "lucide-react";
-import pathlyLogo from "@/assets/pathly-logo.png";
+import navoLogo from "@/assets/navo-logo.png";
 import { toast } from "sonner";
 
 const PATH_FINDER_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/path-finder`;
@@ -647,7 +647,7 @@ export default function PathFinder() {
 
         <div className="relative z-10 max-w-xl w-full text-center animate-fade-up">
           <Link to="/" className="inline-flex items-center gap-2 mb-10">
-            <img src={pathlyLogo} alt="Pathly" className="w-7 h-7 rounded-lg object-contain" />
+            <img src={navoLogo} alt="NAVO" className="w-7 h-7 rounded-lg object-contain" />
             <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
           </Link>
 
@@ -772,7 +772,7 @@ export default function PathFinder() {
         {/* Top bar */}
         <div className="flex items-center justify-between px-6 py-4 shrink-0">
           <Link to="/" className="flex items-center gap-2">
-            <img src={pathlyLogo} alt="Pathly" className="w-6 h-6 rounded-md object-contain" />
+            <img src={navoLogo} alt="NAVO" className="w-6 h-6 rounded-md object-contain" />
             <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
           </Link>
           <div className="text-xs text-muted-foreground">{current + 1} of {inputQuestions.length}</div>
@@ -861,7 +861,7 @@ export default function PathFinder() {
           {/* Header */}
           <div className="text-center mb-12 animate-fade-up">
             <Link to="/" className="inline-flex items-center gap-2 mb-8">
-              <img src={pathlyLogo} alt="Pathly" className="w-6 h-6 rounded-md object-contain" />
+              <img src={navoLogo} alt="NAVO" className="w-6 h-6 rounded-md object-contain" />
               <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
             </Link>
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-5 border"
@@ -933,7 +933,7 @@ export default function PathFinder() {
           {/* Header */}
           <div className="text-center mb-12 animate-fade-up">
             <Link to="/" className="inline-flex items-center gap-2 mb-8">
-              <img src={pathlyLogo} alt="Pathly" className="w-6 h-6 rounded-md object-contain" />
+              <img src={navoLogo} alt="NAVO" className="w-6 h-6 rounded-md object-contain" />
               <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
             </Link>
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-5 border"
@@ -1009,7 +1009,7 @@ export default function PathFinder() {
           {/* Logo */}
           <div className="flex justify-center mb-10">
             <Link to="/" className="flex items-center gap-2">
-              <img src={pathlyLogo} alt="Pathly" className="w-6 h-6 rounded-md object-contain" />
+              <img src={navoLogo} alt="NAVO" className="w-6 h-6 rounded-md object-contain" />
               <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
             </Link>
           </div>

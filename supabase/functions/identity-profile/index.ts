@@ -9,7 +9,7 @@ const corsHeaders = {
 const ANTHROPIC_MODEL = "claude-haiku-4-5-20251001";
 const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
 
-const SYSTEM_PROMPT = `You are Pathly's identity engine — a behavioral psychologist, narrative therapist, and life strategist combined.
+const SYSTEM_PROMPT = `You are NAVO's identity engine — a behavioral psychologist, narrative therapist, and life strategist combined.
 
 Analyze the user's reflection answers and return ONLY valid JSON. No markdown, no explanation, no code fences.
 

@@ -72,11 +72,11 @@ const plans = [
 const faqItems = [
   {
     q: "Is this a job board or recruiter platform?",
-    a: "No. Pathly is an identity exploration and career reinvention platform. We don't post jobs or connect you with recruiters. We help you understand who you are, identify new opportunities, and design your next career chapter.",
+    a: "No. NAVO is an identity exploration and career reinvention platform. We don't post jobs or connect you with recruiters. We help you understand who you are, identify new opportunities, and design your next career chapter.",
   },
   {
     q: "How is this different from LinkedIn Learning or Coursera?",
-    a: "Those platforms offer courses. Pathly offers a complete reinvention system — starting with identity discovery, then skill translation, then personalised paths. It's coaching + learning + community in one place.",
+    a: "Those platforms offer courses. NAVO offers a complete reinvention system — starting with identity discovery, then skill translation, then personalised paths. It's coaching + learning + community in one place.",
   },
   {
     q: "What if I don't know what I want to do next?",

@@ -219,7 +219,7 @@ export default function ProfilePage() {
 
           {/* CTA */}
           <div className="mt-8 text-center">
-            <p className="text-muted-foreground text-sm mb-4">Start your own journey on Pathly</p>
+            <p className="text-muted-foreground text-sm mb-4">Start your own journey on NAVO</p>
             <Link to="/onboarding">
               <Button className="bg-gradient-coral text-primary-foreground gap-2 hover:opacity-90 px-6">
                 Begin Your Journey

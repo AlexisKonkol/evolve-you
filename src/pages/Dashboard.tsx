@@ -259,7 +259,7 @@ export default function Dashboard() {
                   </Button>
                 </Link>
               </div>
-              {/* Pathly Report CTA */}
+              {/* NAVO Report CTA */}
               <div className="rounded-2xl border p-5"
                 style={{ background: "linear-gradient(135deg, hsl(var(--coral) / 0.06), hsl(var(--amber) / 0.06))", borderColor: "hsl(var(--coral) / 0.2)" }}>
                 <div className="flex items-center gap-3 mb-3">
@@ -268,7 +268,7 @@ export default function Dashboard() {
                     <Sparkles className="w-3.5 h-3.5 text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground text-sm">Your Pathly Report</h3>
+                    <h3 className="font-semibold text-foreground text-sm">Your NAVO Report</h3>
                     <p className="text-xs text-muted-foreground">Your personalized insight report</p>
                   </div>
                 </div>
@@ -434,7 +434,7 @@ export default function Dashboard() {
                     { icon: BookOpen, label: "Become someone who understands AI", sub: "15 min · Beginner",                   href: "/learn",              highlight: false },
                     { icon: Map,      label: "Explore paths that match you",   sub: "3 paths aligned to your identity",        href: "/paths",              highlight: false },
                     { icon: Users,    label: "Join others on this journey",    sub: "Career Pivots community",                 href: "/community",          highlight: false },
-                    { icon: Users,    label: "Pathly Network",                  sub: "Connect with people exploring similar paths", href: "/network",           highlight: false },
+                    { icon: Users,    label: "NAVO Network",                  sub: "Connect with people exploring similar paths", href: "/network",           highlight: false },
                   ].map((item) => (
                     <Link key={item.label} to={item.href}
                       className={`flex items-center gap-3 p-3 rounded-xl transition-colors group ${
