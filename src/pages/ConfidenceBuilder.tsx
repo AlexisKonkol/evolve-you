@@ -6,7 +6,7 @@ import {
   Star, Wrench, Users, Brain, Heart,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import pathlyLogo from "@/assets/pathly-logo.png";
+import navoLogo from "@/assets/navo-logo.png";
 import { toast } from "sonner";
 
 const CONFIDENCE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/confidence-builder`;
@@ -490,7 +490,7 @@ export default function ConfidenceBuilder() {
       {/* Nav */}
       <div className="relative z-10 flex items-center justify-between px-6 py-5">
         <Link to="/" className="flex items-center gap-2">
-          <img src={pathlyLogo} alt="Pathly" className="w-7 h-7 rounded-lg object-contain" />
+          <img src={navoLogo} alt="NAVO" className="w-7 h-7 rounded-lg object-contain" />
           <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
         </Link>
         <div className="flex items-center gap-3">

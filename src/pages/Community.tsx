@@ -78,7 +78,7 @@ const recentPosts = [
     author: "Sarah K.",
     group: "Career Pivots After Layoffs",
     time: "2 hours ago",
-    content: "After 8 months of feeling lost after my layoff, I finally landed my first client as an AI workflow consultant. The Pathly path was my roadmap. Don't give up. 🙌",
+    content: "After 8 months of feeling lost after my layoff, I finally landed my first client as an AI workflow consultant. The NAVO path was my roadmap. Don't give up. 🙌",
     likes: 147,
     replies: 38,
   },

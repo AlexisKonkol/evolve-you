@@ -244,7 +244,7 @@ const cTag: Record<string, string> = {
 
 // ── Component ─────────────────────────────────────────────────────────────────
 
-export default function PathlyNetwork() {
+export default function NAVONetwork() {
   const [joinedCommunities, setJoinedCommunities] = useState<number[]>([1]);
   const [joinedGroups, setJoinedGroups] = useState<number[]>([]);
   const [joinedExperiments, setJoinedExperiments] = useState<number[]>([]);
@@ -282,13 +282,13 @@ export default function PathlyNetwork() {
                 color: "hsl(var(--violet))",
               }}>
               <Users className="w-3.5 h-3.5" />
-              Pathly Network
+              NAVO Network
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
               You are not alone<br className="hidden sm:block" /> in exploring your future
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              The Pathly Network connects you with others who are also exploring new directions, 
+              The NAVO Network connects you with others who are also exploring new directions, 
               learning new skills, and designing their next chapter.
             </p>
           </div>

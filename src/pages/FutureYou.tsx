@@ -6,7 +6,7 @@ import {
   Sun, Zap, Star, Brain, Clock, TrendingUp,
   HelpCircle, Plus, X, ChevronDown, ChevronUp, Eye,
 } from "lucide-react";
-import pathlyLogo from "@/assets/pathly-logo.png";
+import navoLogo from "@/assets/navo-logo.png";
 import { toast } from "sonner";
 
 const FUTURE_YOU_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/future-you`;
@@ -448,7 +448,7 @@ export default function FutureYou() {
 
         <div className="relative z-10 max-w-xl w-full text-center animate-fade-up">
           <Link to="/" className="inline-flex items-center gap-2 mb-10">
-            <img src={pathlyLogo} alt="Pathly" className="w-7 h-7 rounded-lg object-contain" />
+            <img src={navoLogo} alt="NAVO" className="w-7 h-7 rounded-lg object-contain" />
             <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
           </Link>
 
@@ -565,7 +565,7 @@ export default function FutureYou() {
           {/* Header */}
           <div className="text-center mb-10 animate-fade-up">
             <Link to="/" className="inline-flex items-center gap-2 mb-8">
-              <img src={pathlyLogo} alt="Pathly" className="w-6 h-6 rounded-md object-contain" />
+              <img src={navoLogo} alt="NAVO" className="w-6 h-6 rounded-md object-contain" />
               <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
             </Link>
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-5 border"
@@ -702,7 +702,7 @@ export default function FutureYou() {
           {/* Header */}
           <div className="text-center mb-10 animate-fade-up">
             <Link to="/" className="inline-flex items-center gap-2 mb-8">
-              <img src={pathlyLogo} alt="Pathly" className="w-6 h-6 rounded-md object-contain" />
+              <img src={navoLogo} alt="NAVO" className="w-6 h-6 rounded-md object-contain" />
               <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
             </Link>
             <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5"
@@ -764,7 +764,7 @@ export default function FutureYou() {
         <div className="relative z-10 container max-w-3xl py-16 px-6">
           <div className="flex justify-center mb-10">
             <Link to="/" className="flex items-center gap-2">
-              <img src={pathlyLogo} alt="Pathly" className="w-6 h-6 rounded-md object-contain" />
+              <img src={navoLogo} alt="NAVO" className="w-6 h-6 rounded-md object-contain" />
               <span className="text-sm font-bold text-foreground">Path<span className="text-gradient-coral">ly</span></span>
             </Link>
           </div>

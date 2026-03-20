@@ -248,13 +248,13 @@ export default function Intelligence() {
                 color: "hsl(var(--violet))",
               }}>
               <Brain className="w-3.5 h-3.5" />
-              Pathly Intelligence
+              NAVO Intelligence
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight">
               Patterns of discovery<br className="hidden sm:block" /> across every path
             </h1>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-              Every person exploring their path generates valuable insight. The Pathly Intelligence Engine 
+              Every person exploring their path generates valuable insight. The NAVO Intelligence Engine 
               learns from patterns across the platform to help reveal new possibilities for you.
             </p>
           </div>

@@ -345,7 +345,7 @@ export default function Report() {
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest mb-4"
                     style={{ background: "hsl(var(--coral) / 0.15)", color: "hsl(var(--coral))", border: "1px solid hsl(var(--coral) / 0.25)" }}>
                     <Sparkles className="w-3 h-3" />
-                    Pathly Report · {reportMeta.generatedDate}
+                    NAVO Report · {reportMeta.generatedDate}
                   </div>
                   <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
                     {reportMeta.name}'s Path Report
@@ -408,7 +408,7 @@ export default function Report() {
                       <Sparkles className="w-3.5 h-3.5 text-primary-foreground" />
                     </div>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Pathly Insight</p>
+                      <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">NAVO Insight</p>
                       <p className="text-sm font-semibold text-foreground">Who you appear to be becoming</p>
                     </div>
                   </div>
@@ -699,7 +699,7 @@ export default function Report() {
                   {copied ? "Link copied!" : "Copy report link"}
                 </Button>
                 <a
-                  href={`https://twitter.com/intent/tweet?text=Just+read+my+Pathly+Report+—+it+revealed+patterns+I+hadn%27t+seen+in+myself.+Understanding+yourself+is+the+beginning.+%23Pathly`}
+                  href={`https://twitter.com/intent/tweet?text=Just+read+my+NAVO+Report+—+it+revealed+patterns+I+hadn%27t+seen+in+myself.+Understanding+yourself+is+the+beginning.+%23NAVO`}
                   target="_blank"
                   rel="noopener noreferrer">
                   <Button variant="outline" className="gap-2 text-sm border-border hover:border-coral-500/40">
@@ -721,7 +721,7 @@ export default function Report() {
             <p className="text-sm text-muted-foreground italic">
               "Understanding yourself is the beginning of designing your future."
             </p>
-            <p className="text-xs text-muted-foreground/60 mt-2">Pathly · {reportMeta.generatedDate}</p>
+            <p className="text-xs text-muted-foreground/60 mt-2">NAVO · {reportMeta.generatedDate}</p>
           </div>
 
         </div>
@@ -816,7 +816,7 @@ function IdentitySnapshotCard() {
         {/* Divider */}
         <div className="h-px mb-5" style={{ background: "linear-gradient(90deg, transparent, hsl(var(--border)), transparent)" }} />
 
-        {/* Core quote + Pathly branding */}
+        {/* Core quote + NAVO branding */}
         <div className="flex items-end justify-between gap-4">
           <p className="text-xs text-muted-foreground/70 italic leading-relaxed max-w-xs">
             "Understanding yourself is the beginning of designing your future."
@@ -826,7 +826,7 @@ function IdentitySnapshotCard() {
               style={{ background: "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)))" }}>
               <Sparkles className="w-2.5 h-2.5 text-primary-foreground" />
             </div>
-            <span className="text-xs font-bold text-muted-foreground/60 tracking-widest uppercase">Pathly</span>
+            <span className="text-xs font-bold text-muted-foreground/60 tracking-widest uppercase">NAVO</span>
           </div>
         </div>
       </div>

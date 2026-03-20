@@ -155,14 +155,14 @@ const dimensions = [
     tagline: "The story you're telling about who you're becoming",
     what: "Synthesizes all five dimensions into a coherent identity story — not who you were, but who you are becoming. Captures the through-line of the person's life across change and transition.",
     why: "Identity is not a fixed state — it is an evolving narrative. People who successfully navigate major life transitions do so by constructing a coherent story that connects their past self to their future possibilities. This dimension anchors everything else.",
-    psychBasis: "McAdams' Narrative Identity Theory shows that personal identity is essentially the internalized story we tell about ourselves. Pathly helps users author a forward-facing identity narrative rather than defining themselves by their past roles.",
+    psychBasis: "McAdams' Narrative Identity Theory shows that personal identity is essentially the internalized story we tell about ourselves. NAVO helps users author a forward-facing identity narrative rather than defining themselves by their past roles.",
     questions: [
       "If the best version of yourself looked back on this period in five years, what would they say it was really about?",
       "What old version of yourself are you outgrowing right now?",
       "What are you becoming — not doing, but becoming?",
       "What chapter of your life is this, and what needs to be true by the end of it?",
     ],
-    insight: "\"Your answers consistently describe someone in the middle of a meaningful transition — from [executor of others' visions] to [architect of your own]. That shift is the real work Pathly is here to support.\"",
+    insight: "\"Your answers consistently describe someone in the middle of a meaningful transition — from [executor of others' visions] to [architect of your own]. That shift is the real work NAVO is here to support.\"",
     visualization: "Identity Timeline — a narrative arc showing past identity anchors, current transition zone, and future horizon",
   },
 ];
@@ -171,7 +171,7 @@ const synthesis = [
   {
     icon: Brain,
     title: "Identity Profile",
-    desc: "Pathly combines your 6 signal dimensions to generate a personal archetype and narrative — not a job title, but a portrait of who you are and the conditions where you come alive.",
+    desc: "NAVO combines your 6 signal dimensions to generate a personal archetype and narrative — not a job title, but a portrait of who you are and the conditions where you come alive.",
     color: "coral",
   },
   {
@@ -183,7 +183,7 @@ const synthesis = [
   {
     icon: FlaskConical,
     title: "Micro-Experiments",
-    desc: "Rather than forcing a decision, Pathly generates specific low-commitment experiments — actions you can take in the next 7–14 days to test a direction before committing to it.",
+    desc: "Rather than forcing a decision, NAVO generates specific low-commitment experiments — actions you can take in the next 7–14 days to test a direction before committing to it.",
     color: "violet",
   },
   {
@@ -338,7 +338,7 @@ export default function Framework() {
               }}
             >
               <Brain className="w-4 h-4" />
-              Pathly's Intellectual Model
+              NAVO's Intellectual Model
             </div>
 
             <h1 className="font-display text-5xl md:text-6xl text-foreground leading-[1.1] tracking-tight mb-5">
@@ -452,7 +452,7 @@ export default function Framework() {
                 Your identity as a living map
               </h2>
               <p className="text-muted-foreground max-w-md mx-auto text-sm leading-relaxed">
-                Pathly visualizes your PATH Signal as an interconnected system — not a flat chart, but a network showing how your dimensions relate, reinforce, and point toward each other.
+                NAVO visualizes your PATH Signal as an interconnected system — not a flat chart, but a network showing how your dimensions relate, reinforce, and point toward each other.
               </p>
             </div>
 
@@ -633,7 +633,7 @@ export default function Framework() {
               <span className="text-gradient-coral">PATH Signal?</span>
             </h2>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              The framework comes to life through Pathly's guided identity experience. It takes about 12 minutes and produces something no career quiz ever has.
+              The framework comes to life through NAVO's guided identity experience. It takes about 12 minutes and produces something no career quiz ever has.
             </p>
             <Link to="/onboarding">
               <Button
