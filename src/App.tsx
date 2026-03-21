@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FloatingCoach } from "@/components/FloatingCoach";
+import ProtectedRoute from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
@@ -35,6 +36,8 @@ import IdentityProfile from "./pages/IdentityProfile";
 import NotFound from "./pages/NotFound";
 import Compass from "./pages/Compass";
 import CompassResults from "./pages/CompassResults";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const queryClient = new QueryClient();
 
@@ -45,36 +48,153 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          {/* Public routes */}
           <Route path="/" element={<Index />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/identity-map" element={<IdentityMap />} />
-          <Route path="/opportunities" element={<Opportunities />} />
-          <Route path="/opportunity-engine" element={<OpportunityEngine />} />
-          <Route path="/paths" element={<Paths />} />
-          <Route path="/learn" element={<Learn />} />
-          <Route path="/experiments" element={<Experiments />} />
-          <Route path="/coach" element={<Coach />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/network" element={<NAVONetwork />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/life-clarity" element={<LifeClarity />} />
-          <Route path="/future-vision" element={<FutureVision />} />
-          <Route path="/confidence-builder" element={<ConfidenceBuilder />} />
-          <Route path="/clarity-engine" element={<ClarityEngine />} />
-          <Route path="/path-finder" element={<PathFinder />} />
-          <Route path="/future-you" element={<FutureYou />} />
-          <Route path="/path-graph" element={<PathGraph />} />
-          <Route path="/journal" element={<Journal />} />
-          <Route path="/mentor" element={<Mentor />} />
-          <Route path="/identity-dashboard" element={<IdentityDashboard />} />
-          <Route path="/intelligence" element={<Intelligence />} />
-          <Route path="/report" element={<Report />} />
-          <Route path="/framework" element={<Framework />} />
-          <Route path="/identity-profile" element={<IdentityProfile />} />
-          <Route path="/compass" element={<Compass />} />
-          <Route path="/compass/results" element={<CompassResults />} />
+          
+          {/* Protected routes */}
+          <Route path="/onboarding" element={
+            <ProtectedRoute>
+              <Onboarding />
+            </ProtectedRoute>
+          } />
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/compass" element={
+            <ProtectedRoute>
+              <Compass />
+            </ProtectedRoute>
+          } />
+          <Route path="/compass/results" element={
+            <ProtectedRoute>
+              <CompassResults />
+            </ProtectedRoute>
+          } />
+          <Route path="/journal" element={
+            <ProtectedRoute>
+              <Journal />
+            </ProtectedRoute>
+          } />
+          <Route path="/profile" element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          } />
+          <Route path="/identity-map" element={
+            <ProtectedRoute>
+              <IdentityMap />
+            </ProtectedRoute>
+          } />
+          <Route path="/opportunities" element={
+            <ProtectedRoute>
+              <Opportunities />
+            </ProtectedRoute>
+          } />
+          <Route path="/opportunity-engine" element={
+            <ProtectedRoute>
+              <OpportunityEngine />
+            </ProtectedRoute>
+          } />
+          <Route path="/paths" element={
+            <ProtectedRoute>
+              <Paths />
+            </ProtectedRoute>
+          } />
+          <Route path="/learn" element={
+            <ProtectedRoute>
+              <Learn />
+            </ProtectedRoute>
+          } />
+          <Route path="/experiments" element={
+            <ProtectedRoute>
+              <Experiments />
+            </ProtectedRoute>
+          } />
+          <Route path="/coach" element={
+            <ProtectedRoute>
+              <Coach />
+            </ProtectedRoute>
+          } />
+          <Route path="/community" element={
+            <ProtectedRoute>
+              <Community />
+            </ProtectedRoute>
+          } />
+          <Route path="/network" element={
+            <ProtectedRoute>
+              <NAVONetwork />
+            </ProtectedRoute>
+          } />
+          <Route path="/life-clarity" element={
+            <ProtectedRoute>
+              <LifeClarity />
+            </ProtectedRoute>
+          } />
+          <Route path="/future-vision" element={
+            <ProtectedRoute>
+              <FutureVision />
+            </ProtectedRoute>
+          } />
+          <Route path="/confidence-builder" element={
+            <ProtectedRoute>
+              <ConfidenceBuilder />
+            </ProtectedRoute>
+          } />
+          <Route path="/clarity-engine" element={
+            <ProtectedRoute>
+              <ClarityEngine />
+            </ProtectedRoute>
+          } />
+          <Route path="/path-finder" element={
+            <ProtectedRoute>
+              <PathFinder />
+            </ProtectedRoute>
+          } />
+          <Route path="/future-you" element={
+            <ProtectedRoute>
+              <FutureYou />
+            </ProtectedRoute>
+          } />
+          <Route path="/path-graph" element={
+            <ProtectedRoute>
+              <PathGraph />
+            </ProtectedRoute>
+          } />
+          <Route path="/mentor" element={
+            <ProtectedRoute>
+              <Mentor />
+            </ProtectedRoute>
+          } />
+          <Route path="/identity-dashboard" element={
+            <ProtectedRoute>
+              <IdentityDashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/intelligence" element={
+            <ProtectedRoute>
+              <Intelligence />
+            </ProtectedRoute>
+          } />
+          <Route path="/report" element={
+            <ProtectedRoute>
+              <Report />
+            </ProtectedRoute>
+          } />
+          <Route path="/framework" element={
+            <ProtectedRoute>
+              <Framework />
+            </ProtectedRoute>
+          } />
+          <Route path="/identity-profile" element={
+            <ProtectedRoute>
+              <IdentityProfile />
+            </ProtectedRoute>
+          } />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}

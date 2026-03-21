@@ -8,38 +8,38 @@ import { ArrowRight, Heart, ChevronDown } from "lucide-react";
 const compassSteps = [
   {
     letter: "C",
-    name: "Clear the Noise",
-    desc: "Separate who you are from the role you lost.",
+    name: "Curate Your Inputs",
+    desc: "Filter the noise. You are the DJ of your own consciousness.",
   },
   {
     letter: "O",
-    name: "Offer Yourself Respect",
-    desc: "Stop treating this moment as a failure. It isn't.",
+    name: "Own Your Narrative",
+    desc: "You aren't displaced — you're transitioning. You write the story.",
   },
   {
     letter: "M",
-    name: "Map What Matters",
-    desc: "Surface the values, strengths, and energy that were always yours.",
+    name: "Meaning Over Metrics",
+    desc: "Build your life on core values, not someone else's scorecard.",
   },
   {
     letter: "P",
-    name: "Pick Your Next Move",
-    desc: "Choose one direction worth exploring — not committing to.",
+    name: "Pivot With Purpose",
+    desc: "Every transition is a door, not a wall. Move with intention.",
   },
   {
     letter: "A",
-    name: "Adjust Your Environment",
-    desc: "Design the conditions that let the real you show up.",
+    name: "Amplify Your Atmosphere",
+    desc: "Shift your physical and digital space to support your growth.",
   },
   {
     letter: "S",
-    name: "Stack Small Proofs",
-    desc: "Build evidence for your new identity one small action at a time.",
+    name: "Savor Small Wins",
+    desc: "Turn progress into a sensory reward. Feel every step forward.",
   },
   {
     letter: "S",
-    name: "Stay With It",
-    desc: "Reinvention isn't an event. It's a practice. Keep going.",
+    name: "Sustain the Spark",
+    desc: "Protect your energy. Keep the fire lit for the long game.",
   },
 ];
 
