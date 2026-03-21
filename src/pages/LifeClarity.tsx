@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft, Sparkles, RefreshCw, Download, Share2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "sonner";
-import navoLogo from "@/assets/navo-logo.png";
+import navoLogo from "@/assets/navo-logo";
 
 const LIFE_CLARITY_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/life-clarity`;
 

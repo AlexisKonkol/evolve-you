@@ -6,7 +6,7 @@ import {
   Lightbulb, Zap, Compass, Heart, Star,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import navoLogo from "@/assets/navo-logo.png";
+import navoLogo from "@/assets/navo-logo";
 import { toast } from "sonner";
 
 const CLARITY_ENGINE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/clarity-engine`;

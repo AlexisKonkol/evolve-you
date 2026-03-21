@@ -7,7 +7,7 @@ import {
   BookOpen, Users, Globe, Lightbulb, Map, Brain,
   CheckCircle2, Circle,
 } from "lucide-react";
-import navoLogo from "@/assets/navo-logo.png";
+import navoLogo from "@/assets/navo-logo";
 import { toast } from "sonner";
 
 const PATH_FINDER_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/path-finder`;

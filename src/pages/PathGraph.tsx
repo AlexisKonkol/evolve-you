@@ -6,7 +6,7 @@ import {
   Brain, TrendingUp, FlaskConical, BookOpen, Users, Map,
   Lightbulb, Eye,
 } from "lucide-react";
-import navoLogo from "@/assets/navo-logo.png";
+import navoLogo from "@/assets/navo-logo";
 
 // ── Color palette per node type ────────────────────────────────────
 const TYPE_STYLE = {

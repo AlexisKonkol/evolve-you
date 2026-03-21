@@ -33,6 +33,8 @@ import Report from "./pages/Report";
 import Framework from "./pages/Framework";
 import IdentityProfile from "./pages/IdentityProfile";
 import NotFound from "./pages/NotFound";
+import Compass from "./pages/Compass";
+import CompassResults from "./pages/CompassResults";
 
 const queryClient = new QueryClient();
 
@@ -71,6 +73,8 @@ const App = () => (
           <Route path="/report" element={<Report />} />
           <Route path="/framework" element={<Framework />} />
           <Route path="/identity-profile" element={<IdentityProfile />} />
+          <Route path="/compass" element={<Compass />} />
+          <Route path="/compass/results" element={<CompassResults />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Floating AI Coach — visible on every page except /coach */}

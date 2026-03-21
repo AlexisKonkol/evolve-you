@@ -6,7 +6,7 @@ import {
   Star, Wrench, Users, Brain, Heart,
 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
-import navoLogo from "@/assets/navo-logo.png";
+import navoLogo from "@/assets/navo-logo";
 import { toast } from "sonner";
 
 const CONFIDENCE_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/confidence-builder`;
