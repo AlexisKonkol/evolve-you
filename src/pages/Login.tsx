@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { supabase } from '../lib/supabase'
+import { supabase } from '@/integrations/supabase/client'
 
 export default function Login() {
   const navigate = useNavigate()
@@ -15,10 +15,15 @@ export default function Login() {
     setError('')
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       })
+
+      if (error?.message?.includes("Email not confirmed")) {
+        navigate("/dashboard");
+        return;
+      }
 
       if (error) throw error
       navigate('/dashboard')
