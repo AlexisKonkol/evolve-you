@@ -36,6 +36,9 @@ import IdentityProfile from "./pages/IdentityProfile";
 import NotFound from "./pages/NotFound";
 import Compass from "./pages/Compass";
 import CompassResults from "./pages/CompassResults";
+import EdgeProfile from "./pages/EdgeProfile";
+import ModulePage from "./pages/ModulePage";
+import SparkProfile from "./pages/SparkProfile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
@@ -65,14 +68,17 @@ const App = () => (
               <Dashboard />
             </ProtectedRoute>
           } />
-          <Route path="/compass" element={
+          <Route path="/compass" element={<Compass />} />
+          <Route path="/compass/results" element={<CompassResults />} />
+          <Route path="/edge-profile" element={<EdgeProfile />} />
+          <Route path="/module/:moduleId" element={
             <ProtectedRoute>
-              <Compass />
+              <ModulePage />
             </ProtectedRoute>
           } />
-          <Route path="/compass/results" element={
+          <Route path="/spark-profile" element={
             <ProtectedRoute>
-              <CompassResults />
+              <SparkProfile />
             </ProtectedRoute>
           } />
           <Route path="/journal" element={

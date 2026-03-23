@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { supabase } from '@/integrations/supabase/client';
 
 const FONTS = `
   @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
@@ -21,11 +22,14 @@ export default function CompassResults() {
   const [loading, setLoading] = useState(true);
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState(false);
+  const [sparkAnswers, setSparkAnswers] = useState<string | null>(null);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("compassAnswers");
+    const sparkAnswersRaw = sessionStorage.getItem("sparkAnswers");
     if (!raw) { navigate("/compass"); return; }
     const answers = JSON.parse(raw);
+    setSparkAnswers(sparkAnswersRaw);
 
     const call = async () => {
       try {
@@ -51,14 +55,20 @@ a valid JSON object with these 4 keys:
 Return ONLY the JSON. No markdown. No backticks. No explanation.`,
             messages: [{
               role: "user",
-              content: `Here is what the user shared:
+              content: `Here are the user's COMPASS session answers:
 C - Clear the Noise: ${answers.step0_q1} / ${answers.step0_q2}
 O - Offer Yourself Respect: ${answers.step1_q1} / ${answers.step1_q2}
 M - Map What Matters: ${answers.step2_q1} / ${answers.step2_q2}
 P - Pick Your Next Move: ${answers.step3_q1} / ${answers.step3_q2}
 A - Adjust Your Environment: ${answers.step4_q1} / ${answers.step4_q2}
 S - Stack Small Proofs: ${answers.step5_q1} / ${answers.step5_q2}
-S - Stay With It: ${answers.step6_q1} / ${answers.step6_q2}`
+S - Stay With It: ${answers.step6_q1} / ${answers.step6_q2}
+
+${results ? `And their COMPASS results: ${results}` : ""}
+
+${sparkAnswers ? `\n\nWhat lights this person up (their Spark Profile):\n${sparkAnswers}` : ""}
+
+Generate their Edge Profile now.`
             }]
           })
         });
@@ -100,6 +110,26 @@ S - Stay With It: ${answers.step6_q1} / ${answers.step6_q2}`
       </button>
     </div>
   );
+
+  const handleSaveToJournal = async () => {
+    try {
+      // Check if user is logged in
+      const { data: { user }, error: userError } = await supabase.auth.getUser()
+      
+      if (userError || !user) {
+        // Store results in sessionStorage before redirecting
+        sessionStorage.setItem("pendingCompassResults", JSON.stringify(results))
+        navigate("/signup")
+        return
+      }
+      
+      // User is logged in - save to journal
+      // TODO: Implement actual journal saving logic
+      setSaved(true)
+    } catch (error) {
+      console.error('Error saving to journal:', error)
+    }
+  };
 
   const cards = [
     { label: "Your Direction Today", text: results!.direction, hero: true },
@@ -161,7 +191,7 @@ S - Stay With It: ${answers.step6_q1} / ${answers.step6_q2}`
         {/* Buttons */}
         <div style={{ display:"flex", gap:12, justifyContent:"center", flexWrap:"wrap", marginTop:32 }}>
           <button
-            onClick={() => setSaved(true)}
+            onClick={handleSaveToJournal}
             style={{ background: saved ? "rgba(255,107,43,0.3)" : "#FF6B2B", color:"white", border:"none", borderRadius:4, padding:"14px 32px", fontFamily:"'Plus Jakarta Sans',sans-serif", fontSize:11, fontWeight:600, letterSpacing:"0.16em", textTransform:"uppercase", cursor:"pointer", transition:"all 0.2s" }}>
             {saved ? "✓ Saved" : "Save to Journal"}
           </button>
@@ -173,6 +203,36 @@ S - Stay With It: ${answers.step6_q1} / ${answers.step6_q2}`
             Start New Session →
           </button>
         </div>
+
+        {/* Edge Profile CTA */}
+        <button
+          onClick={() => navigate('/edge-profile')}
+          style={{
+            width: "100%",
+            background: "transparent",
+            border: "1px solid #FF6B2B",
+            color: "#FF6B2B",
+            borderRadius: "4px",
+            padding: "16px",
+            marginTop: "24px",
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontSize: "11px",
+            fontWeight: 600,
+            letterSpacing: "0.16em",
+            textTransform: "uppercase",
+            cursor: "pointer",
+            transition: "all 0.2s"
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.background = "rgba(255,107,43,0.1)"
+            e.currentTarget.style.transform = "translateY(-1px)"
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = "transparent"
+            e.currentTarget.style.transform = "translateY(0)"
+          }}>
+          Discover your navigation style →
+        </button>
 
       </div>
     </div>
