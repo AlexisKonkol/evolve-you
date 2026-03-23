@@ -95,7 +95,7 @@ const nextSteps = [
 
 // ── Color helpers ─────────────────────────────────────────────────
 const colorClasses = {
-  coral:  { text: "text-coral",  bg: "bg-coral-500/10",  border: "border-coral-500/20",  bar: "bg-gradient-coral"  },
+  coral:  { text: "text-indigo-400",  bg: "bg-indigo-500-500/10",  border: "border-coral-500/20",  bar: "bg-gradient-coral"  },
   violet: { text: "text-violet", bg: "bg-violet-500/10", border: "border-violet-500/20", bar: ""                   },
   amber:  { text: "text-amber",  bg: "bg-amber-500/10",  border: "border-amber-500/20",  bar: "bg-gradient-amber"  },
 } as const;
@@ -162,7 +162,7 @@ export function MomentumTracker() {
           <div className="mb-5">
             <div className="flex justify-between text-xs mb-1.5">
               <span className="text-muted-foreground">Overall progress</span>
-              <span className="text-coral font-medium">{momentumScore}%</span>
+              <span className="text-indigo-400 font-medium">{momentumScore}%</span>
             </div>
             <div className="h-2 bg-border rounded-full overflow-hidden">
               <div
@@ -224,8 +224,8 @@ export function MomentumTracker() {
           {completed.length > 0 && (
             <div className="flex items-center gap-1.5 border rounded-full px-2.5 py-1"
               style={{ background: "hsl(var(--coral) / 0.08)", borderColor: "hsl(var(--coral) / 0.2)" }}>
-              <TrendingUp className="w-3 h-3 text-coral" />
-              <span className="text-coral text-xs font-bold">+{completed.length * 15} momentum</span>
+              <TrendingUp className="w-3 h-3 text-indigo-400" />
+              <span className="text-indigo-400 text-xs font-bold">+{completed.length * 15} momentum</span>
             </div>
           )}
         </div>
@@ -251,7 +251,7 @@ export function MomentumTracker() {
                 key={step.id}
                 className={`flex items-center gap-3 p-3.5 rounded-xl border transition-all duration-300 ${
                   celebrating_
-                    ? "border-coral-500/40 bg-coral-500/10 scale-[1.01]"
+                    ? "border-coral-500/40 bg-indigo-500-500/10 scale-[1.01]"
                     : done
                     ? "border-border/30 bg-transparent opacity-60"
                     : `bg-surface-2 border-border/40 hover:border-border`
@@ -264,9 +264,9 @@ export function MomentumTracker() {
                   className="shrink-0 transition-transform active:scale-90"
                 >
                   {done ? (
-                    <CheckCircle2 className="w-5 h-5 text-coral" />
+                    <CheckCircle2 className="w-5 h-5 text-indigo-400" />
                   ) : (
-                    <Circle className="w-5 h-5 text-muted-foreground/30 hover:text-coral/50 transition-colors" />
+                    <Circle className="w-5 h-5 text-muted-foreground/30 hover:text-indigo-400/50 transition-colors" />
                   )}
                 </button>
 

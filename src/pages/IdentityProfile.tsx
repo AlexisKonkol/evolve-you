@@ -119,7 +119,7 @@ function MirrorMoment({ text }: { text: string }) {
             <Eye className="w-4 h-4 text-primary-foreground" />
           </div>
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-coral">Mirror Moment</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-indigo-400">Mirror Moment</p>
             <p className="text-xs text-muted-foreground">The insight we think you've been waiting to hear</p>
           </div>
         </div>
@@ -130,7 +130,7 @@ function MirrorMoment({ text }: { text: string }) {
               className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center"
               style={{ background: "hsl(var(--coral) / 0.1)", border: "1px solid hsl(var(--coral) / 0.2)" }}
             >
-              <Eye className="w-7 h-7 text-coral" />
+              <Eye className="w-7 h-7 text-indigo-400" />
             </div>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs mx-auto">
               Your most powerful insight is ready. This is the part most people screenshot.
@@ -299,7 +299,7 @@ function LoadingProfile() {
             className="w-16 h-16 rounded-full flex items-center justify-center"
             style={{ background: "hsl(var(--coral) / 0.2)" }}
           >
-            <Sparkles className="w-8 h-8 text-coral animate-pulse" />
+            <Sparkles className="w-8 h-8 text-indigo-400 animate-pulse" />
           </div>
         </div>
         {/* Rings */}
@@ -640,10 +640,10 @@ export default function IdentityProfile() {
                     className="w-8 h-8 rounded-xl flex items-center justify-center"
                     style={{ background: "hsl(var(--coral) / 0.1)" }}
                   >
-                    <Heart className="w-4 h-4 text-coral" />
+                    <Heart className="w-4 h-4 text-indigo-400" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-widest text-coral">Core Drivers</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-indigo-400">Core Drivers</p>
                     <p className="text-xs text-muted-foreground">What fuels you</p>
                   </div>
                 </div>
@@ -657,7 +657,7 @@ export default function IdentityProfile() {
                       <p className="text-sm font-semibold text-foreground mb-1">{d.name}</p>
                       <p className="text-xs text-muted-foreground leading-relaxed">{d.description}</p>
                       {d.signal && (
-                        <p className="text-xs text-coral/60 mt-1.5 italic">Signal: "{d.signal}"</p>
+                        <p className="text-xs text-indigo-400/60 mt-1.5 italic">Signal: "{d.signal}"</p>
                       )}
                     </div>
                   ))}
@@ -730,13 +730,13 @@ export default function IdentityProfile() {
                   style={{ background: "hsl(var(--coral) / 0.05)", border: "1px solid hsl(var(--coral) / 0.15)" }}
                 >
                   <div className="flex items-center gap-2 mb-3">
-                    <Sun className="w-3.5 h-3.5 text-coral" />
-                    <p className="text-xs font-bold uppercase tracking-widest text-coral">You thrive in</p>
+                    <Sun className="w-3.5 h-3.5 text-indigo-400" />
+                    <p className="text-xs font-bold uppercase tracking-widest text-indigo-400">You thrive in</p>
                   </div>
                   <ul className="space-y-2">
                     {profile.environmentFit.thrive.map((env, i) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-foreground/80">
-                        <span className="text-coral mt-0.5">✦</span>
+                        <span className="text-indigo-400 mt-0.5">✦</span>
                         {env}
                       </li>
                     ))}

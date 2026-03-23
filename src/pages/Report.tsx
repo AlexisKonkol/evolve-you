@@ -148,8 +148,8 @@ const nextDirections = [
 
 // ── Design helpers ────────────────────────────────────────────────────────────
 
-const cIcon: Record<string, string>   = { coral: "text-coral", violet: "text-violet", amber: "text-amber" };
-const cBg: Record<string, string>     = { coral: "bg-coral-500/10", violet: "bg-violet-500/10", amber: "bg-amber-500/10" };
+const cIcon: Record<string, string>   = { coral: "text-indigo-400", violet: "text-violet", amber: "text-amber" };
+const cBg: Record<string, string>     = { coral: "bg-indigo-500-500/10", violet: "bg-violet-500/10", amber: "bg-amber-500/10" };
 const cBorder: Record<string, string> = { coral: "border-coral-500/20", violet: "border-violet-500/20", amber: "border-amber-500/20" };
 const cGrad: Record<string, string>   = {
   coral:  "linear-gradient(135deg, hsl(var(--coral)), hsl(var(--peach)))",
@@ -358,7 +358,7 @@ export default function Report() {
                   <Button size="sm" variant="outline"
                     className="border-border hover:border-coral-500/40 gap-1.5 text-xs"
                     onClick={handleCopyLink}>
-                    {copied ? <Check className="w-3.5 h-3.5 text-coral" /> : <Link2 className="w-3.5 h-3.5" />}
+                    {copied ? <Check className="w-3.5 h-3.5 text-indigo-400" /> : <Link2 className="w-3.5 h-3.5" />}
                     {copied ? "Copied!" : "Copy link"}
                   </Button>
                   <Button size="sm"
@@ -436,7 +436,7 @@ export default function Report() {
                     <p className="text-base text-foreground/90 leading-relaxed font-light italic">
                       {summary}
                       {summaryLoading && (
-                        <span className="inline-block w-0.5 h-4 bg-coral ml-0.5 animate-pulse align-middle" />
+                        <span className="inline-block w-0.5 h-4 bg-indigo-500 ml-0.5 animate-pulse align-middle" />
                       )}
                     </p>
                   )}
@@ -454,8 +454,8 @@ export default function Report() {
           <section className="mb-8">
             <div className="bg-gradient-card border border-border/50 rounded-2xl p-6">
               <SectionHeader
-                icon={<Brain className="w-4 h-4 text-coral" />}
-                iconBg="bg-coral-500/10"
+                icon={<Brain className="w-4 h-4 text-indigo-400" />}
+                iconBg="bg-indigo-500-500/10"
                 number="01"
                 title="Your Curiosity Profile"
                 desc="The areas where your attention naturally returns — signals of who you're becoming."
@@ -552,8 +552,8 @@ export default function Report() {
           <section className="mb-8">
             <div className="bg-gradient-card border border-border/50 rounded-2xl p-6">
               <SectionHeader
-                icon={<Heart className="w-4 h-4 text-coral" />}
-                iconBg="bg-coral-500/10"
+                icon={<Heart className="w-4 h-4 text-indigo-400" />}
+                iconBg="bg-indigo-500-500/10"
                 number="03"
                 title="Your Energy Sources"
                 desc="Activities and experiences that appear to give you momentum and drive."
@@ -605,7 +605,7 @@ export default function Report() {
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed">{p.desc}</p>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-coral group-hover:translate-x-0.5 transition-all shrink-0" />
+                      <ArrowRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-all shrink-0" />
                     </Link>
                   );
                 })}
@@ -655,8 +655,8 @@ export default function Report() {
           <section className="mb-8">
             <div className="bg-gradient-card border border-border/50 rounded-2xl p-6">
               <SectionHeader
-                icon={<TrendingUp className="w-4 h-4 text-coral" />}
-                iconBg="bg-coral-500/10"
+                icon={<TrendingUp className="w-4 h-4 text-indigo-400" />}
+                iconBg="bg-indigo-500-500/10"
                 number="06"
                 title="Your Next Possible Directions"
                 desc="Small steps worth exploring. Take one that feels right."
@@ -671,7 +671,7 @@ export default function Report() {
                         <DIcon className={`w-3.5 h-3.5 ${cIcon[d.color]}`} />
                       </div>
                       <span className="text-sm text-foreground flex-1">{d.label}</span>
-                      <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-coral group-hover:translate-x-0.5 transition-all shrink-0" />
+                      <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-all shrink-0" />
                     </Link>
                   );
                 })}
@@ -769,7 +769,7 @@ function IdentitySnapshotCard() {
         {/* Top label */}
         <div className="flex items-center justify-between mb-5">
           <div className="flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-coral animate-pulse" />
+            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
             <span className="text-xs font-bold uppercase tracking-[0.15em] text-muted-foreground">Identity Snapshot</span>
           </div>
           <span className="text-xs text-muted-foreground/50">{reportMeta.generatedDate}</span>

@@ -211,11 +211,11 @@ const discoveryInsights = [
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
-const cIcon: Record<string, string>   = { coral: "text-coral", violet: "text-violet", amber: "text-amber" };
-const cBg: Record<string, string>     = { coral: "bg-coral-500/10", violet: "bg-violet-500/10", amber: "bg-amber-500/10" };
+const cIcon: Record<string, string>   = { coral: "text-indigo-400", violet: "text-violet", amber: "text-amber" };
+const cBg: Record<string, string>     = { coral: "bg-indigo-500-500/10", violet: "bg-violet-500/10", amber: "bg-amber-500/10" };
 const cBorder: Record<string, string> = { coral: "border-coral-500/20", violet: "border-violet-500/20", amber: "border-amber-500/20" };
 const cTag: Record<string, string>    = {
-  coral:  "bg-coral-500/10 text-coral border-coral-500/20",
+  coral:  "bg-indigo-500-500/10 text-indigo-400 border-coral-500/20",
   violet: "bg-violet-500/10 text-violet border-violet-500/20",
   amber:  "bg-amber-500/10 text-amber border-amber-500/20",
 };
@@ -278,8 +278,8 @@ export default function Intelligence() {
           {/* ── Pattern Insights ──────────────────────────────────── */}
           <section className="mb-16">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-8 h-8 bg-coral-500/10 rounded-xl flex items-center justify-center">
-                <TrendingUp className="w-4 h-4 text-coral" />
+              <div className="w-8 h-8 bg-indigo-500-500/10 rounded-xl flex items-center justify-center">
+                <TrendingUp className="w-4 h-4 text-indigo-400" />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-foreground">Pattern Insights</h2>
@@ -334,7 +334,7 @@ export default function Intelligence() {
                         <div className="flex gap-2 mt-4">
                           <Link to="/journal" onClick={(e) => e.stopPropagation()}>
                             <Button size="sm" variant="outline" className="text-xs border-border hover:border-coral-500/40 gap-1.5">
-                              <BookOpen className="w-3 h-3 text-coral" />
+                              <BookOpen className="w-3 h-3 text-indigo-400" />
                               Reflect on this in your journal
                             </Button>
                           </Link>
@@ -388,7 +388,7 @@ export default function Intelligence() {
                       {pc.explorers.toLocaleString()} people explored this sequence
                     </span>
                     <Link to="/path-finder">
-                      <Button variant="ghost" size="sm" className="text-xs text-muted-foreground hover:text-coral gap-1">
+                      <Button variant="ghost" size="sm" className="text-xs text-muted-foreground hover:text-indigo-400 gap-1">
                         Explore this chain <ArrowRight className="w-3 h-3" />
                       </Button>
                     </Link>
@@ -504,7 +504,7 @@ export default function Intelligence() {
                       </div>
                       <div className="flex items-center gap-2 shrink-0">
                         <span className={`text-sm font-bold ${cIcon[r.color]}`}>{r.match}%</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-coral group-hover:translate-x-0.5 transition-all" />
+                        <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/30 group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-all" />
                       </div>
                     </Link>
                   );
@@ -528,8 +528,8 @@ export default function Intelligence() {
           {/* ── Discovery Insights ────────────────────────────────── */}
           <section className="mb-14">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-coral-500/10 rounded-xl flex items-center justify-center">
-                <Star className="w-4 h-4 text-coral" />
+              <div className="w-8 h-8 bg-indigo-500-500/10 rounded-xl flex items-center justify-center">
+                <Star className="w-4 h-4 text-indigo-400" />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-foreground">Paths Others Have Discovered</h2>

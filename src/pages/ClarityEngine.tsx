@@ -57,10 +57,10 @@ const questions = [
 
 // ── Section metadata for the profile cards ────────────────────────
 const sectionMeta: Record<string, { icon: React.ElementType; colorClass: string; bgClass: string; borderClass: string }> = {
-  "Core Motivations":    { icon: Heart,    colorClass: "text-coral",  bgClass: "bg-coral-500/10",  borderClass: "border-coral-500/20"  },
+  "Core Motivations":    { icon: Heart,    colorClass: "text-indigo-400",  bgClass: "bg-indigo-500-500/10",  borderClass: "border-coral-500/20"  },
   "Energy Sources":      { icon: Zap,      colorClass: "text-amber",  bgClass: "bg-amber-500/10",  borderClass: "border-amber-500/20"  },
   "Natural Strengths":   { icon: Star,     colorClass: "text-violet", bgClass: "bg-violet-500/10", borderClass: "border-violet-500/20" },
-  "Meaningful Directions": { icon: Compass, colorClass: "text-coral", bgClass: "bg-coral-500/10",  borderClass: "border-coral-500/20"  },
+  "Meaningful Directions": { icon: Compass, colorClass: "text-indigo-400", bgClass: "bg-indigo-500-500/10",  borderClass: "border-coral-500/20"  },
   "A Grounding Note":    { icon: Sparkles, colorClass: "text-amber",  bgClass: "bg-amber-500/10",  borderClass: "border-amber-500/20"  },
 };
 
@@ -295,7 +295,7 @@ export default function ClarityEngine() {
           </div>
           <div className="flex gap-1.5 justify-center">
             {[0, 1, 2].map((i) => (
-              <div key={i} className="w-2 h-2 rounded-full bg-coral animate-pulse"
+              <div key={i} className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"
                 style={{ animationDelay: `${i * 200}ms` }} />
             ))}
           </div>
@@ -344,7 +344,7 @@ export default function ClarityEngine() {
                 prose-strong:text-foreground prose-strong:font-semibold
                 prose-ul:my-2 [&>h2:first-child]:mt-0">
                 <ReactMarkdown>{profile}</ReactMarkdown>
-                <span className="inline-block w-2 h-4 bg-coral ml-0.5 animate-pulse rounded-sm" />
+                <span className="inline-block w-2 h-4 bg-indigo-500 ml-0.5 animate-pulse rounded-sm" />
               </div>
             </div>
           )}
@@ -355,8 +355,8 @@ export default function ClarityEngine() {
               {sections.map((section, idx) => {
                 const meta = sectionMeta[section.title] ?? {
                   icon: Sparkles,
-                  colorClass: "text-coral",
-                  bgClass: "bg-coral-500/10",
+                  colorClass: "text-indigo-400",
+                  bgClass: "bg-indigo-500-500/10",
                   borderClass: "border-coral-500/20",
                 };
                 const Icon = meta.icon;
@@ -461,7 +461,7 @@ export default function ClarityEngine() {
                   { label: "Talk to your AI Coach",        sub: "Ask what to do with this clarity",                  href: "/coach",              colorKey: "amber" },
                 ].map((item) => {
                   const color = item.colorKey === "coral"
-                    ? "text-coral bg-coral-500/10 border-coral-500/20"
+                    ? "text-indigo-400 bg-indigo-500-500/10 border-coral-500/20"
                     : item.colorKey === "violet"
                     ? "text-violet bg-violet-500/10 border-violet-500/20"
                     : "text-amber bg-amber-500/10 border-amber-500/20";
@@ -475,7 +475,7 @@ export default function ClarityEngine() {
                         <p className="text-sm font-medium text-foreground">{item.label}</p>
                         <p className="text-xs text-muted-foreground">{item.sub}</p>
                       </div>
-                      <ArrowRight className="w-4 h-4 text-muted-foreground/40 group-hover:text-coral group-hover:translate-x-0.5 transition-all" />
+                      <ArrowRight className="w-4 h-4 text-muted-foreground/40 group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-all" />
                     </Link>
                   );
                 })}
@@ -522,7 +522,7 @@ export default function ClarityEngine() {
               <div
                 key={i}
                 className={`h-1.5 rounded-full transition-all duration-500 ${
-                  i < current ? "w-5 bg-coral" : i === current ? "w-5 bg-coral animate-pulse" : "w-1.5 bg-border"
+                  i < current ? "w-5 bg-indigo-500" : i === current ? "w-5 bg-indigo-500 animate-pulse" : "w-1.5 bg-border"
                 }`}
               />
             ))}

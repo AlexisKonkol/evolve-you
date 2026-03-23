@@ -38,11 +38,11 @@ export default function Login() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A0A0A', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <div style={{ minHeight: '100vh', background: '#0B0F1A', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       <style>{FONTS}</style>
 
       {/* Orange glow */}
-      <div style={{ position: 'fixed', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: 350, background: 'radial-gradient(ellipse 700px 300px at 50% -40px, rgba(255,107,43,0.15) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
+      <div style={{ position: 'fixed', top: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', height: 350, background: 'radial-gradient(ellipse 700px 300px at 50% -40px, rgba(99, 102, 241,0.15) 0%, transparent 70%)', pointerEvents: 'none', zIndex: 0 }} />
 
       {/* Content */}
       <div style={{ maxWidth: 400, width: '100%', padding: '32px', position: 'relative', zIndex: 1 }}>
@@ -83,10 +83,10 @@ export default function Login() {
                 fontWeight: 400,
                 lineHeight: 1.7,
                 boxSizing: 'border-box',
-                caretColor: '#FF6B2B',
+                caretColor: '#6366F1',
                 transition: 'border-color 0.3s'
               }}
-              onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#FF6B2B' }}
+              onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#6366F1' }}
               onBlur={(e) => { e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,0.1)' }}
             />
           </div>
@@ -115,17 +115,17 @@ export default function Login() {
                 fontWeight: 400,
                 lineHeight: 1.7,
                 boxSizing: 'border-box',
-                caretColor: '#FF6B2B',
+                caretColor: '#6366F1',
                 transition: 'border-color 0.3s'
               }}
-              onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#FF6B2B' }}
+              onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#6366F1' }}
               onBlur={(e) => { e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,0.1)' }}
             />
           </div>
 
           {/* Error */}
           {error && (
-            <div style={{ padding: '12px 16px', background: 'rgba(255,107,43,0.1)', border: '1px solid rgba(255,107,43,0.3)', borderRadius: 4, fontSize: 13, color: '#FF6B2B' }}>
+            <div style={{ padding: '12px 16px', background: 'rgba(99, 102, 241,0.1)', border: '1px solid rgba(99, 102, 241,0.3)', borderRadius: 4, fontSize: 13, color: '#6366F1' }}>
               {error}
             </div>
           )}
@@ -135,8 +135,8 @@ export default function Login() {
             type="submit"
             disabled={loading}
             style={{
-              background: loading ? 'rgba(255,107,43,0.15)' : '#FF6B2B',
-              color: loading ? 'rgba(255,107,43,0.3)' : 'white',
+              background: loading ? 'rgba(99, 102, 241,0.15)' : '#6366F1',
+              color: loading ? 'rgba(99, 102, 241,0.3)' : 'white',
               border: 'none',
               borderRadius: 4,
               padding: '14px 34px',
@@ -148,7 +148,7 @@ export default function Login() {
               cursor: loading ? 'not-allowed' : 'pointer',
               transition: 'all 0.2s'
             }}
-            onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(255,107,43,0.3)'; } }}
+            onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(99, 102, 241,0.3)'; } }}
             onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}
           >
             {loading ? 'Signing in...' : 'Sign In'}
@@ -162,7 +162,7 @@ export default function Login() {
             <Link
               to="/signup"
               style={{
-                color: '#FF6B2B',
+                color: '#6366F1',
                 textDecoration: 'none',
                 fontWeight: 500
               }}
@@ -176,7 +176,7 @@ export default function Login() {
       </div>
 
       {/* Footer */}
-      <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, padding: '12px 32px', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#0A0A0A', zIndex: 10 }}>
+      <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, padding: '12px 32px', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#0B0F1A', zIndex: 10 }}>
         <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.1)', letterSpacing: '0.14em', textTransform: 'uppercase' }}>NAVO</span>
         <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.1)' }}>Sign In</span>
       </div>

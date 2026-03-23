@@ -222,12 +222,12 @@ const discoveryPeople = [
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
 const cIcon: Record<string, string> = {
-  coral:  "text-coral",
+  coral:  "text-indigo-400",
   violet: "text-violet",
   amber:  "text-amber",
 };
 const cBg: Record<string, string> = {
-  coral:  "bg-coral-500/10",
+  coral:  "bg-indigo-500-500/10",
   violet: "bg-violet-500/10",
   amber:  "bg-amber-500/10",
 };
@@ -237,7 +237,7 @@ const cBorder: Record<string, string> = {
   amber:  "border-amber-500/20",
 };
 const cTag: Record<string, string> = {
-  coral:  "bg-coral-500/10 text-coral border-coral-500/20",
+  coral:  "bg-indigo-500-500/10 text-indigo-400 border-coral-500/20",
   violet: "bg-violet-500/10 text-violet border-violet-500/20",
   amber:  "bg-amber-500/10 text-amber border-amber-500/20",
 };
@@ -382,7 +382,7 @@ export default function NAVONetwork() {
                       <div className="space-y-1 mb-3">
                         {c.highlights.map((h) => (
                           <div key={h} className="flex items-center gap-2 text-xs text-muted-foreground">
-                            <div className={`w-1 h-1 rounded-full ${c.color === "coral" ? "bg-coral" : c.color === "violet" ? "bg-violet" : "bg-amber"}`} />
+                            <div className={`w-1 h-1 rounded-full ${c.color === "coral" ? "bg-indigo-500" : c.color === "violet" ? "bg-violet" : "bg-amber"}`} />
                             {h}
                           </div>
                         ))}
@@ -516,7 +516,7 @@ export default function NAVONetwork() {
                         <div className="flex flex-wrap items-center gap-2 mb-2">
                           <span className={`text-xs px-2.5 py-1 rounded-full border font-medium ${
                             exp.status === "Active now"
-                              ? "bg-coral-500/10 text-coral border-coral-500/20"
+                              ? "bg-indigo-500-500/10 text-indigo-400 border-coral-500/20"
                               : "bg-amber-500/10 text-amber border-amber-500/20"
                           }`}>
                             {exp.status}
@@ -538,7 +538,7 @@ export default function NAVONetwork() {
                               <div key={i} className="flex items-center gap-2.5 text-sm">
                                 <div className="w-4 h-4 rounded-full border flex items-center justify-center shrink-0"
                                   style={{ borderColor: "hsl(var(--coral) / 0.4)" }}>
-                                  <span className="text-coral text-xs font-bold">{i + 1}</span>
+                                  <span className="text-indigo-400 text-xs font-bold">{i + 1}</span>
                                 </div>
                                 <span className="text-muted-foreground">{c}</span>
                               </div>
@@ -623,7 +623,7 @@ export default function NAVONetwork() {
                             )
                           }
                           className={`flex items-center gap-1.5 text-xs transition-colors ${
-                            isLiked ? "text-coral" : "text-muted-foreground hover:text-coral"
+                            isLiked ? "text-indigo-400" : "text-muted-foreground hover:text-indigo-400"
                           }`}
                         >
                           <Heart className={`w-3.5 h-3.5 ${isLiked ? "fill-coral" : ""}`} />
@@ -646,8 +646,8 @@ export default function NAVONetwork() {
             <div>
               <div className="bg-gradient-card border border-border/50 rounded-2xl p-5 mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 bg-coral-500/10 rounded-xl flex items-center justify-center shrink-0">
-                    <Sparkles className="w-4 h-4 text-coral" />
+                  <div className="w-9 h-9 bg-indigo-500-500/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Sparkles className="w-4 h-4 text-indigo-400" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground text-sm">People exploring similar paths</h3>
@@ -700,7 +700,7 @@ export default function NAVONetwork() {
                           <p className="text-sm font-medium text-foreground">{path.label}</p>
                           <p className="text-xs text-muted-foreground">{path.members.toLocaleString()} explorers</p>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-coral group-hover:translate-x-0.5 transition-all" />
+                        <ArrowRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-all" />
                       </Link>
                     );
                   })}

@@ -41,11 +41,11 @@ export function EmergingIdentity() {
         {/* Identity statement block */}
         <div className="rounded-xl p-5 mb-5 border"
           style={{ background: "hsl(var(--coral) / 0.05)", borderColor: "hsl(var(--coral) / 0.15)" }}>
-          <p className="text-xs text-coral font-semibold uppercase tracking-widest mb-3">You are becoming someone who:</p>
+          <p className="text-xs text-indigo-400 font-semibold uppercase tracking-widest mb-3">You are becoming someone who:</p>
           <ul className="space-y-2">
             {identityStatements.map((s, i) => (
               <li key={i} className="flex items-start gap-2.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-coral mt-2 shrink-0" />
+                <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-2 shrink-0" />
                 <span className="text-sm text-foreground/85 leading-relaxed">{s}</span>
               </li>
             ))}
@@ -60,7 +60,7 @@ export function EmergingIdentity() {
               <div key={i} className="flex items-start gap-3 p-3 bg-surface-2 rounded-xl">
                 <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                   style={{ background: "hsl(var(--coral) / 0.15)" }}>
-                  <span className="text-coral text-xs font-bold">{i + 1}</span>
+                  <span className="text-indigo-400 text-xs font-bold">{i + 1}</span>
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">{insight}</p>
               </div>
@@ -74,7 +74,7 @@ export function EmergingIdentity() {
             "The most powerful shift isn't asking{" "}
             <span className="text-foreground not-italic font-medium">what should I do</span>
             {" "}— it's asking{" "}
-            <span className="text-coral not-italic font-medium">who am I becoming?</span>"
+            <span className="text-indigo-400 not-italic font-medium">who am I becoming?</span>"
           </p>
         </div>
 

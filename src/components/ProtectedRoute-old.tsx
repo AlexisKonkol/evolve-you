@@ -39,7 +39,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
     return (
       <div style={{ 
         minHeight: '100vh', 
-        background: '#0A0A0A', 
+        background: '#0B0F1A', 
         display: 'flex', 
         flexDirection: 'column', 
         alignItems: 'center', 
@@ -71,7 +71,7 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
                 width: 8, 
                 height: 8, 
                 borderRadius: '50%', 
-                background: '#FF6B2B', 
+                background: '#6366F1', 
                 animation: `pulse 1.2s ease-in-out ${i * 0.2}s infinite` 
               }} 
             />

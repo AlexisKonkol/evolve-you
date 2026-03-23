@@ -32,14 +32,6 @@ const steps = [
     q2:"What's the one thing you need to protect right now?", q2p:"Your non-negotiable." },
 ];
 
-const FONTS = `
-  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap');
-  textarea::placeholder { color: rgba(255,255,255,0.2); font-style: italic; }
-  textarea:focus { outline: none; }
-  @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  @keyframes pulse { 0%,100% { opacity:0.2; transform:scale(0.8); } 50% { opacity:1; transform:scale(1.1); } }
-`;
-
 export default function Compass() {
   const navigate = useNavigate();
   const [current, setCurrent] = useState(0);
@@ -50,7 +42,7 @@ export default function Compass() {
   const step = steps[current];
   const q1Key = `step${current}_q1`;
   const q2Key = `step${current}_q2`;
-  const canContinue = answers[q1Key]?.trim() && answers[q2Key]?.trim();
+  const canContinue = !!(answers[q1Key]?.trim() && answers[q2Key]?.trim());
 
   const handleContinue = () => {
     if (!canContinue) return;
@@ -73,75 +65,69 @@ export default function Compass() {
   };
 
   if (loading) return (
-    <div style={{ minHeight:"100vh", background:"#0A0A0A", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center", gap:24, fontFamily:"'Plus Jakarta Sans',sans-serif" }}>
-      <style>{FONTS}</style>
-      <div style={{ fontSize:64, animation:"spin 5s linear infinite" }}>🧭</div>
-      <p style={{ fontFamily:"'Playfair Display',serif", fontStyle:"italic", fontWeight:400, fontSize:28, color:"rgba(255,255,255,0.5)", margin:0 }}>Finding your direction...</p>
-      <div style={{ display:"flex", gap:8 }}>
-        {[0,1,2].map(i => <div key={i} style={{ width:8, height:8, borderRadius:"50%", background:"#FF6B2B", animation:`pulse 1.2s ease-in-out ${i*0.2}s infinite` }} />)}
+    <div className="min-h-screen bg-[#0B0F1A] flex flex-col items-center justify-center gap-6 font-sans">
+      <style>{`@keyframes custom-pulse { 0%,100% { opacity:0.2; transform:scale(0.8); } 50% { opacity:1; transform:scale(1.1); } }`}</style>
+      <div className="text-[64px] animate-[spin_5s_linear_infinite]">🧭</div>
+      <p className="font-display italic font-normal text-[28px] text-white/50 m-0">Finding your direction...</p>
+      <div className="flex gap-2">
+        {[0,1,2].map(i => <div key={i} className="w-2 h-2 rounded-full bg-[#6366F1]" style={{ animation: `custom-pulse 1.2s ease-in-out ${i * 0.2}s infinite` }} />)}
       </div>
     </div>
   );
 
   return (
-    <div style={{ minHeight:"100vh", background:"#0A0A0A", position:"relative", fontFamily:"'Plus Jakarta Sans',sans-serif" }}>
-      <style>{FONTS}</style>
-
+    <div className="min-h-screen bg-[#0B0F1A] relative font-sans">
       {/* Orange glow */}
-      <div style={{ position:"fixed", top:0, left:"50%", transform:"translateX(-50%)", width:"100%", height:350, background:"radial-gradient(ellipse 700px 300px at 50% -40px, rgba(255,107,43,0.15) 0%, transparent 70%)", pointerEvents:"none", zIndex:0 }} />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 w-full h-[350px] pointer-events-none z-0" style={{ background:"radial-gradient(ellipse 700px 300px at 50% -40px, rgba(99, 102, 241,0.15) 0%, transparent 70%)" }} />
 
       {/* Back */}
       {current > 0 && (
-        <button onClick={handleBack} style={{ position:"fixed", top:24, left:28, zIndex:10, background:"none", border:"none", cursor:"pointer", fontFamily:"'Plus Jakarta Sans',sans-serif", fontSize:12, color:"rgba(255,255,255,0.28)", letterSpacing:"0.08em" }}
-          onMouseEnter={e => e.currentTarget.style.color="rgba(255,255,255,0.6)"}
-          onMouseLeave={e => e.currentTarget.style.color="rgba(255,255,255,0.28)"}>
+        <button onClick={handleBack} className="fixed top-6 left-7 z-10 bg-transparent border-none cursor-pointer font-sans text-xs text-white/30 tracking-[0.08em] hover:text-white/60 transition-colors duration-200">
           ← back
         </button>
       )}
 
       {/* Progress */}
-      <div style={{ position:"fixed", top:0, left:0, right:0, zIndex:10, display:"flex", alignItems:"center", justifyContent:"center", padding:"20px 0", gap:0 }}>
+      <div className="fixed top-0 left-0 right-0 z-10 flex items-center justify-center py-5 gap-0">
         {steps.map((s, i) => (
-          <div key={i} style={{ display:"flex", alignItems:"center" }}>
-            <div style={{ width:30, height:30, borderRadius:"50%", display:"flex", alignItems:"center", justifyContent:"center", fontSize:11, fontWeight:600, fontFamily:"'Plus Jakarta Sans',sans-serif", transition:"all 0.3s",
-              background: i < current ? "#FF6B2B" : i === current ? "transparent" : "rgba(255,255,255,0.06)",
-              border: i === current ? "1.5px solid #FF6B2B" : "1.5px solid transparent",
-              color: i < current ? "white" : i === current ? "#FF6B2B" : "rgba(255,255,255,0.2)",
-              boxShadow: i === current ? "0 0 0 4px rgba(255,107,43,0.18)" : "none",
-            }}>
+          <div key={i} className="flex items-center">
+            <div className={`w-[30px] h-[30px] rounded-full flex items-center justify-center text-[11px] font-semibold font-sans transition-all duration-300 border-[1.5px] ${
+              i < current ? 'bg-[#6366F1] border-[#6366F1] text-white' : 
+              i === current ? 'bg-transparent border-[#6366F1] text-[#6366F1] ring-4 ring-[#6366F1]/20' : 
+              'bg-white/5 border-transparent text-white/20'
+            }`}>
               {i < current ? "✓" : s.letter}
             </div>
-            {i < steps.length - 1 && <div style={{ width:18, height:1, background: i < current ? "rgba(255,107,43,0.3)" : "rgba(255,255,255,0.07)", transition:"background 0.3s" }} />}
+            {i < steps.length - 1 && <div className={`w-[18px] h-px transition-colors duration-300 ${i < current ? 'bg-[#6366F1]/30' : 'bg-white/5'}`} />}
           </div>
         ))}
-        <span style={{ position:"absolute", right:28, fontSize:11, color:"rgba(255,255,255,0.18)" }}>{current + 1} / 7</span>
+        <span className="absolute right-7 text-[11px] text-white/20">{current + 1} / 7</span>
       </div>
 
       {/* Content */}
-      <div style={{ maxWidth:560, margin:"0 auto", minHeight:"100vh", display:"flex", flexDirection:"column", justifyContent:"center", padding:"100px 32px 100px", position:"relative", zIndex:1,
-        opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(-10px)", transition:"opacity 0.25s ease, transform 0.25s ease" }}>
+      <div className={`max-w-[560px] mx-auto min-h-screen flex flex-col justify-center px-8 py-[100px] relative z-10 transition-all duration-250 ease-in-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2.5'}`}>
 
         {/* Badge */}
-        <div style={{ marginBottom:22 }}>
-          <span style={{ display:"inline-block", fontSize:10, fontWeight:600, letterSpacing:"0.24em", textTransform:"uppercase", color:"#FF6B2B", border:"1px solid rgba(255,107,43,0.35)", borderRadius:999, padding:"6px 16px" }}>
+        <div className="mb-5">
+          <span className="inline-block text-[10px] font-semibold tracking-[0.24em] uppercase text-[#6366F1] border border-[#6366F1]/35 rounded-full px-4 py-1.5">
             {step.letter} — {step.name.toUpperCase()}
           </span>
         </div>
 
         {/* Headline */}
-        <h1 style={{ fontFamily:"'Playfair Display',Georgia,serif", fontSize:"clamp(34px,5vw,44px)", fontWeight:400, color:"white", letterSpacing:"-0.02em", lineHeight:1.08, margin:"0 0 10px" }}>
+        <h1 className="font-display text-[clamp(34px,5vw,44px)] font-normal text-white tracking-[-0.02em] leading-[1.08] m-0 mb-2.5">
           {step.name}
         </h1>
 
         {/* Subtitle */}
-        <p style={{ fontSize:13, fontWeight:400, color:"rgba(255,255,255,0.38)", margin:"0 0 44px", lineHeight:1.6 }}>
+        <p className="text-[13px] font-normal text-white/40 m-0 mb-11 leading-[1.6]">
           {step.subtitle}
         </p>
 
         {/* Questions */}
         {[{ label: step.q1, placeholder: step.q1p, key: q1Key }, { label: step.q2, placeholder: step.q2p, key: q2Key }].map((q, i) => (
-          <div key={i} style={{ marginBottom: i === 0 ? 36 : 44 }}>
-            <label style={{ display:"block", fontSize:11, fontWeight:600, letterSpacing:"0.16em", textTransform:"uppercase", color:"white", marginBottom:14 }}>
+          <div key={i} className={i === 0 ? "mb-9" : "mb-11"}>
+            <label className="block text-[11px] font-semibold tracking-[0.16em] uppercase text-white mb-3.5">
               {q.label}
             </label>
             <textarea
@@ -149,34 +135,37 @@ export default function Compass() {
               onChange={e => setAnswers(a => ({ ...a, [q.key]: e.target.value }))}
               placeholder={q.placeholder}
               rows={3}
-              style={{ width:"100%", display:"block", background:"transparent", border:"none", borderBottom:`1.5px solid ${answers[q.key]?.trim() ? "rgba(255,107,43,0.55)" : "rgba(255,255,255,0.1)"}`, padding:"8px 0 14px", color:"#F5ECD7", fontFamily:"'Plus Jakarta Sans',sans-serif", fontSize:15, fontWeight:400, lineHeight:1.7, resize:"none", boxSizing:"border-box", caretColor:"#FF6B2B", transition:"border-color 0.3s" }}
-              onFocus={e => { e.currentTarget.style.borderBottomColor = "#FF6B2B"; }}
-              onBlur={e => { e.currentTarget.style.borderBottomColor = answers[q.key]?.trim() ? "rgba(255,107,43,0.55)" : "rgba(255,255,255,0.1)"; }}
+              className={`w-full block bg-transparent border-0 border-b-[1.5px] ${answers[q.key]?.trim() ? 'border-[#6366F1]/55' : 'border-white/10'} pt-2 pb-3.5 text-[#F5ECD7] font-sans text-[15px] font-normal leading-[1.7] resize-none caret-[#6366F1] transition-colors duration-300 placeholder:text-white/20 placeholder:italic focus:outline-none focus:border-b-[#6366F1]`}
             />
           </div>
         ))}
 
         {/* Footer */}
-        <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center" }}>
-          <span style={{ fontSize:11, color:"rgba(255,255,255,0.18)" }}>
+        <div className="flex justify-between items-center">
+           <span className="text-[11px] text-white/20 flex items-center">
             {canContinue ? "Ready to continue" : "Answer both to continue"}
           </span>
-          <button onClick={handleContinue} disabled={!canContinue}
-            style={{ background: canContinue ? "#FF6B2B" : "rgba(255,107,43,0.15)", color: canContinue ? "white" : "rgba(255,107,43,0.3)", border:"none", borderRadius:4, padding:"14px 34px", fontFamily:"'Plus Jakarta Sans',sans-serif", fontSize:11, fontWeight:600, letterSpacing:"0.16em", textTransform:"uppercase", cursor: canContinue ? "pointer" : "not-allowed", transition:"all 0.2s" }}
-            onMouseEnter={e => { if (canContinue) { e.currentTarget.style.transform="translateY(-2px)"; e.currentTarget.style.boxShadow="0 8px 24px rgba(255,107,43,0.3)"; }}}
-            onMouseLeave={e => { e.currentTarget.style.transform="translateY(0)"; e.currentTarget.style.boxShadow="none"; }}>
+          <button 
+            onClick={handleContinue} 
+            disabled={!canContinue}
+            className={`rounded px-8 py-3.5 font-sans text-[11px] font-semibold tracking-[0.16em] uppercase transition-all duration-200 border-none ${
+              canContinue 
+                ? 'bg-[#6366F1] text-white cursor-pointer hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(99, 102, 241,0.3)]' 
+                : 'bg-[#6366F1]/15 text-[#6366F1]/30 cursor-not-allowed'
+            }`}
+          >
             {current === steps.length - 1 ? "Find My Direction →" : "Continue →"}
           </button>
         </div>
       </div>
 
       {/* Footer bar */}
-      <div style={{ position:"fixed", bottom:0, left:0, right:0, padding:"12px 32px", borderTop:"1px solid rgba(255,255,255,0.05)", display:"flex", justifyContent:"space-between", alignItems:"center", background:"#0A0A0A", zIndex:10 }}>
-        <span style={{ fontSize:10, color:"rgba(255,255,255,0.1)", letterSpacing:"0.14em", textTransform:"uppercase" }}>NAVO</span>
-        <div style={{ display:"flex", gap:5 }}>
-          {steps.map((_, i) => <div key={i} style={{ width:6, height:6, borderRadius:"50%", background: i === current ? "#FF6B2B" : "rgba(255,255,255,0.1)", transition:"background 0.3s" }} />)}
+      <div className="fixed bottom-0 left-0 right-0 px-8 py-3 border-t border-white/5 flex justify-between items-center bg-[#0B0F1A] z-10">
+        <span className="text-[10px] text-white/10 tracking-[0.14em] uppercase">NAVO</span>
+        <div className="flex gap-[5px]">
+          {steps.map((_, i) => <div key={i} className={`w-[6px] h-[6px] rounded-full transition-colors duration-300 ${i === current ? 'bg-[#6366F1]' : 'bg-white/10'}`} />)}
         </div>
-        <span style={{ fontSize:10, color:"rgba(255,255,255,0.1)" }}>Compass Mode</span>
+        <span className="text-[10px] text-white/10">Compass Mode</span>
       </div>
     </div>
   );

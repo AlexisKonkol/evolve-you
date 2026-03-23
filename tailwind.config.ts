@@ -60,35 +60,38 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         /* Brand colors */
-        coral: {
-          DEFAULT: "hsl(var(--coral))",
-          50: "hsl(10 82% 96%)",
-          100: "hsl(10 82% 90%)",
-          400: "hsl(10 82% 68%)",
-          500: "hsl(10 82% 62%)",
-          600: "hsl(10 82% 52%)",
-        },
-        rose: {
-          DEFAULT: "hsl(var(--rose))",
-          500: "hsl(340 75% 65%)",
-        },
-        /* Legacy alias — keep teal mapped to coral so no classes break */
-        teal: {
-          DEFAULT: "hsl(var(--coral))",
-          50:  "hsl(10 82% 96%)",
-          100: "hsl(10 82% 90%)",
-          400: "hsl(10 82% 68%)",
-          500: "hsl(10 82% 62%)",
-          600: "hsl(10 82% 52%)",
-        },
-        amber: {
-          DEFAULT: "hsl(var(--amber))",
-          400: "hsl(36 80% 62%)",
-          500: "hsl(36 80% 58%)",
+        indigo: {
+          DEFAULT: "hsl(var(--indigo))",
+          400: "hsl(239 84% 75%)",
+          500: "hsl(239 84% 67%)",
+          600: "hsl(239 84% 55%)",
         },
         violet: {
           DEFAULT: "hsl(var(--violet))",
-          500: "hsl(258 55% 65%)",
+          500: "hsl(255 92% 76%)",
+        },
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          400: "hsl(172 66% 60%)",
+          500: "hsl(172 66% 50%)",
+        },
+        /* Legacy aliases to prevent breaking */
+        coral: {
+          DEFAULT: "hsl(var(--indigo))",
+          50: "hsl(239 84% 96%)",
+          100: "hsl(239 84% 90%)",
+          400: "hsl(239 84% 75%)",
+          500: "hsl(239 84% 67%)",
+          600: "hsl(239 84% 55%)",
+        },
+        rose: {
+          DEFAULT: "hsl(var(--violet))",
+          500: "hsl(255 92% 76%)",
+        },
+        amber: {
+          DEFAULT: "hsl(var(--teal))",
+          400: "hsl(172 66% 60%)",
+          500: "hsl(172 66% 50%)",
         },
         surface: {
           1: "hsl(var(--surface-1))",
@@ -107,16 +110,19 @@ export default {
       backgroundImage: {
         "gradient-hero":    "var(--gradient-hero)",
         "gradient-primary": "var(--gradient-primary)",
+        "gradient-indigo":  "var(--gradient-primary)",
         "gradient-coral":   "var(--gradient-coral)",
         "gradient-rose":    "var(--gradient-rose)",
-        "gradient-teal":    "var(--gradient-coral)",
+        "gradient-teal":    "var(--gradient-amber)",
         "gradient-amber":   "var(--gradient-amber)",
         "gradient-card":    "var(--gradient-card)",
         "gradient-glow":    "var(--gradient-glow)",
       },
       boxShadow: {
+        indigo: "var(--shadow-indigo)",
+        teal:   "var(--shadow-teal)",
+        violet: "var(--shadow-violet)",
         coral: "var(--shadow-coral)",
-        teal:  "var(--shadow-coral)",
         rose:  "var(--shadow-rose)",
         card:  "var(--shadow-card)",
         glow:  "var(--shadow-glow)",
@@ -129,8 +135,8 @@ export default {
         "fade-in":   { from: { opacity: "0" }, to: { opacity: "1" } },
         "scale-in":  { from: { opacity: "0", transform: "scale(0.95)" }, to: { opacity: "1", transform: "scale(1)" } },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px -4px hsl(10 82% 62% / 0.3)" },
-          "50%": { boxShadow: "0 0 40px -4px hsl(10 82% 62% / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 40px -10px hsl(239 84% 67% / 0.25)" },
+          "50%": { boxShadow: "0 0 60px -10px hsl(239 84% 67% / 0.5)" },
         },
         float: { "0%, 100%": { transform: "translateY(0px)" }, "50%": { transform: "translateY(-8px)" } },
         shimmer: { from: { backgroundPosition: "200% 0" }, to: { backgroundPosition: "-200% 0" } },
@@ -141,8 +147,8 @@ export default {
         "fade-up":        "fade-up 0.6s ease-out forwards",
         "fade-in":        "fade-in 0.4s ease-out forwards",
         "scale-in":       "scale-in 0.3s ease-out forwards",
-        "pulse-glow":     "pulse-glow 3s ease-in-out infinite",
-        float:            "float 4s ease-in-out infinite",
+        "pulse-glow":     "pulse-glow 4s ease-in-out infinite",
+        float:            "float 6s ease-in-out infinite",
         shimmer:          "shimmer 3s linear infinite",
       },
     },

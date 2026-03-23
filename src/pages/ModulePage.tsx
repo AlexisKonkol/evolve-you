@@ -195,7 +195,7 @@ export default function ModulePage() {
 
   if (!module) {
     return (
-      <div style={{ minHeight: '100vh', background: '#0A0A0A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ minHeight: '100vh', background: '#0B0F1A', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ color: 'white', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>Module not found</div>
       </div>
     );
@@ -203,7 +203,7 @@ export default function ModulePage() {
 
   if (moduleComplete) {
     return (
-      <div style={{ minHeight: '100vh', background: '#0A0A0A', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      <div style={{ minHeight: '100vh', background: '#0B0F1A', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
         <div style={{ textAlign: 'center', maxWidth: '400px' }}>
           <div style={{ fontSize: '64px', marginBottom: '24px' }}>🧭</div>
           <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '32px', color: 'white', margin: '0 0 12px' }}>
@@ -216,7 +216,7 @@ export default function ModulePage() {
             <button
               onClick={() => navigate('/dashboard')}
               style={{
-                background: '#FF6B2B',
+                background: '#6366F1',
                 color: 'white',
                 border: 'none',
                 borderRadius: '4px',
@@ -256,7 +256,7 @@ export default function ModulePage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A0A0A', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+    <div style={{ minHeight: '100vh', background: '#0B0F1A', fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* Top Bar */}
       <div style={{ 
         display: 'flex', 
@@ -286,7 +286,7 @@ export default function ModulePage() {
           {module.title}
         </div>
         <div style={{ 
-          color: '#FF6B2B', 
+          color: '#6366F1', 
           fontSize: '12px', 
           fontWeight: 500 
         }}>
@@ -304,7 +304,7 @@ export default function ModulePage() {
         <div style={{
           width: `${((currentStep + 1) / 5) * 100}%`,
           height: '100%',
-          background: '#FF6B2B',
+          background: '#6366F1',
           transition: 'width 0.3s ease'
         }} />
       </div>
@@ -322,7 +322,7 @@ export default function ModulePage() {
           <div style={{
             fontFamily: "'Playfair Display', serif",
             fontSize: '48px',
-            color: 'rgba(255,107,43,0.3)',
+            color: 'rgba(99, 102, 241,0.3)',
             fontWeight: 400,
             marginBottom: '16px'
           }}>
@@ -360,8 +360,8 @@ export default function ModulePage() {
 
           {/* Action Section */}
           <div style={{
-            background: 'rgba(255,107,43,0.06)',
-            border: '1px solid rgba(255,107,43,0.2)',
+            background: 'rgba(99, 102, 241,0.06)',
+            border: '1px solid rgba(99, 102, 241,0.2)',
             borderRadius: '12px',
             padding: '20px',
             marginBottom: '24px'
@@ -371,7 +371,7 @@ export default function ModulePage() {
               fontWeight: 600,
               letterSpacing: '0.16em',
               textTransform: 'uppercase',
-              color: '#FF6B2B',
+              color: '#6366F1',
               marginBottom: '12px'
             }}>
               YOUR MOVE
@@ -413,7 +413,7 @@ export default function ModulePage() {
                 resize: 'vertical',
                 transition: 'border-color 0.2s'
               }}
-              onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(255,107,43,0.4)'}
+              onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(99, 102, 241,0.4)'}
               onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
             />
           </div>
@@ -447,7 +447,7 @@ export default function ModulePage() {
             disabled={!stepComplete}
             style={{
               flex: 1,
-              background: stepComplete ? '#FF6B2B' : 'rgba(255,107,43,0.3)',
+              background: stepComplete ? '#6366F1' : 'rgba(99, 102, 241,0.3)',
               color: 'white',
               border: 'none',
               borderRadius: '4px',

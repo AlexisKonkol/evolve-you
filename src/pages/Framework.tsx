@@ -195,7 +195,7 @@ const synthesis = [
 ];
 
 const colorTokens: Record<string, { text: string; bg: string; border: string; dot: string }> = {
-  coral:  { text: "text-coral",  bg: "bg-coral-500/8",  border: "border-coral-500/20",  dot: "bg-coral-500"  },
+  coral:  { text: "text-indigo-400",  bg: "bg-indigo-500-500/8",  border: "border-coral-500/20",  dot: "bg-indigo-500-500"  },
   amber:  { text: "text-amber",  bg: "bg-amber-500/8",  border: "border-amber-500/20",  dot: "bg-amber-500"  },
   violet: { text: "text-violet", bg: "bg-violet-500/8", border: "border-violet-500/20", dot: "bg-violet-500" },
   rose:   { text: "text-rose",   bg: "bg-rose-500/8",   border: "border-rose-500/20",   dot: "bg-rose-500"   },
@@ -478,7 +478,7 @@ export default function Framework() {
                       boxShadow: "0 0 40px hsl(var(--coral) / 0.2)",
                     }}
                   >
-                    <span className="text-xs font-bold text-coral text-center leading-tight">Identity<br/>Core</span>
+                    <span className="text-xs font-bold text-indigo-400 text-center leading-tight">Identity<br/>Core</span>
                     {/* Pulse ring */}
                     <div
                       className="absolute inset-0 rounded-full border animate-ping opacity-20"
@@ -611,7 +611,7 @@ export default function Framework() {
                       key={i}
                       style={row.highlight ? { background: "hsl(var(--coral) / 0.06)" } : { background: "hsl(var(--surface-1))" }}
                     >
-                      <td className={`p-4 font-medium ${row.highlight ? "text-coral" : "text-foreground"}`}>
+                      <td className={`p-4 font-medium ${row.highlight ? "text-indigo-400" : "text-foreground"}`}>
                         {row.name}
                       </td>
                       <td className="p-4 text-muted-foreground">{row.what}</td>

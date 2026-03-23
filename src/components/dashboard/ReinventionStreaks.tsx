@@ -43,7 +43,7 @@ export function ReinventionStreaks() {
         {streaks.map((s) => {
           const Icon = s.icon;
           const colorMap = {
-            coral:  { bg: "bg-coral-500/10",  text: "text-coral",  border: "border-coral-500/20"  },
+            coral:  { bg: "bg-indigo-500-500/10",  text: "text-indigo-400",  border: "border-coral-500/20"  },
             violet: { bg: "bg-violet-500/10", text: "text-violet", border: "border-violet-500/20" },
             amber:  { bg: "bg-amber-500/10",  text: "text-amber",  border: "border-amber-500/20"  },
           };

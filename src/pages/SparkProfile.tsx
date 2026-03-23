@@ -129,8 +129,8 @@ export default function SparkProfile() {
       // Save to sessionStorage for AI generation
       sessionStorage.setItem('sparkAnswers', JSON.stringify(answers));
 
-      // Navigate to compass
-      navigate('/compass');
+      // Navigate to spark results
+      navigate('/spark-results');
     } catch (error) {
       console.error('Error saving spark profile:', error);
       setLoading(false);
@@ -138,7 +138,7 @@ export default function SparkProfile() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0A0A0A', fontFamily: "'Plus Jakarta Sans', sans-serif", position: 'relative' }}>
+    <div style={{ minHeight: '100vh', background: '#0B0F1A', fontFamily: "'Plus Jakarta Sans', sans-serif", position: 'relative' }}>
       {/* Orange glow */}
       <div style={{ 
         position: 'fixed', 
@@ -147,7 +147,7 @@ export default function SparkProfile() {
         transform: 'translateX(-50%)', 
         width: '100%', 
         height: 400, 
-        background: 'radial-gradient(ellipse 700px 350px at 50% -60px, rgba(255,107,43,0.13) 0%, transparent 70%)', 
+        background: 'radial-gradient(ellipse 700px 350px at 50% -60px, rgba(99, 102, 241,0.13) 0%, transparent 70%)', 
         pointerEvents: 'none', 
         zIndex: 0 
       }} />
@@ -170,8 +170,8 @@ export default function SparkProfile() {
             fontWeight: 600, 
             letterSpacing: '0.24em', 
             textTransform: 'uppercase', 
-            color: '#FF6B2B', 
-            border: '1px solid rgba(255,107,43,0.35)', 
+            color: '#6366F1', 
+            border: '1px solid rgba(99, 102, 241,0.35)', 
             borderRadius: 999, 
             padding: '6px 16px', 
             marginBottom: 20 
@@ -193,7 +193,7 @@ export default function SparkProfile() {
             fontFamily: "'Playfair Display', serif", 
             fontSize: 36, 
             fontWeight: 400, 
-            color: '#FF6B2B', 
+            color: '#6366F1', 
             fontStyle: 'italic', 
             letterSpacing: '-0.02em', 
             lineHeight: 1.1, 
@@ -230,7 +230,7 @@ export default function SparkProfile() {
                 width: '28px',
                 height: '3px',
                 borderRadius: '999px',
-                background: i === currentSection ? '#FF6B2B' : 'rgba(255,255,255,0.15)'
+                background: i === currentSection ? '#6366F1' : 'rgba(255,255,255,0.15)'
               }}
             />
           ))}
@@ -244,8 +244,8 @@ export default function SparkProfile() {
           letterSpacing: '0.16em',
           textTransform: 'uppercase',
           color: 'white',
-          background: 'rgba(255,107,43,0.15)',
-          border: '1px solid rgba(255,107,43,0.35)',
+          background: 'rgba(99, 102, 241,0.15)',
+          border: '1px solid rgba(99, 102, 241,0.35)',
           borderRadius: 999,
           padding: '8px 16px',
           marginBottom: 24
@@ -295,9 +295,9 @@ export default function SparkProfile() {
                   fontWeight: 300,
                   resize: 'vertical',
                   transition: 'border-color 0.2s',
-                  caretColor: '#FF6B2B'
+                  caretColor: '#6366F1'
                 }}
-                onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(255,107,43,0.35)'}
+                onFocus={(e) => e.currentTarget.style.borderColor = 'rgba(99, 102, 241,0.35)'}
                 onBlur={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'}
               />
               {index < currentSectionData.questions.length - 1 && (
@@ -313,8 +313,8 @@ export default function SparkProfile() {
 
         {/* Bottom Info Box */}
         <div style={{
-          background: 'rgba(255,107,43,0.05)',
-          border: '1px solid rgba(255,107,43,0.15)',
+          background: 'rgba(99, 102, 241,0.05)',
+          border: '1px solid rgba(99, 102, 241,0.15)',
           borderRadius: '14px',
           padding: '20px',
           marginTop: '32px',
@@ -340,7 +340,7 @@ export default function SparkProfile() {
             disabled={!allQuestionsInSectionAnswered || loading}
             style={{
               width: '100%',
-              background: allQuestionsInSectionAnswered && !loading ? '#FF6B2B' : 'rgba(255,107,43,0.3)',
+              background: allQuestionsInSectionAnswered && !loading ? '#6366F1' : 'rgba(99, 102, 241,0.3)',
               color: 'white',
               border: 'none',
               borderRadius: '4px',

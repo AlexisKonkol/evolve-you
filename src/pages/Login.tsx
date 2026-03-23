@@ -37,7 +37,7 @@ export default function Login() {
   return (
     <div style={{ 
       minHeight: '100vh', 
-      background: '#0A0A0A', 
+      background: '#0B0F1A', 
       display: 'flex', 
       flexDirection: 'column', 
       justifyContent: 'center',
@@ -53,7 +53,7 @@ export default function Login() {
         transform: 'translateX(-50%)', 
         width: '100%', 
         height: 350, 
-        background: 'radial-gradient(ellipse 600px 300px at 50% -60px, rgba(255,107,43,0.12) 0%, transparent 70%)', 
+        background: 'radial-gradient(ellipse 600px 300px at 50% -60px, rgba(99, 102, 241,0.12) 0%, transparent 70%)', 
         pointerEvents: 'none', 
         zIndex: 0 
       }} />
@@ -78,7 +78,7 @@ export default function Login() {
             margin: 0,
             letterSpacing: '-0.02em'
           }}>
-            NAV<span style={{ color: '#FF6B2B' }}>O</span>
+            NAV<span style={{ color: '#6366F1' }}>O</span>
           </h1>
         </div>
 
@@ -138,10 +138,10 @@ export default function Login() {
                 fontWeight: 400,
                 lineHeight: 1.7,
                 boxSizing: 'border-box',
-                caretColor: '#FF6B2B',
+                caretColor: '#6366F1',
                 transition: 'border-color 0.3s'
               }}
-              onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#FF6B2B' }}
+              onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#6366F1' }}
               onBlur={(e) => { e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,0.2)' }}
             />
           </div>
@@ -178,10 +178,10 @@ export default function Login() {
                 fontWeight: 400,
                 lineHeight: 1.7,
                 boxSizing: 'border-box',
-                caretColor: '#FF6B2B',
+                caretColor: '#6366F1',
                 transition: 'border-color 0.3s'
               }}
-              onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#FF6B2B' }}
+              onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#6366F1' }}
               onBlur={(e) => { e.currentTarget.style.borderBottomColor = 'rgba(255,255,255,0.2)' }}
             />
           </div>
@@ -190,11 +190,11 @@ export default function Login() {
           {error && (
             <div style={{ 
               padding: '12px 16px', 
-              background: 'rgba(255,107,43,0.1)', 
-              border: '1px solid rgba(255,107,43,0.3)', 
+              background: 'rgba(99, 102, 241,0.1)', 
+              border: '1px solid rgba(99, 102, 241,0.3)', 
               borderRadius: 4, 
               fontSize: '13px', 
-              color: '#FF6B2B' 
+              color: '#6366F1' 
             }}>
               {error}
             </div>
@@ -206,7 +206,7 @@ export default function Login() {
             disabled={loading}
             style={{
               width: '100%',
-              background: loading ? 'rgba(255,107,43,0.5)' : '#FF6B2B',
+              background: loading ? 'rgba(99, 102, 241,0.5)' : '#6366F1',
               color: 'white',
               border: 'none',
               borderRadius: 4,
@@ -219,7 +219,7 @@ export default function Login() {
               cursor: loading ? 'not-allowed' : 'pointer',
               transition: 'all 0.2s'
             }}
-            onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(255,107,43,0.3)'; } }}
+            onMouseEnter={(e) => { if (!loading) { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(99, 102, 241,0.3)'; } }}
             onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}
           >
             {loading ? 'Signing in...' : 'Sign In →'}

@@ -70,7 +70,7 @@ export function ShareableIdentityCard() {
           </div>
 
           {/* Archetype */}
-          <p className="text-xs font-semibold uppercase tracking-widest text-coral mb-1">My Identity Archetype</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-indigo-400 mb-1">My Identity Archetype</p>
           <h3 className="text-xl font-bold text-foreground mb-1">{archetypeData.name}</h3>
           <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{archetypeData.tagline}</p>
 

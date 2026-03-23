@@ -42,12 +42,12 @@ const reflections = [
 ];
 
 const categoryColors: Record<string, { text: string; bg: string; border: string }> = {
-  "Identity Signal": { text: "text-coral",  bg: "bg-coral-500/10",  border: "border-coral-500/20"  },
+  "Identity Signal": { text: "text-indigo-400",  bg: "bg-indigo-500-500/10",  border: "border-coral-500/20"  },
   "Strength Signal": { text: "text-amber",  bg: "bg-amber-500/10",  border: "border-amber-500/20"  },
   "Curiosity Signal":{ text: "text-violet", bg: "bg-violet-500/10", border: "border-violet-500/20" },
   "Values Signal":   { text: "text-amber",  bg: "bg-amber-500/10",  border: "border-amber-500/20"  },
   "Growth Signal":   { text: "text-violet", bg: "bg-violet-500/10", border: "border-violet-500/20" },
-  "Future Signal":   { text: "text-coral",  bg: "bg-coral-500/10",  border: "border-coral-500/20"  },
+  "Future Signal":   { text: "text-indigo-400",  bg: "bg-indigo-500-500/10",  border: "border-coral-500/20"  },
 };
 
 function getDailyIndex() {
@@ -79,7 +79,7 @@ export function DailyMirror() {
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center"
             style={{ background: "hsl(var(--coral) / 0.12)" }}>
-            <Brain className="w-4 h-4 text-coral" />
+            <Brain className="w-4 h-4 text-indigo-400" />
           </div>
           <div>
             <h2 className="font-semibold text-foreground text-sm">Today's Mirror</h2>
@@ -125,7 +125,7 @@ export function DailyMirror() {
               animation: "fadeIn 0.4s ease-out both",
             }}
           >
-            <Sparkles className="w-3.5 h-3.5 text-coral inline mr-1.5 -mt-0.5" />
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400 inline mr-1.5 -mt-0.5" />
             {r.followUp}
           </div>
         )}
@@ -135,7 +135,7 @@ export function DailyMirror() {
       <div className="px-6 py-4 border-t border-border/50 flex items-center justify-between"
         style={{ background: "hsl(var(--surface-2) / 0.4)" }}>
         <span className="text-xs text-muted-foreground/50">Reflect, then journal your answer</span>
-        <Link to="/journal" className="flex items-center gap-1 text-xs text-coral hover:text-coral/80 font-semibold transition-colors">
+        <Link to="/journal" className="flex items-center gap-1 text-xs text-indigo-400 hover:text-indigo-400/80 font-semibold transition-colors">
           Open Journal <ChevronRight className="w-3 h-3" />
         </Link>
       </div>

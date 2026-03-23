@@ -218,19 +218,19 @@ const opportunityFeed = [
 // ── Component ─────────────────────────────────────────────────────────────────
 
 const tagColorMap: Record<string, string> = {
-  coral:  "bg-coral-500/10 text-coral border-coral-500/20",
+  coral:  "bg-indigo-500-500/10 text-indigo-400 border-coral-500/20",
   violet: "bg-violet-500/10 text-violet border-violet-500/20",
   amber:  "bg-amber-500/10 text-amber border-amber-500/20",
 };
 
 const iconColorMap: Record<string, string> = {
-  coral:  "text-coral",
+  coral:  "text-indigo-400",
   violet: "text-violet",
   amber:  "text-amber",
 };
 
 const bgColorMap: Record<string, string> = {
-  coral:  "bg-coral-500/10",
+  coral:  "bg-indigo-500-500/10",
   violet: "bg-violet-500/10",
   amber:  "bg-amber-500/10",
 };
@@ -280,7 +280,7 @@ export default function OpportunityEngine() {
               { label: "Digital Entrepreneurship",growth: "+250%", icon: Rocket  },
             ].map((t) => (
               <div key={t.label} className="bg-gradient-card border border-border/50 rounded-xl p-4 text-center">
-                <t.icon className="w-5 h-5 text-coral mx-auto mb-2" />
+                <t.icon className="w-5 h-5 text-indigo-400 mx-auto mb-2" />
                 <p className="text-xs text-muted-foreground mb-1">{t.label}</p>
                 <p className="text-xl font-bold text-gradient-coral">{t.growth}</p>
               </div>
@@ -290,8 +290,8 @@ export default function OpportunityEngine() {
           {/* ── Opportunity Cards ────────────────────────────────── */}
           <section className="mb-16">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-coral-500/10 rounded-xl flex items-center justify-center">
-                <Target className="w-4 h-4 text-coral" />
+              <div className="w-8 h-8 bg-indigo-500-500/10 rounded-xl flex items-center justify-center">
+                <Target className="w-4 h-4 text-indigo-400" />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-foreground">Emerging Opportunities</h2>
@@ -333,7 +333,7 @@ export default function OpportunityEngine() {
                           </div>
                           <div className="flex items-center gap-3 text-xs text-muted-foreground">
                             <span className="flex items-center gap-1">
-                              <TrendingUp className="w-3 h-3 text-coral" />
+                              <TrendingUp className="w-3 h-3 text-indigo-400" />
                               {opp.growth}
                             </span>
                             <span className="flex items-center gap-1">
@@ -375,7 +375,7 @@ export default function OpportunityEngine() {
                                 <span className="text-foreground font-semibold">{opp.income}</span>
                               </div>
                               <div className="flex items-center gap-2 text-sm">
-                                <Clock className="w-4 h-4 text-coral" />
+                                <Clock className="w-4 h-4 text-indigo-400" />
                                 <span className="text-muted-foreground">{opp.time}</span>
                               </div>
                             </div>
@@ -390,7 +390,7 @@ export default function OpportunityEngine() {
                                 <div key={i} className="flex gap-3 text-sm">
                                   <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5"
                                     style={{ background: "hsl(var(--coral) / 0.15)" }}>
-                                    <span className="text-coral text-xs font-bold">{i + 1}</span>
+                                    <span className="text-indigo-400 text-xs font-bold">{i + 1}</span>
                                   </div>
                                   <p className="text-muted-foreground leading-relaxed">{step}</p>
                                 </div>
@@ -406,7 +406,7 @@ export default function OpportunityEngine() {
                               </Link>
                               <Link to="/experiments">
                                 <Button variant="outline" className="border-border hover:border-coral-500/40 gap-2 text-sm">
-                                  <FlaskConical className="w-4 h-4 text-coral" />
+                                  <FlaskConical className="w-4 h-4 text-indigo-400" />
                                   Try an experiment
                                 </Button>
                               </Link>
@@ -454,7 +454,7 @@ export default function OpportunityEngine() {
                     </div>
                     <Link to="/experiments">
                       <Button variant="ghost" size="sm"
-                        className="w-full mt-3 text-xs text-muted-foreground hover:text-foreground gap-1.5 group-hover:text-coral transition-colors">
+                        className="w-full mt-3 text-xs text-muted-foreground hover:text-foreground gap-1.5 group-hover:text-indigo-400 transition-colors">
                         Try this project
                         <ArrowRight className="w-3 h-3" />
                       </Button>
@@ -524,8 +524,8 @@ export default function OpportunityEngine() {
           {/* ── Opportunity Feed ─────────────────────────────────── */}
           <section className="mb-16">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-coral-500/10 rounded-xl flex items-center justify-center">
-                <Rss className="w-4 h-4 text-coral" />
+              <div className="w-8 h-8 bg-indigo-500-500/10 rounded-xl flex items-center justify-center">
+                <Rss className="w-4 h-4 text-indigo-400" />
               </div>
               <div>
                 <h2 className="text-xl font-bold text-foreground">Your Opportunity Feed</h2>
@@ -541,8 +541,8 @@ export default function OpportunityEngine() {
                     className={`flex items-center gap-4 p-4 hover:bg-surface-2 transition-colors group ${
                       i < opportunityFeed.length - 1 ? "border-b border-border/40" : ""
                     }`}>
-                    <div className="w-9 h-9 bg-coral-500/10 rounded-xl flex items-center justify-center shrink-0">
-                      <FeedIcon className="w-4 h-4 text-coral" />
+                    <div className="w-9 h-9 bg-indigo-500-500/10 rounded-xl flex items-center justify-center shrink-0">
+                      <FeedIcon className="w-4 h-4 text-indigo-400" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-semibold text-foreground">{item.label}</p>
@@ -551,7 +551,7 @@ export default function OpportunityEngine() {
                     <div className="flex items-center gap-3 shrink-0">
                       <span className="text-lg font-bold text-gradient-coral">{item.match}%</span>
                       <span className="text-xs text-muted-foreground">match</span>
-                      <ArrowRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-coral group-hover:translate-x-0.5 transition-all" />
+                      <ArrowRight className="w-4 h-4 text-muted-foreground/30 group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-all" />
                     </div>
                   </Link>
                 );
@@ -583,7 +583,7 @@ export default function OpportunityEngine() {
                 </Link>
                 <Link to="/experiments">
                   <Button variant="outline" className="border-border hover:border-coral-500/40 gap-2">
-                    <FlaskConical className="w-4 h-4 text-coral" />
+                    <FlaskConical className="w-4 h-4 text-indigo-400" />
                     Try a small experiment
                   </Button>
                 </Link>

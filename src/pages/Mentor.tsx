@@ -154,7 +154,7 @@ function MessageBubble({ msg }: { msg: Message }) {
             prose-strong:text-foreground prose-strong:font-semibold
             prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:my-1.5
             prose-li:text-muted-foreground prose-ul:my-2 prose-ol:my-2
-            prose-code:text-coral prose-code:bg-coral-500/10 prose-code:px-1 prose-code:rounded
+            prose-code:text-indigo-400 prose-code:bg-indigo-500-500/10 prose-code:px-1 prose-code:rounded
             [&>*:first-child]:mt-0 [&>*:last-child]:mb-0">
             <ReactMarkdown>{msg.content}</ReactMarkdown>
           </div>
@@ -288,8 +288,8 @@ export default function Mentor() {
                 borderColor: "hsl(var(--coral) / 0.2)",
               }}
             >
-              <Compass className="w-4 h-4 text-coral" />
-              <span className="text-coral">Your Path Mentor</span>
+              <Compass className="w-4 h-4 text-indigo-400" />
+              <span className="text-indigo-400">Your Path Mentor</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               You don't need all the answers{" "}
@@ -357,7 +357,7 @@ export default function Mentor() {
                       style={{ background: "hsl(var(--surface-2))" }}
                     >
                       <Icon
-                        className="w-3.5 h-3.5 mt-0.5 shrink-0 text-muted-foreground/50 group-hover:text-coral transition-colors"
+                        className="w-3.5 h-3.5 mt-0.5 shrink-0 text-muted-foreground/50 group-hover:text-indigo-400 transition-colors"
                       />
                       {text}
                     </button>

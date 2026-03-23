@@ -72,8 +72,8 @@ export function TodayEvolution() {
         {completed.length > 0 && (
           <div className="flex items-center gap-1.5 border rounded-full px-3 py-1"
             style={{ background: "hsl(var(--coral) / 0.08)", borderColor: "hsl(var(--coral) / 0.2)" }}>
-            <Zap className="w-3 h-3 text-coral" />
-            <span className="text-coral text-xs font-bold">+{completed.length * 20} momentum</span>
+            <Zap className="w-3 h-3 text-indigo-400" />
+            <span className="text-indigo-400 text-xs font-bold">+{completed.length * 20} momentum</span>
           </div>
         )}
       </div>
@@ -92,7 +92,7 @@ export function TodayEvolution() {
           const done = completed.includes(action.id);
           const Icon = action.icon;
           const colorMap = {
-            coral:  "text-coral bg-coral-500/10",
+            coral:  "text-indigo-400 bg-indigo-500-500/10",
             violet: "text-violet bg-violet-500/10",
             amber:  "text-amber bg-amber-500/10",
           };
@@ -112,9 +112,9 @@ export function TodayEvolution() {
             >
               <button onClick={() => toggle(action)} className="shrink-0 transition-transform active:scale-90">
                 {done ? (
-                  <CheckCircle2 className="w-5 h-5 text-coral" />
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400" />
                 ) : (
-                  <Circle className="w-5 h-5 text-muted-foreground/40 hover:text-coral/50 transition-colors" />
+                  <Circle className="w-5 h-5 text-muted-foreground/40 hover:text-indigo-400/50 transition-colors" />
                 )}
               </button>
               <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${colorMap[action.color as keyof typeof colorMap]}`}>

@@ -542,7 +542,7 @@ function PathMap({ patterns, paths }: { patterns: Patterns; paths: ParsedPath[] 
               background: "hsl(var(--coral) / 0.05)",
               borderColor: "hsl(var(--coral) / 0.2)",
             }}>
-            <Sparkles className="w-5 h-5 text-coral mx-auto mb-3" />
+            <Sparkles className="w-5 h-5 text-indigo-400 mx-auto mb-3" />
             <p className="text-base font-medium text-foreground leading-relaxed max-w-xl mx-auto">
               {patterns.identityStatement}
             </p>
@@ -884,7 +884,7 @@ export default function PathFinder() {
                 background: "hsl(var(--coral) / 0.06)",
                 borderColor: "hsl(var(--coral) / 0.2)",
               }}>
-              <Sparkles className="w-5 h-5 text-coral mx-auto mb-3" />
+              <Sparkles className="w-5 h-5 text-indigo-400 mx-auto mb-3" />
               <p className="text-base font-medium text-foreground leading-relaxed">{patterns.identityStatement}</p>
             </div>
           )}

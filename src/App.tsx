@@ -3,18 +3,18 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { FloatingCoach } from "@/components/FloatingCoach";
+import FloatingCoach from "@/components/FloatingCoach";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import Index from "./pages/Index";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
+import SparkResults from "./pages/SparkResults";
 import IdentityMap from "./pages/IdentityMap";
 import Opportunities from "./pages/Opportunities";
 import OpportunityEngine from "./pages/OpportunityEngine";
 import Paths from "./pages/Paths";
 import Learn from "./pages/Learn";
 import Experiments from "./pages/Experiments";
-import Coach from "./pages/Coach";
 import Community from "./pages/Community";
 import NAVONetwork from "./pages/NAVONetwork";
 import Pricing from "./pages/Pricing";
@@ -30,6 +30,7 @@ import Journal from "./pages/Journal";
 import Mentor from "./pages/Mentor";
 import IdentityDashboard from "./pages/IdentityDashboard";
 import Intelligence from "./pages/Intelligence";
+import Analytics from "./pages/Analytics";
 import Report from "./pages/Report";
 import Framework from "./pages/Framework";
 import IdentityProfile from "./pages/IdentityProfile";
@@ -39,6 +40,7 @@ import CompassResults from "./pages/CompassResults";
 import EdgeProfile from "./pages/EdgeProfile";
 import ModulePage from "./pages/ModulePage";
 import SparkProfile from "./pages/SparkProfile";
+import Coach from "./pages/Coach";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
@@ -70,7 +72,11 @@ const App = () => (
           } />
           <Route path="/compass" element={<Compass />} />
           <Route path="/compass/results" element={<CompassResults />} />
-          <Route path="/edge-profile" element={<EdgeProfile />} />
+          <Route path="/edge-profile" element={
+            <ProtectedRoute>
+              <EdgeProfile />
+            </ProtectedRoute>
+          } />
           <Route path="/module/:moduleId" element={
             <ProtectedRoute>
               <ModulePage />
@@ -79,6 +85,16 @@ const App = () => (
           <Route path="/spark-profile" element={
             <ProtectedRoute>
               <SparkProfile />
+            </ProtectedRoute>
+          } />
+          <Route path="/spark-results" element={
+            <ProtectedRoute>
+              <SparkResults />
+            </ProtectedRoute>
+          } />
+          <Route path="/coach" element={
+            <ProtectedRoute>
+              <Coach />
             </ProtectedRoute>
           } />
           <Route path="/journal" element={
@@ -184,6 +200,11 @@ const App = () => (
           <Route path="/intelligence" element={
             <ProtectedRoute>
               <Intelligence />
+            </ProtectedRoute>
+          } />
+          <Route path="/analytics" element={
+            <ProtectedRoute>
+              <Analytics />
             </ProtectedRoute>
           } />
           <Route path="/report" element={

@@ -47,7 +47,7 @@ interface ActiveExperiment extends Experiment {
 const colorTokens: Record<string, { bg: string; border: string; text: string; badge: string; glow: string }> = {
   amber:  { bg: "hsl(var(--amber) / 0.06)",  border: "hsl(var(--amber) / 0.2)",  text: "text-amber",  badge: "hsl(var(--amber) / 0.12)",  glow: "hsl(var(--amber) / 0.15)" },
   violet: { bg: "hsl(var(--violet) / 0.06)", border: "hsl(var(--violet) / 0.2)", text: "text-violet", badge: "hsl(var(--violet) / 0.12)", glow: "hsl(var(--violet) / 0.15)" },
-  coral:  { bg: "hsl(var(--coral) / 0.06)",  border: "hsl(var(--coral) / 0.2)",  text: "text-coral",  badge: "hsl(var(--coral) / 0.12)",  glow: "hsl(var(--coral) / 0.15)" },
+  coral:  { bg: "hsl(var(--coral) / 0.06)",  border: "hsl(var(--coral) / 0.2)",  text: "text-indigo-400",  badge: "hsl(var(--coral) / 0.12)",  glow: "hsl(var(--coral) / 0.15)" },
   teal:   { bg: "hsl(150 55% 52% / 0.06)",   border: "hsl(150 55% 52% / 0.2)",   text: "text-teal",   badge: "hsl(150 55% 52% / 0.12)",   glow: "hsl(150 55% 52% / 0.15)" },
 };
 
@@ -280,7 +280,7 @@ function ExperimentCard({
         <Link
           to="/coach"
           onClick={(e) => e.stopPropagation()}
-          className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-coral transition-colors ml-auto"
+          className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-indigo-400 transition-colors ml-auto"
         >
           <MessageCircle className="w-3.5 h-3.5" />
           Ask coach

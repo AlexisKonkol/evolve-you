@@ -65,7 +65,7 @@ const promptLibrary = [
 // ── Color tokens ──────────────────────────────────────────────────────────────
 
 const colorMap = {
-  coral:  { bg: "hsl(var(--coral) / 0.06)",  border: "hsl(var(--coral) / 0.2)",  text: "text-coral",  badge: "hsl(var(--coral) / 0.12)" },
+  coral:  { bg: "hsl(var(--coral) / 0.06)",  border: "hsl(var(--coral) / 0.2)",  text: "text-indigo-400",  badge: "hsl(var(--coral) / 0.12)" },
   amber:  { bg: "hsl(var(--amber) / 0.06)",  border: "hsl(var(--amber) / 0.2)",  text: "text-amber",  badge: "hsl(var(--amber) / 0.12)" },
   violet: { bg: "hsl(var(--violet) / 0.06)", border: "hsl(var(--violet) / 0.2)", text: "text-violet", badge: "hsl(var(--violet) / 0.12)" },
   teal:   { bg: "hsl(150 55% 52% / 0.06)",   border: "hsl(150 55% 52% / 0.2)",   text: "text-teal",   badge: "hsl(150 55% 52% / 0.12)" },
@@ -362,7 +362,7 @@ function InsightsView({ entries }: { entries: JournalEntry[] }) {
       {/* Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         <div className="bg-gradient-card border border-border/50 rounded-2xl p-4 text-center">
-          <p className="text-2xl font-bold text-coral">{entries.length}</p>
+          <p className="text-2xl font-bold text-indigo-400">{entries.length}</p>
           <p className="text-xs text-muted-foreground mt-0.5">Entries written</p>
         </div>
         <div className="bg-gradient-card border border-border/50 rounded-2xl p-4 text-center">
@@ -625,8 +625,8 @@ export default function Journal() {
               className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-4 border"
               style={{ background: "hsl(var(--coral) / 0.06)", borderColor: "hsl(var(--coral) / 0.2)" }}
             >
-              <BookOpen className="w-4 h-4 text-coral" />
-              <span className="text-coral">Path Journal</span>
+              <BookOpen className="w-4 h-4 text-indigo-400" />
+              <span className="text-indigo-400">Path Journal</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               Your path begins with{" "}

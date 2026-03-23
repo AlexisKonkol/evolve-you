@@ -1,275 +1,707 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { ArrowRight, Heart, ChevronDown } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import Navbar from "@/components/Navbar";
 
-/* ── COMPASS steps ─────────────────────────────────────────────────── */
-const compassSteps = [
-  {
-    letter: "C",
-    name: "Curate Your Inputs",
-    desc: "Filter the noise. You are the DJ of your own consciousness.",
-  },
-  {
-    letter: "O",
-    name: "Own Your Narrative",
-    desc: "You aren't displaced — you're transitioning. You write the story.",
-  },
-  {
-    letter: "M",
-    name: "Meaning Over Metrics",
-    desc: "Build your life on core values, not someone else's scorecard.",
-  },
-  {
-    letter: "P",
-    name: "Pivot With Purpose",
-    desc: "Every transition is a door, not a wall. Move with intention.",
-  },
-  {
-    letter: "A",
-    name: "Amplify Your Atmosphere",
-    desc: "Shift your physical and digital space to support your growth.",
-  },
-  {
-    letter: "S",
-    name: "Savor Small Wins",
-    desc: "Turn progress into a sensory reward. Feel every step forward.",
-  },
-  {
-    letter: "S",
-    name: "Sustain the Spark",
-    desc: "Protect your energy. Keep the fire lit for the long game.",
-  },
-];
-
-/* ── Main ───────────────────────────────────────────────────────────── */
 export default function Index() {
+  const navigate = useNavigate();
+
+  const scrollToHowItWorks = () => {
+    const element = document.getElementById('how-it-works');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+      `}</style>
+      
+      {/* SECTION 1 — HERO */}
+      <section style={{
+        backgroundImage: "url('/hero-bg.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+        position: "relative",
+        minHeight: "100vh",
+        overflow: "hidden"
+      }}>
+        {/* Overlays */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(to bottom, rgba(4,0,10,0.15) 0%, rgba(4,0,10,0.0) 20%, rgba(4,0,10,0.0) 50%, rgba(4,0,10,0.65) 82%, rgba(4,0,10,0.95) 100%)",
+          zIndex: 1
+        }} />
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          background: "linear-gradient(to right, rgba(4,0,10,0.25) 0%, transparent 22%, transparent 78%, rgba(4,0,10,0.25) 100%)",
+          zIndex: 1
+        }} />
 
-      {/* ── HERO ──────────────────────────────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Background layers */}
-        <div className="absolute inset-0 bg-gradient-hero" />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
-        <div
-          className="absolute top-1/3 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-40 pointer-events-none"
-          style={{ background: "hsl(var(--coral) / 0.07)" }}
-        />
-        <div
-          className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-30 pointer-events-none"
-          style={{ background: "hsl(45 90% 50% / 0.05)" }}
-        />
-
-        <div className="container relative z-10 text-center max-w-3xl mx-auto px-6">
-
-          {/* Badge */}
-          <div
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-10 border"
+        {/* NAVBAR */}
+        <nav style={{
+          position: "absolute",
+          top: 0,
+          width: "100%",
+          padding: "20px 44px",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          zIndex: 10
+        }}>
+          {/* Left: Logo */}
+          <a 
+            href="/"
             style={{
-              background: "hsl(var(--coral) / 0.08)",
-              borderColor: "hsl(var(--coral) / 0.18)",
-              color: "hsl(var(--coral))",
+              fontSize: "16px",
+              fontWeight: 700,
+              color: "white",
+              letterSpacing: "0.1em",
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              textDecoration: "none"
             }}
           >
-            <Heart className="w-3.5 h-3.5" />
-            For the person AI displaced, laid off, or burned out
-          </div>
+            NAVO
+          </a>
 
-          {/* Headline */}
-          <h1 className="font-display text-5xl md:text-7xl text-foreground leading-[1.08] tracking-tight mb-6">
-            The job ended.
-            <br />
-            <span className="text-gradient-coral italic">You didn't.</span>
-          </h1>
-
-          {/* Subheadline */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-            NAVO helps you find your direction and take your next step —
-            one honest move at a time.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-14">
-            <Link to="/compass">
-              <Button
-                size="lg"
-                className="bg-gradient-coral text-primary-foreground font-semibold text-base px-8 py-6 rounded-xl glow-coral hover:opacity-90 transition-all hover:scale-[1.02] group gap-2"
-              >
-                Find Your Direction
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Button>
-            </Link>
-            <a href="#compass-method">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-border text-muted-foreground hover:text-foreground hover:border-coral-500/40 text-base px-8 py-6 rounded-xl gap-2 bg-transparent"
-              >
-                See how it works ↓
-              </Button>
+          {/* Centre: Nav links */}
+          <div style={{
+            display: "flex",
+            gap: "30px",
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+            fontSize: "12px",
+            color: "rgba(255,255,255,0.42)"
+          }}>
+            <a 
+              href="#how-it-works"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToHowItWorks();
+              }}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              How it works
+            </a>
+            <a 
+              href="/compass"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/compass');
+              }}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              COMPASS
+            </a>
+            <a 
+              href="/dashboard"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/dashboard');
+              }}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Dashboard
             </a>
           </div>
 
-          {/* Trust stats */}
-          <div className="flex items-center justify-center gap-10 text-sm text-muted-foreground flex-wrap">
-            {[
-              { n: "4 min", l: "to first insight" },
-              { n: "Free", l: "to start" },
-              { n: "Built", l: "for right now" },
-            ].map((s, i) => (
-              <div key={i} className="text-center">
-                <div className="text-xl font-bold text-foreground tracking-tight">{s.n}</div>
-                <div className="text-xs mt-0.5">{s.l}</div>
-              </div>
-            ))}
+          {/* Right: Buttons */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "16px",
+            fontFamily: "'Plus Jakarta Sans', sans-serif"
+          }}>
+            <button
+              onClick={() => navigate('/login')}
+              style={{
+                background: "none",
+                border: "none",
+                fontSize: "12px",
+                color: "rgba(255,255,255,0.35)",
+                cursor: "pointer",
+                fontFamily: "inherit"
+              }}
+            >
+              Sign In
+            </button>
+            <button
+              onClick={() => navigate('/signup')}
+              style={{
+                background: "white",
+                color: "#0D0028",
+                padding: "9px 20px",
+                borderRadius: "3px",
+                fontSize: "10px",
+                fontWeight: 700,
+                letterSpacing: "0.13em",
+                textTransform: "uppercase",
+                cursor: "pointer",
+                border: "none",
+                fontFamily: "inherit"
+              }}
+            >
+              Find Your Direction →
+            </button>
+          </div>
+        </nav>
+
+        {/* HERO TEXT */}
+        <div style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -60px)",
+          textAlign: "center",
+          padding: "0 140px",
+          zIndex: 5,
+          width: "100%",
+          boxSizing: "border-box"
+        }}>
+          {/* Badge pill */}
+          <div style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "7px",
+            background: "rgba(192,132,252,0.1)",
+            border: "1px solid rgba(192,132,252,0.22)",
+            borderRadius: "999px",
+            padding: "5px 16px",
+            marginBottom: "24px"
+          }}>
+            <div style={{
+              width: "4px",
+              height: "4px",
+              borderRadius: "50%",
+              background: "#C084FC"
+            }} />
+            <span style={{
+              fontSize: "10px",
+              color: "rgba(192,132,252,0.75)",
+              letterSpacing: "0.1em",
+              fontWeight: 500,
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              For when surviving isn't enough anymore
+            </span>
+          </div>
+
+          {/* Headline */}
+          <h1 style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "46px",
+            color: "white",
+            fontWeight: 400,
+            lineHeight: 1.2,
+            letterSpacing: "-0.01em",
+            margin: "0 0 8px"
+          }}>
+            When you can't see a way forward —
+          </h1>
+          <h2 style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "46px",
+            color: "#E9D5FF",
+            fontStyle: "italic",
+            fontWeight: 400,
+            lineHeight: 1.2,
+            margin: "0 0 26px"
+          }}>
+            NAVO helps you find one.
+          </h2>
+
+          {/* Subline */}
+          <p style={{
+            fontSize: "15px",
+            color: "rgba(255,255,255,0.35)",
+            lineHeight: 1.95,
+            fontWeight: 300,
+            marginBottom: "36px",
+            maxWidth: "400px",
+            marginLeft: "auto",
+            marginRight: "auto",
+            fontFamily: "'Plus Jakarta Sans', sans-serif"
+          }}>
+            Direction, support and clarity —<br />
+            for the moments that feel unbearable.
+          </p>
+
+          {/* CTA row */}
+          <div style={{
+            display: "flex",
+            gap: "14px",
+            alignItems: "center",
+            justifyContent: "center"
+          }}>
+            <button
+              onClick={() => navigate('/signup')}
+              style={{
+                background: "white",
+                color: "#0D0028",
+                padding: "14px 36px",
+                borderRadius: "3px",
+                fontSize: "11px",
+                fontWeight: 700,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                cursor: "pointer",
+                border: "none",
+                fontFamily: "'Plus Jakarta Sans', sans-serif"
+              }}
+            >
+              Find Your Direction →
+            </button>
+            <button
+              onClick={scrollToHowItWorks}
+              style={{
+                color: "rgba(220,190,255,0.35)",
+                fontSize: "12px",
+                fontWeight: 300,
+                letterSpacing: "0.05em",
+                cursor: "pointer",
+                background: "none",
+                border: "none",
+                fontFamily: "'Plus Jakarta Sans', sans-serif"
+              }}
+            >
+              See how it works ↓
+            </button>
           </div>
         </div>
 
-        {/* Scroll nudge */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30 animate-bounce">
-          <ChevronDown className="w-5 h-5 text-muted-foreground" />
+        {/* BOTTOM STATS */}
+        <div style={{
+          position: "absolute",
+          bottom: "22px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          gap: "38px",
+          zIndex: 5
+        }}>
+          {/* Free stat */}
+          <div style={{ textAlign: "center" }}>
+            <div style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "14px",
+              color: "rgba(220,190,255,0.5)"
+            }}>
+              Free
+            </div>
+            <div style={{
+              fontSize: "8px",
+              textTransform: "uppercase",
+              letterSpacing: "0.16em",
+              color: "rgba(255,255,255,0.16)",
+              marginTop: "3px",
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              to start
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div style={{
+            width: "1px",
+            height: "26px",
+            background: "rgba(255,255,255,0.07)"
+          }} />
+
+          {/* Time stat */}
+          <div style={{ textAlign: "center" }}>
+            <div style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "14px",
+              color: "rgba(220,190,255,0.5)"
+            }}>
+              4 min
+            </div>
+            <div style={{
+              fontSize: "8px",
+              textTransform: "uppercase",
+              letterSpacing: "0.16em",
+              color: "rgba(255,255,255,0.16)",
+              marginTop: "3px",
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              to first insight
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div style={{
+            width: "1px",
+            height: "26px",
+            background: "rgba(255,255,255,0.07)"
+          }} />
+
+          {/* AI Coach stat */}
+          <div style={{ textAlign: "center" }}>
+            <div style={{
+              fontFamily: "'Playfair Display', serif",
+              fontSize: "14px",
+              color: "rgba(220,190,255,0.5)"
+            }}>
+              AI Coach
+            </div>
+            <div style={{
+              fontSize: "8px",
+              textTransform: "uppercase",
+              letterSpacing: "0.16em",
+              color: "rgba(255,255,255,0.16)",
+              marginTop: "3px",
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              built in
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ── SECTION 2 — THE PROBLEM ────────────────────────────────────── */}
-      <section className="py-28 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
-        <div className="container max-w-2xl px-6 text-center relative z-10">
-          <p className="text-coral text-xs font-semibold uppercase tracking-widest mb-5">
-            The thing no one talks about
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 leading-snug">
-            Most people respond to a crisis by doing more of what already felt wrong.
-          </h2>
+      {/* SECTION 2 — HOW IT WORKS */}
+      <section id="how-it-works" style={{
+        background: "#06000F",
+        padding: "72px 60px",
+        borderTop: "1px solid rgba(139,92,246,0.08)"
+      }}>
+        {/* Centre label */}
+        <div style={{
+          fontSize: "9px",
+          textTransform: "uppercase",
+          letterSpacing: "0.24em",
+          color: "rgba(192,132,252,0.35)",
+          marginBottom: "22px",
+          textAlign: "center",
+          fontFamily: "'Plus Jakarta Sans', sans-serif"
+        }}>
+          The NAVO Method
+        </div>
+
+        {/* Centre headline */}
+        <h2 style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: "28px",
+          color: "white",
+          lineHeight: 1.6,
+          marginBottom: "14px",
+          maxWidth: "560px",
+          margin: "0 auto 14px",
+          textAlign: "center",
+          fontWeight: 400
+        }}>
+          The fog isn't failure.<br />
+          <span style={{ color: "#E9D5FF", fontStyle: "italic" }}>
+            It's the moment before clarity.
+          </span>
+        </h2>
+
+        {/* Centre subline */}
+        <p style={{
+          fontSize: "13px",
+          color: "rgba(255,255,255,0.28)",
+          lineHeight: 1.95,
+          fontWeight: 300,
+          marginBottom: "44px",
+          textAlign: "center",
+          fontFamily: "'Plus Jakarta Sans', sans-serif"
+        }}>
+          NAVO asks the questions that cut through the noise.<br />
+          Your answers become your direction.
+        </p>
+
+        {/* 3 feature cards */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "14px",
+          maxWidth: "660px",
+          margin: "0 auto"
+        }}>
+          {/* COMPASS card */}
           <div
-            className="rounded-2xl border p-8 text-left"
+            onClick={() => navigate('/compass')}
             style={{
-              background: "hsl(var(--surface-1))",
-              borderColor: "hsl(var(--border))",
+              background: "rgba(139,92,246,0.06)",
+              border: "1px solid rgba(139,92,246,0.13)",
+              borderRadius: "12px",
+              padding: "26px 18px",
+              textAlign: "center",
+              cursor: "pointer",
+              transition: "all 0.2s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(139,92,246,0.1)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(139,92,246,0.06)";
+              e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            <div
-              className="border-l-2 pl-6 mb-6"
-              style={{ borderColor: "hsl(var(--coral) / 0.5)" }}
-            >
-              <p className="text-lg font-semibold text-foreground italic font-display leading-relaxed">
-                "Update the résumé. Apply to more jobs. Do more of what already felt wrong."
-              </p>
+            <div style={{
+              fontSize: "9px",
+              textTransform: "uppercase",
+              letterSpacing: "0.18em",
+              color: "rgba(192,132,252,0.5)",
+              marginBottom: "12px",
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              COMPASS
             </div>
-            <p className="text-muted-foreground leading-[1.9]">
-              NAVO does something different. Before any path, any plan, any next step —
-              we help you understand who you actually are.
-            </p>
-            <p className="text-muted-foreground leading-[1.9] mt-4">
-              Not a job recommendation. Not a skills assessment. A real mirror held up to the person
-              that existed long before any job title — and will exist long after the next one.
+            <p style={{
+              fontSize: "12px",
+              color: "rgba(255,255,255,0.48)",
+              lineHeight: 1.75,
+              margin: 0,
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              7 honest questions. What's<br />
+              blocking you. What lights you up.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* ── SECTION 3 — THE COMPASS METHOD ────────────────────────────── */}
-      <section
-        id="compass-method"
-        className="py-28 relative overflow-hidden"
-        style={{ background: "hsl(var(--surface-1))" }}
-      >
-        <div className="container max-w-5xl px-6 relative z-10">
-          <div className="text-center mb-14">
-            {/* Compass icon */}
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-5"
-              style={{ background: "hsl(45 90% 50% / 0.1)", border: "1px solid hsl(45 90% 50% / 0.2)" }}>
-              <svg width="26" height="26" viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="50" r="40" stroke="hsl(45, 90%, 50%)" strokeWidth="4" fill="none" opacity="0.6"/>
-                <circle cx="50" cy="50" r="30" stroke="hsl(45, 90%, 50%)" strokeWidth="2" fill="none" opacity="0.3"/>
-                <path d="M50 14 L43 52 L50 48 Z" fill="hsl(30, 60%, 35%)"/>
-                <path d="M50 14 L57 52 L50 48 Z" fill="hsl(25, 80%, 55%)"/>
-                <path d="M43 52 L50 48 L50 62 Z" fill="hsl(28, 70%, 45%)"/>
-                <path d="M57 52 L50 48 L50 62 Z" fill="hsl(22, 75%, 50%)"/>
-                <circle cx="50" cy="14" r="3" fill="white" opacity="0.9"/>
-              </svg>
+          {/* Spark Profile card */}
+          <div
+            onClick={() => navigate('/signup')}
+            style={{
+              background: "rgba(139,92,246,0.06)",
+              border: "1px solid rgba(139,92,246,0.13)",
+              borderRadius: "12px",
+              padding: "26px 18px",
+              textAlign: "center",
+              cursor: "pointer",
+              transition: "all 0.2s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(139,92,246,0.1)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(139,92,246,0.06)";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            <div style={{
+              fontSize: "9px",
+              textTransform: "uppercase",
+              letterSpacing: "0.18em",
+              color: "rgba(192,132,252,0.5)",
+              marginBottom: "12px",
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              Spark Profile
             </div>
-
-            <p
-              className="text-xs font-semibold uppercase tracking-widest mb-3"
-              style={{ color: "hsl(45, 90%, 55%)" }}
-            >
-              The method
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
-              Introducing the COMPASS Method™
-            </h2>
-            <p className="text-muted-foreground text-base max-w-md mx-auto">
-              7 steps. Your pace. AI that listens instead of pitches.
+            <p style={{
+              fontSize: "12px",
+              color: "rgba(255,255,255,0.48)",
+              lineHeight: 1.75,
+              margin: 0,
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              Your purpose. Your energy.<br />
+              Your possible futures — all mapped.
             </p>
           </div>
 
-          {/* Cards grid — horizontal feel on wide, wraps on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {compassSteps.map((step, i) => (
-              <div
-                key={i}
-                className="bg-gradient-card border border-border/40 rounded-2xl p-5 card-hover group"
-                style={i === 6 ? { gridColumn: "span 1" } : {}}
-              >
-                {/* Letter pill */}
-                <div
-                  className="inline-flex items-center justify-center w-9 h-9 rounded-xl font-bold text-base mb-4 shrink-0"
-                  style={{
-                    background: "hsl(45 90% 50% / 0.12)",
-                    border: "1px solid hsl(45 90% 50% / 0.25)",
-                    color: "hsl(45, 90%, 55%)",
-                  }}
-                >
-                  {step.letter}
-                </div>
-                <h3 className="font-semibold text-foreground text-sm mb-1.5">{step.name}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{step.desc}</p>
-              </div>
-            ))}
+          {/* AI Coach card */}
+          <div
+            onClick={() => navigate('/signup')}
+            style={{
+              background: "rgba(139,92,246,0.06)",
+              border: "1px solid rgba(139,92,246,0.13)",
+              borderRadius: "12px",
+              padding: "26px 18px",
+              textAlign: "center",
+              cursor: "pointer",
+              transition: "all 0.2s ease"
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(139,92,246,0.1)";
+              e.currentTarget.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(139,92,246,0.06)";
+              e.currentTarget.style.transform = "translateY(0)";
+            }}
+          >
+            <div style={{
+              fontSize: "9px",
+              textTransform: "uppercase",
+              letterSpacing: "0.18em",
+              color: "rgba(192,132,252,0.5)",
+              marginBottom: "12px",
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              AI Coach
+            </div>
+            <p style={{
+              fontSize: "12px",
+              color: "rgba(255,255,255,0.48)",
+              lineHeight: 1.75,
+              margin: 0,
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              Knows your whole story.<br />
+              Holds you accountable every day.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 4 — FINAL CTA ──────────────────────────────────────── */}
-      <section className="py-36 relative overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "var(--gradient-glow)" }} />
-        <div
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full blur-3xl pointer-events-none"
-          style={{ background: "hsl(var(--coral) / 0.07)" }}
-        />
+      {/* SECTION 3 — WHO THIS IS FOR */}
+      <section style={{
+        background: "#04000A",
+        padding: "72px 60px",
+        borderTop: "1px solid rgba(139,92,246,0.06)"
+      }}>
+        {/* Centre headline */}
+        <h2 style={{
+          fontFamily: "'Playfair Display', serif",
+          fontSize: "28px",
+          color: "white",
+          lineHeight: 1.55,
+          marginBottom: "32px",
+          textAlign: "center",
+          fontWeight: 400
+        }}>
+          Your stars are already there.<br />
+          <span style={{ color: "#E9D5FF", fontStyle: "italic" }}>
+            NAVO helps you read them.
+          </span>
+        </h2>
 
-        <div className="container max-w-2xl text-center relative z-10 px-6">
-          <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6 leading-[1.1]">
-            Clarity isn't found.
-            <br />
-            <span className="text-gradient-coral italic">It's built — one step at a time.</span>
-          </h2>
+        {/* 3 bullet rows */}
+        <div style={{
+          maxWidth: "500px",
+          margin: "0 auto 38px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "10px"
+        }}>
+          {/* Row 1 */}
+          <div style={{
+            display: "flex",
+            gap: "14px",
+            alignItems: "flex-start",
+            padding: "16px 20px",
+            background: "rgba(139,92,246,0.05)",
+            border: "1px solid rgba(139,92,246,0.11)",
+            borderRadius: "10px"
+          }}>
+            <div style={{
+              width: "5px",
+              height: "5px",
+              borderRadius: "50%",
+              background: "rgba(192,132,252,0.55)",
+              flexShrink: 0,
+              marginTop: "6px"
+            }} />
+            <p style={{
+              fontSize: "13px",
+              color: "rgba(255,255,255,0.45)",
+              lineHeight: 1.65,
+              fontWeight: 300,
+              margin: 0,
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              You've been running on empty and don't know how to stop
+            </p>
+          </div>
 
-          <p className="text-muted-foreground text-lg mb-10 leading-relaxed max-w-lg mx-auto">
-            Seven honest steps. No résumé required. No pretending you have it figured out.
-          </p>
+          {/* Row 2 */}
+          <div style={{
+            display: "flex",
+            gap: "14px",
+            alignItems: "flex-start",
+            padding: "16px 20px",
+            background: "rgba(139,92,246,0.05)",
+            border: "1px solid rgba(139,92,246,0.11)",
+            borderRadius: "10px"
+          }}>
+            <div style={{
+              width: "5px",
+              height: "5px",
+              borderRadius: "50%",
+              background: "rgba(192,132,252,0.55)",
+              flexShrink: 0,
+              marginTop: "6px"
+            }} />
+            <p style={{
+              fontSize: "13px",
+              color: "rgba(255,255,255,0.45)",
+              lineHeight: 1.65,
+              fontWeight: 300,
+              margin: 0,
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              Something happened that changed everything — and you're still standing
+            </p>
+          </div>
 
-          <Link to="/compass">
-            <Button
-              size="lg"
-              className="bg-gradient-coral text-primary-foreground font-semibold text-base px-10 py-6 rounded-xl glow-coral hover:opacity-90 transition-all hover:scale-[1.02] group gap-2"
-            >
-              Start Your Compass Session
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </Button>
-          </Link>
+          {/* Row 3 */}
+          <div style={{
+            display: "flex",
+            gap: "14px",
+            alignItems: "flex-start",
+            padding: "16px 20px",
+            background: "rgba(139,92,246,0.05)",
+            border: "1px solid rgba(139,92,246,0.11)",
+            borderRadius: "10px"
+          }}>
+            <div style={{
+              width: "5px",
+              height: "5px",
+              borderRadius: "50%",
+              background: "rgba(192,132,252,0.55)",
+              flexShrink: 0,
+              marginTop: "6px"
+            }} />
+            <p style={{
+              fontSize: "13px",
+              color: "rgba(255,255,255,0.45)",
+              lineHeight: 1.65,
+              fontWeight: 300,
+              margin: 0,
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}>
+              You know there's more — you just can't see the path to it yet
+            </p>
+          </div>
+        </div>
 
-          <p className="text-xs text-muted-foreground/40 mt-6">
-            Free to start. No email required. Your pace.
+        {/* CTA */}
+        <div style={{ textAlign: "center" }}>
+          <button
+            onClick={() => navigate('/signup')}
+            style={{
+              background: "white",
+              color: "#0D0028",
+              padding: "15px 38px",
+              borderRadius: "3px",
+              fontSize: "11px",
+              fontWeight: 700,
+              letterSpacing: "0.13em",
+              textTransform: "uppercase",
+              cursor: "pointer",
+              border: "none",
+              marginBottom: "14px",
+              fontFamily: "'Plus Jakarta Sans', sans-serif"
+            }}
+          >
+            Start for free →
+          </button>
+          <p style={{
+            fontSize: "11px",
+            color: "rgba(255,255,255,0.14)",
+            fontWeight: 300,
+            margin: 0,
+            fontFamily: "'Plus Jakarta Sans', sans-serif"
+          }}>
+            No credit card · 4 minutes to your first insight
           </p>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </>
   );
 }

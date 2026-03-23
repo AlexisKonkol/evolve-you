@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Menu, X, LayoutDashboard, Compass, BookOpen, Sparkles } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Identity", href: "/identity-profile", icon: Sparkles },
-  { label: "Paths", href: "/paths", icon: Compass },
-  { label: "Journal", href: "/journal", icon: BookOpen },
-  { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "COMPASS", href: "/compass" },
+  { label: "Dashboard", href: "/dashboard" },
 ];
 
 function NavoLogo({ size = 28 }: { size?: number }) {
@@ -33,6 +31,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -42,90 +41,227 @@ export function Navbar() {
 
   useEffect(() => { setMobileOpen(false); }, [location.pathname]);
 
-  const isAppRoute = navLinks.some((l) => l.href === location.pathname);
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? "glass border-b border-border/40 py-3" : "py-4"
-    }`}>
-      <div className="container max-w-6xl flex items-center gap-2 px-6">
-        <Link to="/" className="flex items-center gap-2.5 group shrink-0 mr-4">
-          <NavoLogo size={30} />
-          <span className="font-bold text-foreground tracking-tight text-sm">
-            NAV<span className="text-gradient-coral">O</span>
-          </span>
-        </Link>
+    <>
+      <style>{`
+        .navbar-desktop {
+          display: none;
+        }
+        .navbar-mobile {
+          display: block;
+        }
+        @media (min-width: 768px) {
+          .navbar-desktop {
+            display: flex;
+          }
+          .navbar-mobile {
+            display: none;
+          }
+        }
+      `}</style>
+      <header 
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          transition: "all 0.3s ease",
+          backgroundColor: scrolled ? "rgba(10,10,10,0.95)" : "transparent",
+          borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "none",
+          paddingTop: scrolled ? "12px" : "16px",
+          paddingBottom: scrolled ? "12px" : "16px"
+        }}
+      >
+        <nav style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "56px" }}>
+          {/* Logo */}
+          <Link to="/" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
+            <NavoLogo size={32} />
+            <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontSize: "20px", fontWeight: 600, color: "white" }}>NAVO</span>
+          </Link>
 
-        <nav className="hidden md:flex items-center gap-0.5 flex-1">
-          {navLinks.map((link) => {
-            const Icon = link.icon;
-            const active = location.pathname === link.href;
-            return (
-              <Link key={link.href} to={link.href}
-                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  active ? "text-coral bg-coral-500/10" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                }`}>
-                <Icon className="w-3.5 h-3.5" />
-                {link.label}
-              </Link>
-            );
-          })}
-        </nav>
-
-        <div className="hidden md:flex items-center gap-2 ml-auto">
-          {isAppRoute ? (
-            <Link to="/profile">
-              <Button variant="outline" size="sm" className="border-border/60 text-muted-foreground hover:text-foreground hover:border-coral-500/40 h-8 text-xs rounded-lg">
-                My Profile
-              </Button>
-            </Link>
-          ) : (
-            <>
-              <Link to="/dashboard">
-                <Button variant="outline" size="sm" className="border-border/60 text-muted-foreground hover:text-foreground hover:border-coral-500/40 h-8 text-xs rounded-lg">
-                  Sign In
-                </Button>
-              </Link>
-              <Link to="/onboarding">
-                <Button size="sm" className="bg-gradient-coral text-primary-foreground font-semibold hover:opacity-90 h-8 text-xs rounded-lg glow-coral">
-                  Rediscover your edge
-                </Button>
-              </Link>
-            </>
-          )}
-        </div>
-
-        <button className="md:hidden ml-auto text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
-      </div>
-
-      {mobileOpen && (
-        <div className="md:hidden glass border-t border-border/40 mt-1">
-          <div className="container px-6 py-4 space-y-1">
-            {navLinks.map((link) => {
-              const Icon = link.icon;
-              const active = location.pathname === link.href;
-              return (
-                <Link key={link.href} to={link.href} onClick={() => setMobileOpen(false)}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                    active ? "text-coral bg-coral-500/10" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
-                  }`}>
-                  <Icon className="w-4 h-4" />
+          {/* Desktop Nav */}
+          <div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
+            <div className="navbar-desktop" style={{ gap: "28px" }}>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    textDecoration: "none",
+                    color: location.pathname === link.href ? "#FF6B2B" : "rgba(255,255,255,0.5)",
+                    transition: "color 0.2s ease"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "white";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = location.pathname === link.href ? "#FF6B2B" : "rgba(255,255,255,0.5)";
+                  }}
+                >
                   {link.label}
                 </Link>
-              );
-            })}
-            <div className="pt-3 border-t border-border/40">
-              <Link to="/onboarding" onClick={() => setMobileOpen(false)}>
-                <Button className="w-full bg-gradient-coral text-primary-foreground font-semibold">
-                  Rediscover your edge
-                </Button>
-              </Link>
+              ))}
+            </div>
+
+            {/* Right side buttons */}
+            <div className="navbar-desktop" style={{ alignItems: "center", gap: "12px" }}>
+              <button
+                onClick={() => navigate('/login')}
+                style={{
+                  background: "transparent",
+                  border: "none",
+                  color: "rgba(255,255,255,0.7)",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 500,
+                  cursor: "pointer",
+                  padding: "8px 16px",
+                  borderRadius: "8px",
+                  transition: "all 0.2s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = "white";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = "rgba(255,255,255,0.7)";
+                  e.currentTarget.style.background = "transparent";
+                }}
+              >
+                Sign In
+              </button>
+              
+              <button
+                onClick={() => navigate('/signup')}
+                style={{
+                  background: "#FF6B2B",
+                  border: "none",
+                  color: "white",
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  borderRadius: "999px",
+                  padding: "10px 20px",
+                  transition: "all 0.2s ease"
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-1px)";
+                  e.currentTarget.style.boxShadow = "0 4px 12px rgba(255, 107, 43, 0.3)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                Find Your Direction →
+              </button>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="navbar-mobile"
+            style={{
+              background: "none",
+              border: "none",
+              color: "white",
+              cursor: "pointer",
+              padding: "8px"
+            }}
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </nav>
+
+        {/* Mobile menu */}
+        {mobileOpen && (
+          <div style={{
+            position: "absolute",
+            top: "100%",
+            left: 0,
+            right: 0,
+            background: "rgba(10,10,10,0.98)",
+            backdropFilter: "blur(20px)",
+            borderBottom: "1px solid rgba(255,255,255,0.1)",
+            padding: "24px"
+          }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: "16px",
+                    fontWeight: 500,
+                    textDecoration: "none",
+                    color: location.pathname === link.href ? "#FF6B2B" : "rgba(255,255,255,0.7)",
+                    padding: "12px 16px",
+                    borderRadius: "8px",
+                    transition: "all 0.2s ease"
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = "white";
+                    e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = location.pathname === link.href ? "#FF6B2B" : "rgba(255,255,255,0.7)";
+                    e.currentTarget.style.background = "transparent";
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginTop: "8px", borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "16px" }}>
+                <button
+                  onClick={() => navigate('/login')}
+                  style={{
+                    background: "transparent",
+                    border: "1px solid rgba(255,255,255,0.2)",
+                    color: "white",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 500,
+                    cursor: "pointer",
+                    borderRadius: "8px",
+                    padding: "12px 16px",
+                    width: "100%",
+                    textAlign: "center"
+                  }}
+                >
+                  Sign In
+                </button>
+                
+                <button
+                  onClick={() => navigate('/signup')}
+                  style={{
+                    background: "#FF6B2B",
+                    border: "none",
+                    color: "white",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: "14px",
+                    fontWeight: 600,
+                    cursor: "pointer",
+                    borderRadius: "8px",
+                    padding: "12px 16px",
+                    width: "100%",
+                    textAlign: "center"
+                  }}
+                >
+                  Find Your Direction →
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </header>
+    </>
   );
 }

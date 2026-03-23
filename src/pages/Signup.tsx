@@ -63,17 +63,17 @@ export default function Signup() {
   `;
 
   return (
-    <div style={{ minHeight:"100vh", background:"#0A0A0A", display:"flex", 
+    <div style={{ minHeight:"100vh", background:"#0B0F1A", display:"flex", 
       alignItems:"center", justifyContent:"center", fontFamily:"'Plus Jakarta Sans',sans-serif",
       position:"relative" }}>
       <style>{FONTS}</style>
       <div style={{ position:"absolute", top:0, left:"50%", transform:"translateX(-50%)",
-        width:"100%", height:300, background:"radial-gradient(ellipse 600px 300px at 50% -60px, rgba(255,107,43,0.12) 0%, transparent 70%)",
+        width:"100%", height:300, background:"radial-gradient(ellipse 600px 300px at 50% -60px, rgba(99, 102, 241,0.12) 0%, transparent 70%)",
         pointerEvents:"none" }} />
       <div style={{ width:"100%", maxWidth:420, padding:"0 32px", position:"relative", zIndex:1 }}>
         <div style={{ textAlign:"center", marginBottom:48 }}>
           <div style={{ fontFamily:"'Playfair Display',serif", fontSize:24, color:"white", marginBottom:32 }}>
-            NAV<span style={{ color:"#FF6B2B" }}>O</span>
+            NAV<span style={{ color:"#6366F1" }}>O</span>
           </div>
           <h1 style={{ fontFamily:"'Playfair Display',serif", fontSize:36, fontWeight:400, 
             color:"white", margin:"0 0 8px", letterSpacing:"-0.02em" }}>
@@ -103,8 +103,8 @@ export default function Signup() {
                 borderBottom:"1px solid rgba(255,255,255,0.15)", padding:"8px 0 14px",
                 color:"#F5ECD7", fontFamily:"'Plus Jakarta Sans',sans-serif",
                 fontSize:15, fontWeight:300, boxSizing:"border-box",
-                caretColor:"#FF6B2B" }}
-              onFocus={e => e.currentTarget.style.borderBottomColor="#FF6B2B"}
+                caretColor:"#6366F1" }}
+              onFocus={e => e.currentTarget.style.borderBottomColor="#6366F1"}
               onBlur={e => e.currentTarget.style.borderBottomColor="rgba(255,255,255,0.15)"}
             />
           </div>
@@ -119,7 +119,7 @@ export default function Signup() {
         )}
 
         <button onClick={handleSignup} disabled={loading || !name || !email || !password}
-          style={{ width:"100%", background: loading ? "rgba(255,107,43,0.5)" : "#FF6B2B",
+          style={{ width:"100%", background: loading ? "rgba(99, 102, 241,0.5)" : "#6366F1",
             color:"white", border:"none", borderRadius:4, padding:"16px",
             fontFamily:"'Plus Jakarta Sans',sans-serif", fontSize:11, fontWeight:600,
             letterSpacing:"0.16em", textTransform:"uppercase", cursor:"pointer",
@@ -129,7 +129,7 @@ export default function Signup() {
 
         <p style={{ textAlign:"center", fontSize:13, color:"rgba(255,255,255,0.3)" }}>
           Already have an account?{" "}
-          <Link to="/login" style={{ color:"rgba(255,107,43,0.8)", textDecoration:"none" }}>
+          <Link to="/login" style={{ color:"rgba(99, 102, 241,0.8)", textDecoration:"none" }}>
             Sign in →
           </Link>
         </p>

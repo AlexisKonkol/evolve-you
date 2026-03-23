@@ -105,7 +105,7 @@ const futurePaths: FuturePath[] = [
 // ── Color tokens ──────────────────────────────────────────────────────────────
 
 const ct = {
-  coral:  { bg: "hsl(var(--coral) / 0.08)",  border: "hsl(var(--coral) / 0.22)",  text: "text-coral",  dot: "hsl(var(--coral))"  },
+  coral:  { bg: "hsl(var(--coral) / 0.08)",  border: "hsl(var(--coral) / 0.22)",  text: "text-indigo-400",  dot: "hsl(var(--coral))"  },
   amber:  { bg: "hsl(var(--amber) / 0.08)",  border: "hsl(var(--amber) / 0.22)",  text: "text-amber",  dot: "hsl(var(--amber))"  },
   violet: { bg: "hsl(var(--violet) / 0.08)", border: "hsl(var(--violet) / 0.22)", text: "text-violet", dot: "hsl(var(--violet))" },
   teal:   { bg: "hsl(150 55% 52% / 0.08)",   border: "hsl(150 55% 52% / 0.22)",   text: "text-teal",   dot: "hsl(150 55% 52%)"   },
@@ -417,8 +417,8 @@ export default function IdentityDashboard() {
           <div className="mb-10">
             <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium mb-4 border"
               style={{ background: "hsl(var(--coral) / 0.06)", borderColor: "hsl(var(--coral) / 0.2)" }}>
-              <Brain className="w-4 h-4 text-coral" />
-              <span className="text-coral">Identity Dashboard</span>
+              <Brain className="w-4 h-4 text-indigo-400" />
+              <span className="text-indigo-400">Identity Dashboard</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
               <div>
@@ -434,7 +434,7 @@ export default function IdentityDashboard() {
               <div className="flex gap-2 shrink-0">
                 <Link to="/journal">
                   <Button variant="outline" size="sm" className="gap-1.5 text-xs border-border hover:border-coral/40">
-                    <BookOpen className="w-3.5 h-3.5 text-coral" />
+                    <BookOpen className="w-3.5 h-3.5 text-indigo-400" />
                     Add reflection
                   </Button>
                 </Link>
@@ -458,7 +458,7 @@ export default function IdentityDashboard() {
                 <Brain className="w-7 h-7 text-primary-foreground" />
               </div>
               <div className="flex-1">
-                <p className="text-xs text-coral font-semibold uppercase tracking-wider mb-1">Your emerging identity</p>
+                <p className="text-xs text-indigo-400 font-semibold uppercase tracking-wider mb-1">Your emerging identity</p>
                 <h2 className="text-xl font-bold text-foreground mb-1">The Connector-Builder</h2>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   You bridge people, ideas, and systems. You're energized by meaningful problems and naturally build
@@ -513,7 +513,7 @@ export default function IdentityDashboard() {
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
                     style={{ background: "hsl(var(--coral) / 0.12)" }}>
-                    <Sparkles className="w-4 h-4 text-coral" />
+                    <Sparkles className="w-4 h-4 text-indigo-400" />
                   </div>
                   <div>
                     <h2 className="font-semibold text-foreground text-sm">Curiosity Signals</h2>
@@ -581,7 +581,7 @@ export default function IdentityDashboard() {
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
                     style={{ background: "hsl(var(--coral) / 0.12)" }}>
-                    <TrendingUp className="w-4 h-4 text-coral" />
+                    <TrendingUp className="w-4 h-4 text-indigo-400" />
                   </div>
                   <div>
                     <h2 className="font-semibold text-foreground text-sm">Possible Futures</h2>
@@ -591,7 +591,7 @@ export default function IdentityDashboard() {
                 <PossibleFutures />
                 <Link to="/path-finder" className="block mt-4">
                   <Button size="sm" variant="outline"
-                    className="w-full gap-1.5 text-xs border-border hover:border-coral/40 text-muted-foreground hover:text-coral">
+                    className="w-full gap-1.5 text-xs border-border hover:border-coral/40 text-muted-foreground hover:text-indigo-400">
                     Discover more paths with AI
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Button>
@@ -610,12 +610,12 @@ export default function IdentityDashboard() {
                   ].map((item) => (
                     <Link key={item.label} to={item.href}
                       className="flex items-center gap-3 p-2.5 rounded-xl transition-colors hover:bg-surface-2 group">
-                      <item.icon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-coral transition-colors shrink-0" />
+                      <item.icon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-indigo-400 transition-colors shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-medium text-foreground">{item.label}</p>
                         <p className="text-xs text-muted-foreground">{item.sub}</p>
                       </div>
-                      <ArrowRight className="w-3 h-3 text-muted-foreground/30 group-hover:text-coral transition-colors" />
+                      <ArrowRight className="w-3 h-3 text-muted-foreground/30 group-hover:text-indigo-400 transition-colors" />
                     </Link>
                   ))}
                 </div>
