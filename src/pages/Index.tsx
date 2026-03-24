@@ -15,11 +15,37 @@ export default function Index() {
     <>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+        
+        @media (max-width: 768px) {
+          .hero-headline {
+            font-size: 28px !important;
+          }
+          .hero-subline {
+            font-size: 14px !important;
+            max-width: 300px !important;
+          }
+          .hero-container {
+            padding: 0 20px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .hero-headline {
+            font-size: 24px !important;
+          }
+          .hero-subline {
+            font-size: 13px !important;
+            max-width: 280px !important;
+          }
+          .hero-container {
+            padding: 0 15px !important;
+          }
+        }
       `}</style>
       
       {/* SECTION 1 — HERO */}
       <section style={{
-        backgroundImage: "url('/hero-bg.jpg')",
+        backgroundImage: "url('/hero-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center top",
         position: "relative",
@@ -150,15 +176,15 @@ export default function Index() {
         {/* HERO TEXT */}
         <div style={{
           position: "absolute",
-          top: "50%",
+          top: "45%",
           left: "50%",
-          transform: "translate(-50%, -60px)",
+          transform: "translate(-50%, -50%)",
           textAlign: "center",
-          padding: "0 140px",
+          padding: "0 clamp(20px, 8vw, 140px)",
           zIndex: 5,
           width: "100%",
           boxSizing: "border-box"
-        }}>
+        }} className="hero-container">
           {/* Badge pill */}
           <div style={{
             display: "inline-flex",
@@ -168,7 +194,7 @@ export default function Index() {
             border: "1px solid rgba(192,132,252,0.22)",
             borderRadius: "999px",
             padding: "5px 16px",
-            marginBottom: "24px"
+            marginBottom: "20px"
           }}>
             <div style={{
               width: "4px",
@@ -190,39 +216,39 @@ export default function Index() {
           {/* Headline */}
           <h1 style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "46px",
+            fontSize: "clamp(28px, 5vw, 46px)",
             color: "white",
             fontWeight: 400,
             lineHeight: 1.2,
             letterSpacing: "-0.01em",
-            margin: "0 0 8px"
-          }}>
+            margin: "0 0 6px"
+          }} className="hero-headline">
             When you can't see a way forward —
           </h1>
           <h2 style={{
             fontFamily: "'Playfair Display', serif",
-            fontSize: "46px",
+            fontSize: "clamp(28px, 5vw, 46px)",
             color: "#E9D5FF",
             fontStyle: "italic",
             fontWeight: 400,
             lineHeight: 1.2,
-            margin: "0 0 26px"
-          }}>
+            margin: "0 0 16px"
+          }} className="hero-headline">
             NAVO helps you find one.
           </h2>
 
           {/* Subline */}
           <p style={{
-            fontSize: "15px",
+            fontSize: "clamp(14px, 3vw, 15px)",
             color: "rgba(255,255,255,0.35)",
             lineHeight: 1.95,
             fontWeight: 300,
-            marginBottom: "36px",
-            maxWidth: "400px",
+            marginBottom: "40px",
+            maxWidth: "clamp(300px, 80vw, 450px)",
             marginLeft: "auto",
             marginRight: "auto",
             fontFamily: "'Plus Jakarta Sans', sans-serif"
-          }}>
+          }} className="hero-subline">
             Direction, support and clarity —<br />
             for the moments that feel unbearable.
           </p>
@@ -234,24 +260,6 @@ export default function Index() {
             alignItems: "center",
             justifyContent: "center"
           }}>
-            <button
-              onClick={() => navigate('/signup')}
-              style={{
-                background: "white",
-                color: "#0D0028",
-                padding: "14px 36px",
-                borderRadius: "3px",
-                fontSize: "11px",
-                fontWeight: 700,
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                cursor: "pointer",
-                border: "none",
-                fontFamily: "'Plus Jakarta Sans', sans-serif"
-              }}
-            >
-              Find Your Direction →
-            </button>
             <button
               onClick={scrollToHowItWorks}
               style={{
