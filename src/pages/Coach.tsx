@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
+import { useEdgeScore } from "@/hooks/useEdgeScore";
 
 const FONTS = `@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');`;
 
@@ -18,6 +19,7 @@ interface Message {
 
 export default function Coach() {
   const navigate = useNavigate();
+  const { addPoints } = useEdgeScore();
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -176,6 +178,8 @@ COACHING RULES — always follow these:
 
       if (user) {
         await (supabase as any).from("coach_messages").insert({ user_id: user.id, role: "assistant", content: coachResponse });
+        // Add edge score points for coach interaction
+        await addPoints("coach");
       }
     } catch (err) {
       console.error("Send message error:", err);

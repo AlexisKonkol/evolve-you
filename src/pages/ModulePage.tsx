@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { supabase } from '@/integrations/supabase/client';
+import { useEdgeScore } from "@/hooks/useEdgeScore";
 
 const MODULES = [
   {
@@ -120,6 +121,7 @@ const MODULES = [
 export default function ModulePage() {
   const { moduleId } = useParams<{ moduleId: string }>();
   const navigate = useNavigate();
+  const { addPoints } = useEdgeScore();
   const [currentStep, setCurrentStep] = useState(0);
   const [completed, setCompleted] = useState<boolean[]>([false, false, false, false, false]);
   const [journalEntry, setJournalEntry] = useState('');
@@ -172,6 +174,8 @@ export default function ModulePage() {
             module_id: module.id,
             completed_at: new Date().toISOString()
           });
+          // Add edge score points for module completion
+          await addPoints("module");
         }
       } catch (error) {
         console.error('Error saving module completion:', error);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { supabase } from '@/integrations/supabase/client'
+import { EdgeScoreWidget } from '@/components/EdgeScoreWidget'
 
 export default function Dashboard() {
   const navigate = useNavigate()
@@ -145,6 +146,11 @@ export default function Dashboard() {
           </button>
         </div>
       )}
+
+      {/* Edge Score Widget */}
+      <div className="max-w-2xl mx-auto mt-8">
+        <EdgeScoreWidget />
+      </div>
 
       {/* Hero Card */}
       <div className="max-w-2xl mx-auto mt-12 bg-indigo-500/5 border border-indigo-500/20 rounded-[20px] p-10 relative overflow-hidden group">
